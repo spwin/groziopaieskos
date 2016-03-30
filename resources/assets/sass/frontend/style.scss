@@ -1,0 +1,815 @@
+/*
+Theme Name: Grozio Keliai
+Author: Paul
+Description: Template for Grozio Keliai
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: grozis
+*/
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+  color: white; }
+
+body {
+  background: url("../img/back.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.line-break {
+  display: block; }
+
+div.clear {
+  clear: both; }
+
+/** header **/
+header {
+  width: 100%;
+  height: 6.08974358974359%; }
+  header .header-container {
+    width: 83.333333%;
+    margin: 0 auto; }
+    header .header-container .logo {
+      display: inline-block;
+      width: 27.92307692307692%;
+      margin-left: 4.83870967741935%;
+      margin-top: 20px;
+      max-width: 350px; }
+    header .header-container .main-nav {
+      display: inline-block;
+      width: auto; }
+    header .header-container .menu-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 16px;
+      width: 50%;
+      display: inline-block;
+      margin-left: 2%; }
+      header .header-container .menu-list li {
+        display: inline-block;
+        padding: 0 3%;
+        padding-bottom: 2%; }
+      header .header-container .menu-list #miestai,
+      header .header-container .menu-list #paslaugos {
+        border-bottom: 3px solid transparent; }
+    header .header-container .header-contacts-button {
+      width: 13.61538461538462%;
+      display: inline-block;
+      text-align: right;
+      margin-top: 10px; }
+      header .header-container .header-contacts-button p {
+        font-size: 12px;
+        margin: 0;
+        padding: 0; }
+      header .header-container .header-contacts-button p:last-child {
+        margin-bottom: 1%; }
+      header .header-container .header-contacts-button .header-button {
+        width: 100%;
+        background-color: #86818d;
+        border-radius: 10px;
+        font-size: 16px;
+        max-width: 170px;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: 0; }
+
+.hover-menu {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-bottom: 20px;
+  border-top: 1px solid lightgray; }
+  .hover-menu .hover-container {
+    width: 83.333333%;
+    margin: 0 auto;
+    display: flex; }
+    .hover-menu .hover-container .hover-button {
+      width: 10%;
+      height: auto;
+      text-align: center;
+      max-width: 130px;
+      position: relative;
+      display: inline-block;
+      margin-left: 1%; }
+      .hover-menu .hover-container .hover-button .hover-button-header {
+        height: 55px;
+        padding-top: 8%;
+        font-weight: 700; }
+      .hover-menu .hover-container .hover-button .hover-button-image {
+        width: 100%;
+        line-height: 100px;
+        height: 100px; }
+        .hover-menu .hover-container .hover-button .hover-button-image img {
+          vertical-align: middle; }
+        .hover-menu .hover-container .hover-button .hover-button-image img.salonas-icon {
+          margin-right: -10%; }
+      .hover-menu .hover-container .hover-button .hover-button-text p {
+        margin: 0;
+        padding-bottom: 3px;
+        font-size: 12px; }
+      .hover-menu .hover-container .hover-button .hover-button-text p:first-child {
+        padding-top: 3px; }
+      .hover-menu .hover-container .hover-button ul.city-list {
+        position: absolute;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        display: none; }
+        .hover-menu .hover-container .hover-button ul.city-list li:first-child {
+          font-size: 12px;
+          margin: 0;
+          text-align: center;
+          padding: 0;
+          font-weight: 700;
+          margin-top: 3px;
+          margin-bottom: 2px; }
+        .hover-menu .hover-container .hover-button ul.city-list li:first-child:hover {
+          background: transparent; }
+        .hover-menu .hover-container .hover-button ul.city-list li {
+          font-size: 12px;
+          padding: 8px 0;
+          text-align: left;
+          padding-left: 10%; }
+        .hover-menu .hover-container .hover-button ul.city-list li:hover {
+          background-color: rgba(255, 255, 255, 0.3); }
+    .hover-menu .hover-container .hover-button:first-child {
+      margin-left: 10%; }
+
+.hover-menu.paslaugos-menu .hover-container .hover-button .hover-button-header {
+  font-size: 13px; }
+  @media screen and (min-width: 1200px) {
+    .hover-menu.paslaugos-menu .hover-container .hover-button .hover-button-header {
+      font-size: 15px; } }
+
+.hover-menu.miestai-menu .hover-container .hover-button .hover-button-header {
+  padding-top: 0;
+  height: 30px;
+  line-height: 30px; }
+.hover-menu.miestai-menu .hover-container .hover-button .hover-button-image {
+  height: 125px;
+  line-height: 125px; }
+  .hover-menu.miestai-menu .hover-container .hover-button .hover-button-image img {
+    width: 85%;
+    opacity: 0.7; }
+.hover-menu.miestai-menu .hover-container .hover-button .hover-button-image:hover img {
+  opacity: 1; }
+.hover-menu.miestai-menu .hover-container .hover-button .hover-button-image.klaipeda-icon img {
+  width: 50%; }
+.hover-menu.miestai-menu .hover-container .hover-button .hover-button-image.marijampole-icon img {
+  width: 60%; }
+.hover-menu.miestai-menu .hover-container .hover-button .hover-button-image.telsiai-icon img {
+  width: 60%; }
+.hover-menu.miestai-menu .hover-container .hover-button .hover-button:first-child {
+  margin-left: 0; }
+.hover-menu.miestai-menu .hover-container .hover-button:first-child {
+  margin-left: 0; }
+
+header,
+.hover-menu {
+  z-index: 2; }
+
+#b,
+#c {
+  display: none; }
+
+/*
+#a:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+#a:hover + #b {
+  display: block;
+}
+#b:hover {
+  display: block;
+  -webkit-transition: all 3s ease;
+  -moz-transition: all 3s ease;
+  -ms-transition: all 3s ease;
+  -o-transition: all 3s ease;
+  transition: all 3s ease;
+}
+*/
+.hovered-button {
+  background-color: rgba(255, 255, 255, 0.2); }
+  .hovered-button .hover-button-header {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black; }
+
+.visible {
+  display: block !important; }
+
+/** main **/
+.main-container {
+  width: 83.333333%;
+  margin: 0 auto;
+  position: relative;
+  max-width: 1150px; }
+  .main-container .main-map {
+    width: 715px;
+    margin-top: 30px; }
+    .main-container .main-map img {
+      width: 100%; }
+  .main-container .main-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right; }
+    .main-container .main-header p {
+      margin: 0;
+      font-size: 43px; }
+      .main-container .main-header p .line-break {
+        font-size: 23px; }
+  .main-container .main-header.main-paieska {
+    bottom: 10%;
+    top: auto; }
+    .main-container .main-header.main-paieska p {
+      margin-bottom: 3%; }
+    .main-container .main-header.main-paieska input[type=search] {
+      height: 30px;
+      border-bottom-left-radius: 30px;
+      border-top-left-radius: 30px;
+      display: inline-block;
+      margin: 0;
+      border: none;
+      font-family: "Lato", sans-serif;
+      font-size: 20px;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+      padding-left: 10px;
+      width: 170px; }
+    .main-container .main-header.main-paieska input[type=submit] {
+      display: inline-block;
+      border-bottom-right-radius: 30px;
+      border-top-right-radius: 30px;
+      height: 30px;
+      width: 85px;
+      border: none;
+      background-color: #bec8d9;
+      font-family: "Lato", sans-serif;
+      font-size: 20px;
+      margin-left: -5px;
+      text-align: left;
+      color: white;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3); }
+
+.toolTipClass {
+  position: relative;
+  width: 295px;
+  height: 215px;
+  background-color: rgba(46, 41, 61, 0.8);
+  top: 30px !important;
+  left: 480.672px !important; }
+  @media screen and (min-width: 1280px) {
+    .toolTipClass {
+      top: 62px !important;
+      left: 530px !important; } }
+  @media screen and (min-width: 1380px) {
+    .toolTipClass {
+      left: 40% !important; } }
+  @media screen and (min-width: 1670px) {
+    .toolTipClass {
+      left: 42% !important; } }
+  .toolTipClass h3 {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    padding: 3px 0;
+    background-color: #18313f; }
+  .toolTipClass ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .toolTipClass ul li {
+      height: 50px;
+      line-height: 50px;
+      border-top: 3px solid transparent; }
+    .toolTipClass ul img.dantis {
+      width: 9%;
+      margin-left: 15px;
+      margin-right: 21px; }
+    .toolTipClass ul li:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+      border-top: 3px solid white; }
+    .toolTipClass ul img {
+      width: 13%;
+      margin-bottom: -10px;
+      margin-right: 15px;
+      margin-left: 10px; }
+  .toolTipClass p {
+    margin: 5px 0 0 0;
+    float: right;
+    font-size: 17px; }
+
+.toolTipClass:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 30px;
+  top: 215px;
+  border: 25px solid;
+  border-color: rgba(46, 41, 61, 0.8) transparent transparent rgba(46, 41, 61, 0.8); }
+
+/*
+.toolTipClass:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 38px;
+  top: 100px;
+  border: 15px solid;
+  border-color: #fff transparent transparent #fff;
+}
+*/
+/********** Mikrorajonai page ************/
+.main-container .mikrorajonai {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  height: 230px;
+  width: 30%;
+  position: absolute;
+  font-size: 15px; }
+  .main-container .mikrorajonai li {
+    margin-left: 0; }
+.main-container .vilnius-map {
+  margin-top: 30px;
+  width: 570px; }
+  @media screen and (min-width: 1170px) {
+    .main-container .vilnius-map {
+      margin-left: 85px; } }
+  .main-container .vilnius-map img {
+    width: 100%; }
+.main-container .mikrorajonu-sidebar {
+  width: 40%;
+  top: 0;
+  position: absolute;
+  right: 0; }
+  .main-container .mikrorajonu-sidebar .main-header {
+    position: relative; }
+  .main-container .mikrorajonu-sidebar .sidebar-icons {
+    text-align: right;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
+    width: 272px; }
+    .main-container .mikrorajonu-sidebar .sidebar-icons .sidebar-icon {
+      display: inline-block;
+      text-align: center;
+      margin-left: 5px;
+      margin-top: 8px; }
+      .main-container .mikrorajonu-sidebar .sidebar-icons .sidebar-icon .icon-image {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        border: 2px solid white;
+        border-radius: 7px; }
+        .main-container .mikrorajonu-sidebar .sidebar-icons .sidebar-icon .icon-image img {
+          width: 80%;
+          vertical-align: middle; }
+        .main-container .mikrorajonu-sidebar .sidebar-icons .sidebar-icon .icon-image img.smaller-width {
+          width: 55%; }
+      .main-container .mikrorajonu-sidebar .sidebar-icons .sidebar-icon .icon-image:hover {
+        background-color: #173e4e; }
+      .main-container .mikrorajonu-sidebar .sidebar-icons .sidebar-icon p {
+        margin: 0;
+        font-size: 13px; }
+  .main-container .mikrorajonu-sidebar .search-clues {
+    width: 272px;
+    float: right;
+    margin-top: 10px; }
+    .main-container .mikrorajonu-sidebar .search-clues h3,
+    .main-container .mikrorajonu-sidebar .search-clues h4,
+    .main-container .mikrorajonu-sidebar .search-clues p {
+      margin: 0; }
+    .main-container .mikrorajonu-sidebar .search-clues input[type=submit] {
+      display: inline-block;
+      border-radius: 30px;
+      height: 35px;
+      width: 150px;
+      border: none;
+      background-color: #fff;
+      font-family: "Lato", sans-serif;
+      font-size: 20px;
+      text-align: center;
+      color: black;
+      float: right;
+      margin-right: 50px;
+      margin-top: 10px; }
+.main-container .paslaugu-sarasas {
+  width: 75%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  max-width: 820px; }
+  .main-container .paslaugu-sarasas h3 {
+    margin: 0;
+    font-size: 17px;
+    text-align: left;
+    background-color: #18313f; }
+  .main-container .paslaugu-sarasas .sarasas-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px; }
+    .main-container .paslaugu-sarasas .sarasas-wrapper .sarasas-container .image-header {
+      text-align: left; }
+      .main-container .paslaugu-sarasas .sarasas-wrapper .sarasas-container .image-header img {
+        margin-left: 10px;
+        max-height: 55px; }
+      .main-container .paslaugu-sarasas .sarasas-wrapper .sarasas-container .image-header h3 {
+        background-color: transparent; }
+    .main-container .paslaugu-sarasas .sarasas-wrapper .sarasas-container form {
+      text-align: left;
+      margin-top: 5px; }
+    .main-container .paslaugu-sarasas .sarasas-wrapper .sarasas-container input[type=checkbox] {
+      display: none; }
+    .main-container .paslaugu-sarasas .sarasas-wrapper .sarasas-container input[type=checkbox] + label {
+      display: block;
+      cursor: pointer; }
+    .main-container .paslaugu-sarasas .sarasas-wrapper .sarasas-container input[type=checkbox] + label span {
+      display: inline-block;
+      width: 28px;
+      height: 27px;
+      background: url("../img/tick-box-sprite.png") left top no-repeat;
+      margin-right: 5px; }
+    .main-container .paslaugu-sarasas .sarasas-wrapper .sarasas-container input[type=checkbox]:checked + label span {
+      background-position: -28px 0; }
+  .main-container .paslaugu-sarasas input[type=submit] {
+    display: inline-block;
+    border-radius: 30px;
+    height: 40px;
+    width: 150px;
+    border: none;
+    background-color: #fff;
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+    float: right;
+    margin-right: 30px; }
+
+/********** Rezultatai page ************/
+.main-container {
+  margin-top: 30px; }
+  .main-container .left-column {
+    width: 58%;
+    float: left; }
+    .main-container .left-column .rusiavimas {
+      margin-top: 60px;
+      position: relative;
+      text-align: right; }
+      .main-container .left-column .rusiavimas p {
+        display: inline-block;
+        margin: 0 50px 0 0; }
+      .main-container .left-column .rusiavimas .filter-button {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        width: auto;
+        padding: 0 10px;
+        border-radius: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        font-size: 14px;
+        cursor: pointer; }
+    .main-container .left-column .gmap {
+      margin-top: 15px; }
+  .main-container .right-column {
+    float: right;
+    width: 42%;
+    text-align: right; }
+    .main-container .right-column .rezultatai-header {
+      width: 50%;
+      float: right;
+      text-align: left; }
+      .main-container .right-column .rezultatai-header .main-header {
+        position: relative;
+        text-align: left; }
+      .main-container .right-column .rezultatai-header .line-break {
+        font-size: 23px;
+        margin-left: 2px; }
+    .main-container .right-column .rezultatu-sarasas {
+      width: 95%;
+      height: 500px;
+      clear: both;
+      text-align: left;
+      float: right; }
+      .main-container .right-column .rezultatu-sarasas .rezultatas {
+        width: 95%;
+        height: 200px;
+        background-color: rgba(0, 0, 0, 0.2);
+        line-height: 200px;
+        text-align: center;
+        margin-top: 10px; }
+        .main-container .right-column .rezultatu-sarasas .vienas-rezultatas {
+          width: 95%;
+        }
+        .main-container .right-column .rezultatu-sarasas .imone-container {
+          height: auto;
+          width: 91%;
+        }
+        .main-container .right-column .rezultatu-sarasas .imone-container .left-side .bottom-left-side ul {
+          font-size: 16px;
+        }
+        .main-container .right-column .rezultatu-sarasas .vienas-rezultatas .left-side{
+          width: auto;
+          font-size: 15px;
+        }
+        .main-container .right-column .rezultatu-sarasas .vienas-rezultatas .top-left-side{
+          display: flex;
+          width: 100%;
+        }
+        .main-container .right-column .rezultatu-sarasas .vienas-rezultatas .top-left-side img{
+          height: 85px;
+        }
+
+    .main-container .right-column .nano .nano-pane {
+      background: rgba(0, 0, 0, 0.2); }
+    .main-container .right-column .nano .nano-slider {
+      background: rgba(0, 0, 0, 0.4); }
+
+/************ APIE IMONE page *****************/
+.main-container .apie-imone .main-header {
+  position: relative; }
+.main-container .imone-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 10px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2); }
+  .main-container .imone-container .left-side {
+    width: 50%;
+    display: inline-block; }
+    .main-container .imone-container .left-side .top-left-side {
+      display: inline-block;
+      height: auto; }
+      .main-container .imone-container .left-side .top-left-side img {
+        display: inline-block;
+        margin-right: 10px;
+        height: 110px; }
+        @media screen and (min-width: 1200px) {
+          .main-container .imone-container .left-side .top-left-side img {
+            margin-right: 25px;
+            height: 120px; } }
+      .main-container .imone-container .left-side .top-left-side .name-details {
+        display: inline-block;
+        margin-right: 10px; }
+        .main-container .imone-container .left-side .top-left-side .name-details p {
+          color: green;
+          margin: 0;
+          font-weight: 700; }
+        .main-container .imone-container .left-side .top-left-side .name-details h3 {
+          margin: 0; }
+        .main-container .imone-container .left-side .top-left-side .name-details h4 {
+          margin: 0; }
+        .main-container .imone-container .left-side .top-left-side .name-details img {
+          width: 50px;
+          height: auto; }
+      .main-container .imone-container .left-side .top-left-side .imone-checkboxes {
+        display: inline-block; }
+        .main-container .imone-container .left-side .top-left-side .imone-checkboxes input[type=checkbox] {
+          display: none; }
+        .main-container .imone-container .left-side .top-left-side .imone-checkboxes input[type=checkbox] + label {
+          display: block;
+          cursor: pointer; }
+        .main-container .imone-container .left-side .top-left-side .imone-checkboxes input[type=checkbox] + label span {
+          display: inline-block;
+          width: 28px;
+          height: 27px;
+          background: url("../img/tick-box-sprite.png") left top no-repeat;
+          margin-right: 5px; }
+        .main-container .imone-container .left-side .top-left-side .imone-checkboxes input[type=checkbox]:checked + label span {
+          background-position: -28px 0; }
+    .main-container .imone-container .left-side .bottom-left-side ul {
+      list-style: none;
+      font-size: 20px;
+      padding: 0;
+      margin: 0;
+      margin-top: 15px; }
+      .main-container .imone-container .left-side .bottom-left-side ul li {
+        padding: 0;
+        margin: 0;
+        margin-top: 5px; }
+  .main-container .imone-container .right-side {
+    width: 45%;
+    padding-left: 20px;
+    display: inline-block;
+    font-size: 15.5px; }
+    .main-container .imone-container .right-side p:first-child {
+      margin-top: 0; }
+.main-container .ziureti-zemelapyje {
+  float: right;
+  color: white;
+  text-decoration: underline; }
+
+/*** header ***/
+@media screen and (max-width: 1300px) {
+  .hover-menu .hover-container .hover-button .hover-button-header {
+    font-size: 15px; } }
+/***** MAIN *****/
+@media screen and (min-width: 1280px) {
+  .main-container .main-map {
+    width: 780px; }
+  .main-container .main-header p {
+    font-size: 50px; }
+    .main-container .main-header p .line-break {
+      font-size: 28px; }
+  .main-container .main-header.main-paieska input[type=search] {
+    width: 230px; }
+  .main-container .main-header.main-paieska input[type=submit] {
+    width: 100px; } }
+
+/*** Pasirinkta paslauga ***/
+
+.main-container.pasirinkta-paslauga .mikrorajonu-sidebar .sidebar-icons {
+  justify-content: flex-end;
+  width: 300px;
+}
+
+.pasirinkti-ziureti-paslaugas {
+  margin-top: 50px;
+  display: flex;
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+}
+.pasirinkti-ziureti-paslaugas .transparent-button {
+  border: 1px solid white;
+  border-radius: 25px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+    margin: 0 0 15px 0;
+    cursor: pointer;
+}
+.pasirinkti-ziureti-paslaugas .transparent-button p {
+  padding: 0 10px;
+  margin: 0;
+}
+
+/*** Registracija ****/
+
+.registracija-button {
+  height: 45px;
+  border-radius: 30px;
+  background-color: rgba(255,255,255,0.1);
+  margin-top: 15px;
+  text-align: center;
+  line-height: 45px;
+}
+
+.registracija-button.current {
+    color: black;
+    background-color: rgba(255,255,255,0.6);
+}
+
+.main-container .main-header .registracija-button p {
+  padding: 0 15px;
+  font-size: 22px;
+}
+
+.registracija-form p {
+  font-size: 24px;
+}
+
+.registracija-form .first-form-line {
+  width: 70%;
+}
+
+.registracija-form div.inputs {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  width: 230px;
+}
+
+.registracija-form div.inputs label {
+  display: block;
+  margin-left: 5px;
+}
+
+.registracija-form div.inputs input,
+.registracija-form div.inputs select {
+  margin-top: 5px;
+  border: none;
+  height: 25px;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 15px;
+  line-height: 25px;
+  color: white;
+  padding-left: 10px;
+  font-size: 18px;
+  width: 220px;
+}
+
+.registracija-form div.inputs select option {
+  background-color: rgba(0,0,0,0.2);
+}
+
+  .main-container .form-container .sidebar-icons {
+    text-align: right;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px; }
+    .main-container .form-container .sidebar-icons .sidebar-icon {
+      display: inline-block;
+      text-align: center;
+      margin-top: 8px;
+      margin-right: 10px; }
+      .main-container .form-container .sidebar-icons .sidebar-icon .icon-image {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        border: 2px solid white;
+        border-radius: 7px; }
+        .main-container .form-container .sidebar-icons .sidebar-icon .icon-image img {
+          width: 80%;
+          vertical-align: middle; }
+        .main-container .form-container .sidebar-icons .sidebar-icon .icon-image img.smaller-width {
+          width: 55%; }
+      .main-container .form-container .sidebar-icons .sidebar-icon .icon-image:hover {
+        background-color: #173e4e; }
+      .main-container .form-container .sidebar-icons .sidebar-icon p {
+        margin: 0;
+        font-size: 13px; }
+
+.main-container .form-container div.darbo-laikas .sliders {
+  width: 250px;
+  display: inline-block;
+}
+
+.main-container .form-container div.darbo-laikas div.diena {
+  display: inline-block;
+  width: 330px;
+}
+
+.main-container .form-container input[type=checkbox] {
+      display: none; }
+    .main-container .form-container input[type=checkbox] + label {
+      display: inline-block;
+      cursor: pointer; }
+    .main-container .form-container input[type=checkbox] + label span {
+      display: inline-block;
+      width: 28px;
+      height: 27px;
+      background: url("../img/tick-box-sprite.png") left top no-repeat;
+      margin-right: 5px; }
+    .main-container .form-container input[type=checkbox]:checked + label span {
+      background-position: -28px 0; }
+
+.inputs textarea {
+    border: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.2);
+  color: white;
+  padding-left: 10px;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  padding-top: 5px;
+}
+
+    .main-container .form-container input[type=submit] {
+    display: inline-block;
+    border-radius: 30px;
+    height: 40px;
+    width: 200px;
+    border: none;
+    background-color: #fff;
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+    float: right;
+    margin-right: 30px;  }
+
+.background-color-selected {
+  background-color: #173e4e;
+}
+
+
+/*# sourceMappingURL=style.css.map */
