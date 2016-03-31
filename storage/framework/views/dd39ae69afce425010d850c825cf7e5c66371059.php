@@ -12,9 +12,9 @@
     <title>Grožio paieškos</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo e(URL::to('/')); ?>/css/frontend.css" rel="stylesheet">
-    <script src="<?php echo e(URL::to('/')); ?>/js/libraries.js"></script>
-    <script src="<?php echo e(URL::to('/')); ?>/js/frontend.js"></script>
+    <link href="<?php echo e(URL::to('/')); ?>/css/admin.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="<?php echo e(URL::to('/')); ?>/js/bootstrap.min.js"></script>
 
 </head>
 

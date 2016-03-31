@@ -175,7 +175,6 @@
                             <div id="slider7" class="sliders"></div>
                         </div>
                     </div>
-
                     <!-- Darbo laikas end -->
 
                     <div class="inputs">
@@ -190,7 +189,10 @@
 
                 <?php foreach($categories as $category): ?>
                     <div class="paslaugu-sarasas facilities-<?php echo e($category->id); ?>">
-                        <h3><?php echo e(strtoupper($category->name_plural)); ?></h3>
+                        <div class="header-of-headers">
+                            <h3><?php echo e(strtoupper($category->name_plural)); ?></h3>
+                            <span>Uždaryti</span>
+                        </div>
                         <div class="sarasas-wrapper">
                             <div class="sarasas-container">
                                 <?php foreach($category->getFacilities()->get() as $facility): ?>
@@ -199,7 +201,7 @@
                                 <?php endforeach; ?>
                             </div>
                         </div>
-                        <input class="patvirtinti" type="submit" value="PATVIRTINTI">
+                        <div class="patvirtinti">PATVIRTINTI</div>
                     </div>
                 <?php endforeach; ?>
 

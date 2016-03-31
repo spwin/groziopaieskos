@@ -153,7 +153,6 @@
                             <div id="slider7" class="sliders"></div>
                         </div>
                     </div>
-
                     <!-- Darbo laikas end -->
 
                     <div class="inputs">
@@ -168,7 +167,10 @@
 
                 @foreach($categories as $category)
                     <div class="paslaugu-sarasas facilities-{{ $category->id }}">
-                        <h3>{{ strtoupper($category->name_plural) }}</h3>
+                        <div class="header-of-headers">
+                            <h3>{{ strtoupper($category->name_plural) }}</h3>
+                            <span>Uždaryti</span>
+                        </div>
                         <div class="sarasas-wrapper">
                             <div class="sarasas-container">
                                 @foreach($category->getFacilities()->get() as $facility)
@@ -177,7 +179,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <input class="patvirtinti" type="submit" value="PATVIRTINTI">
+                        <div class="patvirtinti">PATVIRTINTI</div>
                     </div>
                 @endforeach
 

@@ -299,6 +299,11 @@ function sliderOn7() {
     sliderOn6();
     sliderOn7();
 
+    /*** Uzdaryti paslaugu sarasa ***/
+    $('.header-of-headers span').on('click', function() {
+        $('.paslaugu-sarasas').hide();
+    })
+
     /*********** MAIN MAP *************/
 
     $("#myimg").mapster({
