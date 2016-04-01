@@ -8,13 +8,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../favicon.ico">
-
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <title>Grožio paieškos</title>
 
     <!-- Bootstrap core CSS -->
+    <link href="{{ URL::to('/') }}/css/jquery.qtip.min.css" rel="stylesheet">
     <link href="{{ URL::to('/') }}/css/frontend.css" rel="stylesheet">
     <script src="{{ URL::to('/') }}/js/libraries.js"></script>
     <script src="{{ URL::to('/') }}/js/frontend.js"></script>
+    <script src="{{ URL::to('/') }}/js/jquery.qtip.min.js"></script>
 
 </head>
 
