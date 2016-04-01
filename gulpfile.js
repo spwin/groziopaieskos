@@ -20,4 +20,6 @@ elixir(function(mix) {
     mix.sass('frontend.scss', 'public/css/frontend.css');
     mix.scripts(['jquery-2.2.2.min.js', 'jquery-ui.min.js', 'jquery.imagemapster.js', 'nano.js'], 'public/js/libraries.js')
         .scripts(['script.js'], 'public/js/frontend.js');
+
+    mix.copy('resources/assets/uploads', 'public/uploads');
 });

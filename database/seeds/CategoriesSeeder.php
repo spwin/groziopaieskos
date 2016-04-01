@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Categories;
+use \App\Facilities;
 
 class CategoriesSeeder extends Seeder
 {
@@ -157,5 +159,19 @@ class CategoriesSeeder extends Seeder
                 'Baseinas'
             ]
         ];
+
+        foreach($categories as $category){
+            $new_cat = new Categories();
+            $new_cat->fill($category['category']);
+            $new_cat->save();
+            foreach($category['facilities'] as $facility){
+                $new_facility = new Facilities();
+                $new_facility->fill([
+                    'name' => $facility,
+                    'category_id' => $new_cat->id
+                ]);
+                $new_facility->save();
+            }
+        }
     }
 }

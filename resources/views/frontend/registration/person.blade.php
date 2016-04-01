@@ -27,7 +27,7 @@
 
                 <div class="first-form-line">
                     <div class="inputs">
-                        {!! Form::label('title', 'Įmonės pavadinimas ') !!}
+                        {!! Form::label('title', 'Vardas, pavardė ') !!}
                         {!! Form::text('title', null, ['required' => 'required']) !!}
                     </div>
                     <div class="inputs">
@@ -76,12 +76,8 @@
                         {!! Form::text('address', null, ['required' => 'required']) !!}
                     </div>
                     <div class="inputs">
-                        {!! Form::label('imones_kodas', 'Įmonės kodas') !!}
-                        {!! Form::text('imones_kodas', null, ['required' => 'required']) !!}
-                    </div>
-                    <div class="inputs">
-                        {!! Form::label('pvm_kodas', 'PVM kodas') !!}
-                        {!! Form::text('pvm_kodas', null, ['required' => 'required']) !!}
+                        {!! Form::label('ind_veikl_nr', 'Individualios veiklos nr') !!}
+                        {!! Form::text('ind_veikl_nr', null, ['required' => 'required']) !!}
                     </div>
                     <div class="inputs">
                         {!! Form::label('phone', 'Telefonas') !!}

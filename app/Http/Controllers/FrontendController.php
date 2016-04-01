@@ -124,8 +124,8 @@ class FrontendController extends Controller
                 'imones_kodas' => '',
                 'pmv_kodas' => '',
                 'website' => $input['website'],
-                'name' => $input['vardas'],
-                'pavarde' => $input['pavarde'],
+                'name' => '',
+                'pavarde' => $input['title'],
                 'ind_veikl_nr' => $input['ind_veikl_nr']
             ];
         }
@@ -151,7 +151,7 @@ class FrontendController extends Controller
             }
         }
 
-        Flash::message('Organizacija sėkmingai pridėta!');
+        Flash::message($type == 'company' ? 'Organizacija sėkmingai pridėta!' : 'Veikla sėkmingai pridėta!');
         return Redirect::back();
     }
 }
