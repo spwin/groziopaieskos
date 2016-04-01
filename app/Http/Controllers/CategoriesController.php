@@ -51,7 +51,7 @@ class CategoriesController extends Controller
     {
         $category = Categories::findOrFail($id);
         $input = $request->all();
-        if ($request->has('image') && $request->file('image')->isValid()) {
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $destinationPath = 'uploads';
             $fileName = rand(11111,99999).$request->file('image')->getClientOriginalName();
             $request->file('image')->move($destinationPath, $fileName);

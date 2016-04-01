@@ -2,16 +2,15 @@
 
 // FRONTEND
 
+Route::get('/', 'FrontendController@index');
 
 Route::group(['prefix' => 'registracija'], function () {
     Route::get('imone', 'FrontendController@company');
+    Route::get('individuali-veikla', 'FrontendController@person');
     Route::post('{type}/store', 'FrontendController@store');
 });
 
 Route::get('search/autocomplete', 'FrontendController@autocomplete');
-
-Route::get('/', function () {
-});
 
 // BACKEND
 
@@ -45,5 +44,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     });
 
     Route::resource('organizations', 'OrganizationsController');
+    Route::get('organizations/{id}/approve/{approve}', 'OrganizationsController@approve');
 
 });

@@ -358,5 +358,11 @@ function sliderOn7() {
         });
     });
 
+
+    // Close messages button
+    $('button.close').on('click', function(){
+        $('div.alert').remove();
+    });
+
 })
 //# sourceMappingURL=frontend.js.map
