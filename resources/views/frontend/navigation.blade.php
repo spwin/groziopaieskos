@@ -24,90 +24,20 @@
 
 <div id="b" class="hover-menu paslaugos-menu">
     <div class="hover-container">
-        <div class="hover-button">
-            <div class="hover-button-header">
-                Grožio<span class="line-break"></span> salonai
+        @foreach(Helper::categories() as $category)
+            <div class="hover-button">
+                <div class="hover-button-header">
+                    {{ $category->name_plural }}
+                </div>
+                <div class="hover-button-image">
+                    <img class="salonas-icon" src="{{ URL::to('/') }}/uploads/{{ $category->image }}" alt="grozio salonai icon">
+                </div>
+                <div class="hover-button-text">
+                    <p>{{ $category->getOrganizations()->where(['type' => 'imone'])->count() }} įmonės</p>
+                    <p>{{ $category->getOrganizations()->where(['type' => 'asmuo'])->count() }} fiziniai asmenys</p>
+                </div>
             </div>
-            <div class="hover-button-image">
-                <img class="salonas-icon" src="img/header-icons/grozio-salonai.png" alt="grozio salonai icon">
-            </div>
-            <div class="hover-button-text">
-                <p>553 įmonės</p>
-                <p>109 fiziniai asmenys</p>
-            </div>
-        </div>
-        <div class="hover-button">
-            <div class="hover-button-header">
-                Soliariumai
-            </div>
-            <div class="hover-button-image">
-                <img src="img/header-icons/soliariumai.png" alt="grozio salonai icon">
-            </div>
-            <div class="hover-button-text">
-                <p>553 įmonės</p>
-                <p>109 fiziniai asmenys</p>
-            </div>
-        </div>
-        <div class="hover-button">
-            <div class="hover-button-header">
-                Tatuiruočių salonai
-            </div>
-            <div class="hover-button-image">
-                <img src="img/header-icons/tattoo.png" alt="grozio salonai icon">
-            </div>
-            <div class="hover-button-text">
-                <p>553 įmonės</p>
-                <p>109 fiziniai asmenys</p>
-            </div>
-        </div>
-        <div class="hover-button">
-            <div class="hover-button-header">
-                SPA centrai
-            </div>
-            <div class="hover-button-image">
-                <img src="img/header-icons/spa.png" alt="grozio salonai icon">
-            </div>
-            <div class="hover-button-text">
-                <p>553 įmonės</p>
-                <p>109 fiziniai asmenys</p>
-            </div>
-        </div>
-        <div class="hover-button">
-            <div class="hover-button-header">
-                Kosmetologijos kabinetai
-            </div>
-            <div class="hover-button-image">
-                <img src="img/header-icons/kosmetologija.png" alt="grozio salonai icon">
-            </div>
-            <div class="hover-button-text">
-                <p>553 įmonės</p>
-                <p>109 fiziniai asmenys</p>
-            </div>
-        </div>
-        <div class="hover-button">
-            <div class="hover-button-header">
-                Odontologijos kabinetai
-            </div>
-            <div class="hover-button-image">
-                <img src="img/header-icons/dantis.png" alt="grozio salonai icon">
-            </div>
-            <div class="hover-button-text">
-                <p>553 įmonės</p>
-                <p>109 fiziniai asmenys</p>
-            </div>
-        </div>
-        <div class="hover-button">
-            <div class="hover-button-header">
-                Sporto klubai
-            </div>
-            <div class="hover-button-image">
-                <img src="img/header-icons/sporto-klubai.png" alt="grozio salonai icon">
-            </div>
-            <div class="hover-button-text">
-                <p>553 įmonės</p>
-                <p>109 fiziniai asmenys</p>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 
