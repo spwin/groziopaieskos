@@ -7,17 +7,17 @@
         <div class="main-header">
             <p>Registracija</p>
             <a href="{{ action('FrontendController@company') }}">
-                <div class="registracija-button current"><p>Juridiniai asmenys</p></div>
+                <div class="registracija-button"><p>Juridiniai asmenys</p></div>
             </a>
             <a href="{{ action('FrontendController@person') }}">
-                <div class="registracija-button"><p>Individuali veikla</p></div>
+                <div class="registracija-button current"><p>Individuali veikla</p></div>
             </a>
         </div>
 
         <div class="form-container">
 
             {!! Form::open([
-                'action' => ['FrontendController@store', 'company'],
+                'action' => ['FrontendController@store', 'person'],
                 'class' => 'registracija-form',
                 'role' => 'form',
                 'files' => true,

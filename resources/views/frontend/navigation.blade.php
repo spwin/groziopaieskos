@@ -12,7 +12,9 @@
         <div class="header-contacts-button">
             <p>+370 6 7420316</p>
             <p>info@groziokeliai.lt</p>
-            <div class="header-button">Registruotis</div>
+            <a href="{{ action('FrontendController@company') }}">
+                <div class="header-button">Registruotis</div>
+            </a>
         </div>
 
     </div>
@@ -249,7 +251,7 @@
     <div class="hover-container">
         <div class="hover-button">
             <div class="hover-button-image">
-                <img src="img/header-icons/kontaktai/adresas.png" alt="adresas">
+                <img src="{{ URL::to('/') }}/img/header-icons/kontaktai/adresas.png" alt="adresas">
             </div>
             <div class="hover-button-text">
                 <p class="kontaktai-button-header">ADRESAS</p>
@@ -258,7 +260,7 @@
         </div>
         <div class="hover-button">
             <div class="hover-button-image">
-                <img src="img/header-icons/kontaktai/elpastas.png" alt="adresas">
+                <img src="{{ URL::to('/') }}/img/header-icons/kontaktai/elpastas.png" alt="adresas">
             </div>
             <div class="hover-button-text">
                 <p class="kontaktai-button-header">EL. PAŠTAS</p>
@@ -267,7 +269,7 @@
         </div>
         <div class="hover-button">
             <div class="hover-button-image">
-                <img src="img/header-icons/kontaktai/telefonas.png" alt="adresas">
+                <img src="{{ URL::to('/') }}/img/header-icons/kontaktai/telefonas.png" alt="adresas">
             </div>
             <div class="hover-button-text">
                 <p class="kontaktai-button-header">TELEFONAS</p>
