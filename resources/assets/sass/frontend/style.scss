@@ -864,5 +864,52 @@ button:focus {
   display: inline-block;
 }
 
+/* NEW CSS */
+
+
+.hidden {
+  display: none;
+}
+.qtip-default {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
+.qtip {
+  max-width: none;
+  font-size: inherit;
+  line-height: inherit;
+}
+.qtip-content {
+  overflow: initial;
+}
+.kontaktai-menu .hover-container {
+  justify-content: center;
+  margin-bottom: 50.5px;
+  margin-top: 15px;
+}
+
+.kontaktai-menu .hover-container .hover-button:first-child {
+  margin-left: 0;
+}
+
+.kontaktai-menu .hover-container .hover-button {
+  width: 15%;
+  max-width: none;
+}
+
+.kontaktai-menu .hover-container .hover-button p.kontaktai-button-header {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.kontaktai-menu .hover-container .hover-button .hover-button-image {
+  line-height: 100px;
+  height: 80px;
+}
+
+.kontaktai-menu .hover-container .hover-button {
+  margin-left: 3%;
+}
 
 /*# sourceMappingURL=style.css.map */

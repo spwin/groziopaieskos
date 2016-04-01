@@ -12,9 +12,11 @@
     <title>Grožio paieškos</title>
 
     <!-- Bootstrap core CSS -->
+    <link href="{{ URL::to('/') }}/css/jquery.qtip.min.css" rel="stylesheet">
     <link href="{{ URL::to('/') }}/css/frontend.css" rel="stylesheet">
     <script src="{{ URL::to('/') }}/js/libraries.js"></script>
     <script src="{{ URL::to('/') }}/js/frontend.js"></script>
+    <script src="{{ URL::to('/') }}/js/jquery.qtip.min.js"></script>
 
 </head>
 

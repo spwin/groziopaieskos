@@ -43,6 +43,29 @@ jQuery( document ).ready(function($){
     })
 
 
+    $('#kontaktai, #d').mouseover(function(){
+        $('#d').show();
+        $('header').css('background-color', 'rgba(0,0,0,0.7)');
+        $('#kontaktai').css('border-bottom', '3px solid white');
+    });
+    $('#kontaktai, #d').mouseout(function(){
+        $('#d').hide();
+        $('header').css('background-color', 'transparent');
+        $('#kontaktai').css('border-bottom', '3px solid transparent');
+    })
+
+    $('#apiemus, #e').mouseover(function(){
+        $('#e').show();
+        $('header').css('background-color', 'rgba(0,0,0,0.7)');
+        $('#apiemus').css('border-bottom', '3px solid white');
+    });
+    $('#apiemus, #e').mouseout(function(){
+        $('#e').hide();
+        $('header').css('background-color', 'transparent');
+        $('#apiemus').css('border-bottom', '3px solid transparent');
+    })
+
+
     $(".hover-button").hover(function() {
         $(this).toggleClass("hovered-button");
     });
@@ -312,17 +335,27 @@ function sliderOn7() {
         strokeColor: "000",
         strokeWidth: 1,
         fill: true,
-        fillColor: '111111',
-        fillOpacity: 0.3,
-        toolTipContainer: '<div class="toolTipClass"></div>',
-        toolTipClose: ["image-mouseout"],
-        showToolTip: true,
-        areas: [
-            {
-                key: 'area1',
-                toolTip: '<h3>PANEVEŽYS (553)</h3><ul><li><img src="img/header-icons/grozio-salonai.png">Grožio salonai (101)</li><li><img src="img/header-icons/soliariumai.png">Soliariumai (33)</li><li><img class="dantis" src="img/header-icons/dantis.png">Odontologijos kabinetai (8)</li></ul><p>Žiūrėti viską</p>'
+        fillColor: 'c9eafe',
+        fillOpacity: 0.3
+    });
+
+    $('area').each(function() {
+        $(this).qtip({
+            content: {
+                text: '<div class="toolTipClass"><h3>VILNIUS (553)</h3><ul><li><img src="img/header-icons/grozio-salonai.png">Grožio salonai (101)</li><li><img src="img/header-icons/soliariumai.png">Soliariumai (33)</li><li><img class="dantis" src="img/header-icons/dantis.png">Odontologijos kabinetai (8)</li></ul><p>Žiūrėti viską</p></div>'
+            },
+            show: {
+                solo: true
+            },
+            position: {
+                my: 'bottom center',
+                at: 'top right'
+            },
+            hide: {
+                fixed: true,
+                delay: 300
             }
-        ]
+        });
     });
 
 })
