@@ -121,7 +121,7 @@
                 Vilnius
             </div>
             <div class="hover-button-image">
-                <img src="img/header-icons/miestai/vilnius.png" alt="grozio salonai icon">
+                <img src="{{ URL::to('/') }}/img/header-icons/miestai/vilnius.png" alt="grozio salonai icon">
             </div>
             <div class="hover-button-text">
                 <p>553 įmonės</p>
@@ -133,7 +133,7 @@
                 Kaunas
             </div>
             <div class="hover-button-image">
-                <img src="img/header-icons/miestai/kaunas.png" alt="grozio salonai icon">
+                <img src="{{ URL::to('/') }}/img/header-icons/miestai/kaunas.png" alt="grozio salonai icon">
             </div>
             <div class="hover-button-text">
                 <p>553 įmonės</p>
@@ -145,7 +145,7 @@
                 Šiauliai
             </div>
             <div class="hover-button-image">
-                <img src="img/header-icons/miestai/siauliai.png" alt="grozio salonai icon">
+                <img src="{{ URL::to('/') }}/img/header-icons/miestai/siauliai.png" alt="grozio salonai icon">
             </div>
             <div class="hover-button-text">
                 <p>553 įmonės</p>
@@ -157,7 +157,7 @@
                 Klaipėda
             </div>
             <div class="hover-button-image klaipeda-icon">
-                <img src="img/header-icons/miestai/klaipeda.png" alt="grozio salonai icon">
+                <img src="{{ URL::to('/') }}/img/header-icons/miestai/klaipeda.png" alt="grozio salonai icon">
             </div>
             <div class="hover-button-text">
                 <p>553 įmonės</p>
@@ -169,7 +169,7 @@
                 Panevežys
             </div>
             <div class="hover-button-image">
-                <img src="img/header-icons/miestai/panevezys.png" alt="grozio salonai icon">
+                <img src="{{ URL::to('/') }}/img/header-icons/miestai/panevezys.png" alt="grozio salonai icon">
             </div>
             <div class="hover-button-text">
                 <p>553 įmonės</p>
@@ -181,7 +181,7 @@
                 Utena
             </div>
             <div class="hover-button-image">
-                <img src="img/header-icons/miestai/utena.png" alt="grozio salonai icon">
+                <img src="{{ URL::to('/') }}/img/header-icons/miestai/utena.png" alt="grozio salonai icon">
             </div>
             <div class="hover-button-text">
                 <p>553 įmonės</p>
@@ -193,7 +193,7 @@
                 Alytus
             </div>
             <div class="hover-button-image">
-                <img src="img/header-icons/miestai/alytus.png" alt="grozio salonai icon">
+                <img src="{{ URL::to('/') }}/img/header-icons/miestai/alytus.png" alt="grozio salonai icon">
             </div>
             <div class="hover-button-text">
                 <p>553 įmonės</p>
@@ -205,7 +205,7 @@
                 Telšliai
             </div>
             <div class="hover-button-image telsiai-icon">
-                <img src="img/header-icons/miestai/telsiai.png" alt="grozio salonai icon">
+                <img src="{{ URL::to('/') }}/img/header-icons/miestai/telsiai.png" alt="grozio salonai icon">
             </div>
             <div class="hover-button-text">
                 <p>553 įmonės</p>
@@ -217,7 +217,7 @@
                 Marijampolė
             </div>
             <div class="hover-button-image marijampole-icon">
-                <img src="img/header-icons/miestai/marijampole.png" alt="grozio salonai icon">
+                <img src="{{ URL::to('/') }}/img/header-icons/miestai/marijampole.png" alt="grozio salonai icon">
             </div>
             <div class="hover-button-text">
                 <p>553 įmonės</p>
@@ -229,7 +229,7 @@
                 Tauragė
             </div>
             <div class="hover-button-image">
-                <img src="img/header-icons/miestai/taurage.png" alt="grozio salonai icon">
+                <img src="{{ URL::to('/') }}/img/header-icons/miestai/taurage.png" alt="grozio salonai icon">
             </div>
             <div class="hover-button-text">
                 <p>553 įmonės</p>
