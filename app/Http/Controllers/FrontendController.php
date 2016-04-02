@@ -151,7 +151,7 @@ class FrontendController extends Controller
             }
         }
 
-        Flash::message($type == 'company' ? 'Organizacija sėkmingai pridėta!' : 'Veikla sėkmingai pridėta!');
+        Flash::message($type == 'company' ? 'Registracijos užklausa išsiųsta. Laukite patvirtinimo.' : 'Registracijos užklausa išsiųsta. Laukite patvirtinimo.');
         return Redirect::back();
     }
 }

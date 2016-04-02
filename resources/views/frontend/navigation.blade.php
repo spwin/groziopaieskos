@@ -5,8 +5,8 @@
         <ul class="menu-list">
             <li id="miestai">Miestai</li>
             <li id="paslaugos">Paslaugos</li>
-            <li>Apie mus</li>
-            <li>Kontaktai</li>
+            <li id="apiemus">Apie mus</li>
+            <li id="kontaktai">Kontaktai</li>
         </ul>
 
         <div class="header-contacts-button">

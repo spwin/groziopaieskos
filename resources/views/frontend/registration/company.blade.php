@@ -43,6 +43,7 @@
                 <div class="registracija-veikla">
 
                     <p>Veikla</p>
+                    <p class="litred">Turite pasirinkti veiklos sritį! </p>
                     <div class="sidebar-icons">
                         @foreach($categories as $category)
                             <div class="sidebar-icon category-facilities" data-id="{{ $category->id }}">

@@ -344,12 +344,22 @@ function sliderOn7() {
             content: {
                 text: '<div class="toolTipClass"><h3>VILNIUS (553)</h3><ul><li><img src="img/header-icons/grozio-salonai.png">Grožio salonai (101)</li><li><img src="img/header-icons/soliariumai.png">Soliariumai (33)</li><li><img class="dantis" src="img/header-icons/dantis.png">Odontologijos kabinetai (8)</li></ul><p>Žiūrėti viską</p></div>'
             },
+            style: {
+                classes: 'qtip-dark',
+                tip: {
+                    corner: 'bottom center',
+                    mimic: 'bottom center',
+                    border: 1,
+                    width: 40,
+                    height: 26
+                }
+            },
             show: {
                 solo: true
             },
             position: {
                 my: 'bottom center',
-                at: 'top right'
+                at: 'center center'
             },
             hide: {
                 fixed: true,
@@ -358,11 +368,26 @@ function sliderOn7() {
         });
     });
 
-
     // Close messages button
     $('button.close').on('click', function(){
         $('div.alert').remove();
     });
+
+    /********* FORM SUBMIT ********/
+
+
+    $( "form" ).submit(function( event ) {
+        $( ".sidebar-icon .icon-image" ).each( function() {
+            if ( $(this).hasClass('background-color-selected') === true  ) {
+                $('form').unbind('submit').submit();
+            } else {
+                $('p.litred').show();
+                event.preventDefault();
+            }
+        });
+    });
+
+
 
 })
 //# sourceMappingURL=frontend.js.map
