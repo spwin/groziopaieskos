@@ -2,6 +2,8 @@
 
 // FRONTEND
 
+Route::post('test/form', 'FrontendController@formTest');
+
 Route::get('/', 'FrontendController@index');
 
 Route::group(['prefix' => 'registracija'], function () {
