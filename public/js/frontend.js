@@ -331,13 +331,13 @@ function sliderOn7() {
     /*********** MAIN MAP *************/
 
     $("#myimg").mapster({
-        mapKey: 'data-name',
         stroke: false,
         strokeColor: "000",
         strokeWidth: 1,
         fill: true,
         fillColor: 'c9eafe',
-        fillOpacity: 0.3
+        fillOpacity: 0.3,
+        isSelectable: false
     });
 
     $('#lithuania area').each(function() {
