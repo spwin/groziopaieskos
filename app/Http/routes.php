@@ -5,6 +5,7 @@
 Route::post('test/form', 'FrontendController@formTest');
 
 Route::get('/', 'FrontendController@index');
+Route::get('crazy', 'FrontendController@crazy');
 
 Route::group(['prefix' => 'registracija'], function () {
     Route::get('imone', 'FrontendController@company');

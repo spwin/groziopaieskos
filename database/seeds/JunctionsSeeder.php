@@ -15,7 +15,7 @@ class JunctionsSeeder extends Seeder
         DB::table('junctions')->delete();
 
         $cities = [
-            'vilnius' => [
+            'vilnius-miestas' => [
                 'verkiai' => 'Verkiai',
                 'antakalnis' => 'Antakalnis',
                 'pasilaiciai' => 'Pašilaičiai',
@@ -38,9 +38,9 @@ class JunctionsSeeder extends Seeder
                 'naujininkai' => 'Naujininkai',
                 'rasai' => 'Rasai'
             ],
-            'kaunas' => [],
-            'klaipeda' => [],
-            'siauliai' => []
+            'kaunas-miestas' => [],
+            'klaipeda-miestas' => [],
+            'siauliai-miestas' => []
         ];
 
         foreach($cities as $slug => $junctions) {

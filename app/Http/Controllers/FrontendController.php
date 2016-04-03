@@ -72,6 +72,48 @@ class FrontendController extends Controller
         ]);
     }
 
+    public function crazy(){
+        $cities = [
+            'vilnius-miestas' => [
+                'verkiai' => 'Verkiai',
+                'antakalnis' => 'Antakalnis',
+                'pasilaiciai' => 'Pašilaičiai',
+                'fabijoniskes' => 'Fabijoniškės',
+                'pilaite' => 'Pilaitė',
+                'justiniskes' => 'Justiniškės',
+                'virsuliskes' => 'Viršuliškės',
+                'seskine' => 'Šeškinė',
+                'snipiskes' => 'Šnipiškės',
+                'zirmunai' => 'Žirmūnai',
+                'karoliniskes' => 'Karoliniškės',
+                'zverynas' => 'Žvėrynas',
+                'grigiskes' => 'Grigiškės',
+                'lazdynai' => 'Lazdynai',
+                'vilkpede' => 'Vilkpėdė',
+                'naujamiestis' => 'Naujamiestis',
+                'senamiestis' => 'Senamiestis',
+                'naujoji_vilnia' => 'Naujoji Vilnia',
+                'paneriai' => 'Paneriai',
+                'naujininkai' => 'Naujininkai',
+                'rasai' => 'Rasai'
+            ],
+            'kaunas-miestas' => [],
+            'klaipeda-miestas' => [],
+            'siauliai-miestas' => []
+        ];
+
+        foreach($cities as $slug => $junctions) {
+            $city = Cities::where(['slug' => $slug])->first();
+            foreach($junctions as $junction_slug => $junction){
+                DB::table('junctions')->insert([
+                    'slug' => $junction_slug,
+                    'name' => $junction,
+                    'city_id' => $city->id
+                ]);
+            }
+        }
+    }
+
     public function formTest(Request $request){
         $input = $request->all();
         echo '<pre>';
