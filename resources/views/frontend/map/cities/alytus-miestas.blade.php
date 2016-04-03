@@ -1,17 +1,17 @@
 <ul class="mikrorajonai">
-    @foreach($region_db->getCities()->get() as $city)
-        <li>{{ $city->name }}</li>
+    @foreach($city_db->getJunctions()->get() as $junction)
+        <li>{{ $junction->name }}</li>
     @endforeach
 </ul>
 
-<div class="{{ $region_db->slug }}-map">
-    <img src="{{ URL::to('/') }}/img/{{ $region_db->slug }}-map.png" alt="{{ $region_db->slug }} map">
+<div class="{{ $city_db->slug }}-map">
+    <img src="{{ URL::to('/') }}/img/cities/{{ $city_db->slug }}-map.png" alt="{{ $city_db->slug }} map">
 </div>
 
 <div class="mikrorajonu-sidebar">
 
     <div class="main-header">
-        <p>Vilnius<span class="line-break">Pasirinkite rajoną ir paslaugą</span></p>
+        <p>{{ $city_db->name }}<span class="line-break">Pasirinkite rajoną ir paslaugą</span></p>
     </div>
 
     <div class="sidebar-icons">

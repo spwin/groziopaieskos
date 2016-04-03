@@ -15,7 +15,7 @@ Route::group(['prefix' => 'registracija'], function () {
 Route::get('search/autocomplete', 'FrontendController@autocomplete');
 Route::get('region/{region}', 'FrontendController@region');
 Route::get('region/{region}/{city}', 'FrontendController@city');
-//Route::get('tooltip/{region}', 'FrontendController@tooltip');
+Route::get('tooltip/{city}', 'FrontendController@tooltip');
 // BACKEND
 
 Route::get('login', 'Auth\AuthController@getLogin');

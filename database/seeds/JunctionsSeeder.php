@@ -15,6 +15,12 @@ class JunctionsSeeder extends Seeder
         DB::table('junctions')->delete();
 
         $cities = [
+            'alytus-miestas' => [
+                'alytus-verkiai' => 'Verkiai',
+                'alytus-antakalnis' => 'Antakalnis',
+                'alytus-pasilaiciai' => 'Pašilaičiai',
+                'alytus-fabijoniskes' => 'Fabijoniškės'
+            ],
             'vilnius-miestas' => [
                 'verkiai' => 'Verkiai',
                 'antakalnis' => 'Antakalnis',

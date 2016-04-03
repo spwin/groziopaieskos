@@ -73,9 +73,21 @@ class FrontendController extends Controller
     }
 
     public function city($region, $city){
-        echo $region;
-        echo '<br/>';
-        echo $city;
+        $city_db = Cities::with('getJunctions')->where(['slug' => $city])->first();
+        $categories = Categories::all();
+        if($city_db->getJunctions()->count() > 0){
+            return view('frontend.map.cities')->with([
+                'city_db' => $city_db,
+                'city' => $city,
+                'categories' => $categories
+            ]);
+        } else {
+            return view('frontend.filter')->with([
+                'city_db' => $city_db,
+                'city' => $city,
+                'categories' => $categories
+            ]);
+        }
     }
 
     public function formTest(Request $request){
@@ -84,19 +96,17 @@ class FrontendController extends Controller
         print_r($input);
         echo '</pre>';
     }
-    /*public function tooltip($region){
-        $region_db = Regions::where(['slug' => $region])->with('getCities')->first();
-        $organizations_count = $region_db->getCities()->join('organizations', 'cities.id', '=', 'organizations.city_id')->where(['organizations.approved' => 1])->count();
-        $output = '<div class="toolTipClass"><h3>'.strtoupper($region_db->name).' ('.$organizations_count.')</h3><ul>';
 
-        $output .= '
-                        <li><img src="img/header-icons/grozio-salonai.png">Grožio salonai (101)</li>
-                        <li><img src="img/header-icons/soliariumai.png">Soliariumai (33)</li>
-                        <li><img class="dantis" src="img/header-icons/dantis.png">Odontologijos kabinetai (8)</li>
-                        ';
-        $output .= '</ul><p>Žiūrėti viską</p></div>';
+    public function tooltip($city){
+        $city_db = Cities::where(['slug' => $city])->with('getJunctions')->first();
+        if(count($city_db) > 0) {
+            $city = $city_db->name;
+        } else {
+            $city = 'Unknown';
+        }
+        $output = '<div class="toolTipClass"><h3>' . $city . '</h3><ul></div>';
         return $output;
-    }*/
+    }
 
     public function store($type, Request $request){
         $input = $request->all();

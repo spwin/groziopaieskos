@@ -344,11 +344,16 @@ function sliderOn7() {
         $(this).on('click', function(){
             window.location.href=root+'/region/'+$(this).attr('data-name');
         });
-        /*$(this).qtip({
+    });
+    $('#region area').each(function() {
+        $(this).on('click', function(){
+            window.location.href=root+'/region/'+$(this).attr('href');
+        });
+        $(this).qtip({
             content: {
                 text: function(event, api) {
                     return $.ajax({
-                        url: 'tooltip/' + $(this).attr('data-name')
+                        url: root + '/tooltip/' + $(this).attr('data-name')
                     });
                 }
             },
@@ -373,11 +378,6 @@ function sliderOn7() {
                 fixed: true,
                 delay: 300
             }
-        });*/
-    });
-    $('#region area').each(function() {
-        $(this).on('click', function(){
-            window.location.href=root+'/region/'+$(this).attr('href');
         });
     });
 
