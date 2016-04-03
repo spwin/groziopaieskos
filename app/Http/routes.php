@@ -5,7 +5,6 @@
 Route::post('test/form', 'FrontendController@formTest');
 
 Route::get('/', 'FrontendController@index');
-Route::get('crazy', 'FrontendController@crazy');
 
 Route::group(['prefix' => 'registracija'], function () {
     Route::get('imone', 'FrontendController@company');
@@ -15,6 +14,7 @@ Route::group(['prefix' => 'registracija'], function () {
 
 Route::get('search/autocomplete', 'FrontendController@autocomplete');
 Route::get('region/{region}', 'FrontendController@region');
+Route::get('region/{region}/{city}', 'FrontendController@city');
 //Route::get('tooltip/{region}', 'FrontendController@tooltip');
 // BACKEND
 

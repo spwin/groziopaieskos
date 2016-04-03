@@ -5,7 +5,7 @@
     <div class="main-container">
         <div class="main-map">
             <img id="myimg" src="{{ URL::to('/') }}/img/regions/{{ $region_db->slug }}-map.png" usemap="#mymap">
-            <map name="mymap" id="{{ $region_db->slug }}">
+            <map name="mymap" id="region">
                 @include('frontend.map.regions.'.$region, [$region_db, $categories])
             </map>
         </div>

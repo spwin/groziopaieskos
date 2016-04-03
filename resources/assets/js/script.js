@@ -375,6 +375,11 @@ function sliderOn7() {
             }
         });*/
     });
+    $('#region area').each(function() {
+        $(this).on('click', function(){
+            window.location.href=root+'/region/'+$(this).attr('href');
+        });
+    });
 
     // Close messages button
     $('button.close').on('click', function(){
