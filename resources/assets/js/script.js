@@ -1,6 +1,7 @@
 /**
  * Created by Pixsens on 2016-03-17.
  */
+var root = location.protocol + '//' + location.host;
 
 jQuery( document ).ready(function($){
 /*
@@ -339,10 +340,17 @@ function sliderOn7() {
         fillOpacity: 0.3
     });
 
-    $('area').each(function() {
-        $(this).qtip({
+    $('#lithuania area').each(function() {
+        $(this).on('click', function(){
+            window.location.href=root+'/region/'+$(this).attr('data-name');
+        });
+        /*$(this).qtip({
             content: {
-                text: '<div class="toolTipClass"><h3>VILNIUS (553)</h3><ul><li><img src="img/header-icons/grozio-salonai.png">Grožio salonai (101)</li><li><img src="img/header-icons/soliariumai.png">Soliariumai (33)</li><li><img class="dantis" src="img/header-icons/dantis.png">Odontologijos kabinetai (8)</li></ul><p>Žiūrėti viską</p></div>'
+                text: function(event, api) {
+                    return $.ajax({
+                        url: 'tooltip/' + $(this).attr('data-name')
+                    });
+                }
             },
             style: {
                 classes: 'qtip-dark',
@@ -365,7 +373,7 @@ function sliderOn7() {
                 fixed: true,
                 delay: 300
             }
-        });
+        });*/
     });
 
     // Close messages button

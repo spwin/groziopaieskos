@@ -62,6 +62,30 @@ class FrontendController extends Controller
         return Response::json($results);
     }
 
+    public function region($region){
+        $region_db = Regions::where(['slug' => $region])->with('getCities')->first();
+        $categories = Categories::with('getFacilities')->get();
+        return view('frontend.map.regions')->with([
+            'region' => $region,
+            'region_db' => $region_db,
+            'categories' => $categories
+        ]);
+    }
+
+    /*public function tooltip($region){
+        $region_db = Regions::where(['slug' => $region])->with('getCities')->first();
+        $organizations_count = $region_db->getCities()->join('organizations', 'cities.id', '=', 'organizations.city_id')->where(['organizations.approved' => 1])->count();
+        $output = '<div class="toolTipClass"><h3>'.strtoupper($region_db->name).' ('.$organizations_count.')</h3><ul>';
+
+        $output .= '
+                        <li><img src="img/header-icons/grozio-salonai.png">Grožio salonai (101)</li>
+                        <li><img src="img/header-icons/soliariumai.png">Soliariumai (33)</li>
+                        <li><img class="dantis" src="img/header-icons/dantis.png">Odontologijos kabinetai (8)</li>
+                        ';
+        $output .= '</ul><p>Žiūrėti viską</p></div>';
+        return $output;
+    }*/
+
     public function store($type, Request $request){
         $input = $request->all();
 
