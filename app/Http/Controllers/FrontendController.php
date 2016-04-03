@@ -72,6 +72,12 @@ class FrontendController extends Controller
         ]);
     }
 
+    public function formTest(Request $request){
+        $input = $request->all();
+        echo '<pre>';
+        print_r($input);
+        echo '</pre>';
+    }
     /*public function tooltip($region){
         $region_db = Regions::where(['slug' => $region])->with('getCities')->first();
         $organizations_count = $region_db->getCities()->join('organizations', 'cities.id', '=', 'organizations.city_id')->where(['organizations.approved' => 1])->count();
