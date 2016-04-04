@@ -167,20 +167,28 @@
                     </div>
 
                 </div>
-
-
                 <input type="submit" value="Siųsti užklausą">
 
                 @foreach($categories as $category)
                     @if($category->getFacilitiesCategories()->count() > 0)
+                    <div class="paslaugu-sarasas facilities-{{ $category->id }}">
+                        <h3>{{ strtoupper($category->name_plural) }}</h3>
+                        <div class="sarasas-wrapper">
                         @foreach($category->getFacilitiesCategories()->get() as $fc)
-                            <h3>{{ $fc->name }} <img src="{{ URL::to('/') }}/uploads/{{ $fc->image }}"></h3>
-                            <p>
-                            @foreach($fc->getFacilities()->get() as $facility)
-                                {{ $facility->name }}
-                            @endforeach
-                            </p>
+                            <div class="sarasas-container">
+                                <div class="image-header">
+                                    <img src="{{ URL::to('/') }}/uploads/{{ $fc->image }}">
+                                    <h3>{{ $fc->name }}</h3>
+                                    @foreach($fc->getFacilities()->get() as $facility)
+                                        <input id="{{ $category->id }}_{{ $facility->id }}" type="checkbox" name="facilities[{{ $category->id }}][{{ $facility->id }}]">
+                                        <label for="{{ $category->id }}_{{ $facility->id }}"><span></span>{{ $facility->name }}</label>
+                                    @endforeach
+                                </div>
+                            </div>
                         @endforeach
+                        </div>
+                        <div class="patvirtinti">PATVIRTINTI</div>
+                    </div>
                     @else
                         <div class="paslaugu-sarasas facilities-{{ $category->id }}">
                             <div class="header-of-headers">
