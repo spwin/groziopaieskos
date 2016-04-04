@@ -45,12 +45,18 @@ class FrontendController extends Controller
 
     public function person(){
         $categories = Categories::with('getFacilities')->get();
+        $junctions_db = Junctions::all();
+        $junctions = [];
+        foreach($junctions_db as $junction){
+            $junctions[$junction->city_id][$junction->slug] = $junction->name;
+        }
         $regions = Regions::lists('name', 'id');
         $cities = Cities::lists('name', 'id');
         return view('frontend.registration.person')->with([
             'categories' => $categories,
             'regions' => $regions,
-            'cities' => $cities
+            'cities' => $cities,
+            'junctions' => $junctions
         ]);
     }
 
