@@ -23,6 +23,11 @@
                     {!! Form::text('name', null, ['class' => 'form-control', 'required' => 'required']) !!}
                 </div>
 
+                <div class="form-group">
+                    {!! Form::label('facility_category_id', 'Priklauso subkategorijai:', ['class' => 'control-label']) !!}
+                    {!! Form::select('facility_category_id', $facilities_categories, null, ['class' => 'form-control']) !!}
+                </div>
+
                 {!! Form::submit('Pridėti', ['class' => 'btn btn-success btn-medium']) !!}
 
                 {!! Form::close() !!}

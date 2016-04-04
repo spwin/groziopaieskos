@@ -27,7 +27,7 @@ class FrontendController extends Controller
     }
 
     public function company(){
-        $categories = Categories::with('getFacilities')->get();
+        $categories = Categories::with(['getFacilities', 'getFacilitiesCategories'])->get();
         $junctions_db = Junctions::all();
         $junctions = [];
         foreach($junctions_db as $junction){

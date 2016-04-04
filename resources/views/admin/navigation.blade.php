@@ -7,6 +7,9 @@
             <li role="presentation" {{ (Request::is('*admin/categories*') ? 'class=active' : '') }}>
                 <a href="{{ action('CategoriesController@index') }}">Kategorijos</a>
             </li>
+            <li role="presentation" {{ (Request::is('*admin/facilities-categories*') ? 'class=active' : '') }}>
+                <a href="{{ action('FacilitiesCategoriesController@index') }}">Paslaugu kategorijos</a>
+            </li>
             <li role="presentation" {{ (Request::is('*admin/organizations*') ? 'class=active' : '') }}>
                 <a href="{{ action('OrganizationsController@index') }}">Įrašai</a>
             </li>

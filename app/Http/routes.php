@@ -41,6 +41,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'AdminController@index');
 
     Route::resource('categories', 'CategoriesController');
+    Route::resource('facilities-categories', 'FacilitiesCategoriesController');
 
     Route::group(['prefix' => 'categories'], function () {
 

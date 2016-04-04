@@ -172,21 +172,32 @@
                 <input type="submit" value="Siųsti užklausą">
 
                 @foreach($categories as $category)
-                    <div class="paslaugu-sarasas facilities-{{ $category->id }}">
-                        <div class="header-of-headers">
-                            <h3>{{ strtoupper($category->name_plural) }}</h3>
-                            <span>Uždaryti</span>
-                        </div>
-                        <div class="sarasas-wrapper">
-                            <div class="sarasas-container">
-                                @foreach($category->getFacilities()->get() as $facility)
-                                <input id="{{ $category->id }}_{{ $facility->id }}" type="checkbox" name="facilities[{{ $category->id }}][{{ $facility->id }}]">
-                                <label for="{{ $category->id }}_{{ $facility->id }}"><span></span>{{ $facility->name }}</label>
-                                @endforeach
+                    @if($category->getFacilitiesCategories()->count() > 0)
+                        @foreach($category->getFacilitiesCategories()->get() as $fc)
+                            <h3>{{ $fc->name }} <img src="{{ URL::to('/') }}/uploads/{{ $fc->image }}"></h3>
+                            <p>
+                            @foreach($fc->getFacilities()->get() as $facility)
+                                {{ $facility->name }}
+                            @endforeach
+                            </p>
+                        @endforeach
+                    @else
+                        <div class="paslaugu-sarasas facilities-{{ $category->id }}">
+                            <div class="header-of-headers">
+                                <h3>{{ strtoupper($category->name_plural) }}</h3>
+                                <span>Uždaryti</span>
                             </div>
+                            <div class="sarasas-wrapper">
+                                <div class="sarasas-container">
+                                    @foreach($category->getFacilities()->get() as $facility)
+                                        <input id="{{ $category->id }}_{{ $facility->id }}" type="checkbox" name="facilities[{{ $category->id }}][{{ $facility->id }}]">
+                                        <label for="{{ $category->id }}_{{ $facility->id }}"><span></span>{{ $facility->name }}</label>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="patvirtinti">PATVIRTINTI</div>
                         </div>
-                        <div class="patvirtinti">PATVIRTINTI</div>
-                    </div>
+                    @endif
                 @endforeach
 
             {!! Form::close() !!}

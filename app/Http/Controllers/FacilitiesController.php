@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Categories;
 use App\Facilities;
+use App\FacilitiesCategories;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -23,8 +24,10 @@ class FacilitiesController extends Controller
 
     public function create($category){
         $db_category = Categories::findOrFail($category);
+        $facilities_categories = FacilitiesCategories::where(['category_id' => $db_category->id])->lists('name', 'id');
         return view('categories.facilities.create')->with([
-            'category' => $db_category
+            'category' => $db_category,
+            'facilities_categories' => $facilities_categories
         ]);
     }
 
@@ -42,9 +45,11 @@ class FacilitiesController extends Controller
     public function edit($id){
         $facility = Facilities::findOrFail($id);
         $category = Categories::findOrFail($facility->category_id);
+        $facilities_categories = FacilitiesCategories::where(['category_id' => $facility->category_id])->lists('name', 'id');
         return view('categories.facilities.edit')->with([
             'category' => $category,
-            'facility' => $facility
+            'facility' => $facility,
+            'facilities_categories' => $facilities_categories
         ]);
     }
 
