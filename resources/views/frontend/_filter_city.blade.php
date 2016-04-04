@@ -26,10 +26,14 @@
     {!! Form::hidden('') !!}
 
     <div class="search-clues">
-        <h3>{{ $city_db->name }}</h3>
-        <h4 id="category-search"></h4>
-        <div id="facilities-search"></div>
-        <a href="http://groziopaieskos.lt/test/rezultatai"><input type="submit" value="Ieškoti"></a>
+        <div class="nano">
+            <div class="nano-content">
+                <h3>{{ $city_db->name }}</h3>
+                <h4 id="category-search"></h4>
+                <div id="facilities-search"></div>
+            </div>
+        </div>
+        <input type="submit" value="Ieškoti">
     </div>
 
 </div>

@@ -1653,7 +1653,6 @@ header .header-container .header-contacts-button .header-button {
   line-height: 125px; }
 
 .hover-menu.miestai-menu .hover-container .hover-button .hover-button-image img {
-  width: 85%;
   opacity: 0.7; }
 
 .hover-menu.miestai-menu .hover-container .hover-button .hover-button-image:hover img {
@@ -1968,11 +1967,11 @@ header,
   margin-top: 30px; }
 
 .main-container .left-column {
-  width: 58%;
+  width: 52%;
   float: left; }
 
 .main-container .left-column .rusiavimas {
-  margin-top: 60px;
+  margin-top: 8px;
   position: relative;
   text-align: right; }
 
@@ -1989,14 +1988,15 @@ header,
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   font-size: 14px;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-top: 5px; }
 
 .main-container .left-column .gmap {
   margin-top: 15px; }
 
 .main-container .right-column {
   float: right;
-  width: 42%;
+  width: 48%;
   text-align: right; }
 
 .main-container .right-column .rezultatai-header {
@@ -2047,9 +2047,6 @@ header,
   display: flex;
   width: 100%; }
 
-.main-container .right-column .rezultatu-sarasas .vienas-rezultatas .top-left-side img {
-  height: 85px; }
-
 .main-container .right-column .nano .nano-pane {
   background: rgba(0, 0, 0, 0.2); }
 
@@ -2073,17 +2070,11 @@ header,
 
 .main-container .imone-container .left-side .top-left-side {
   display: inline-block;
-  height: auto; }
+  height: auto;
+  width: 100%; }
 
 .main-container .imone-container .left-side .top-left-side img {
-  display: inline-block;
-  margin-right: 10px;
-  height: 110px; }
-
-@media screen and (min-width: 1200px) {
-  .main-container .imone-container .left-side .top-left-side img {
-    margin-right: 25px;
-    height: 120px; } }
+  display: inline-block; }
 
 .main-container .imone-container .left-side .top-left-side .name-details {
   display: inline-block;
@@ -2101,11 +2092,15 @@ header,
   margin: 0; }
 
 .main-container .imone-container .left-side .top-left-side .name-details img {
-  width: 50px;
+  width: 35px;
   height: auto; }
 
 .main-container .imone-container .left-side .top-left-side .imone-checkboxes {
-  display: inline-block; }
+  display: inline-block;
+  height: 120px;
+  width: 42%;
+  position: relative;
+  overflow-x: hidden; }
 
 .main-container .imone-container .left-side .top-left-side .imone-checkboxes input[type=checkbox] {
   display: none; }
@@ -2137,10 +2132,16 @@ header,
   margin-top: 5px; }
 
 .main-container .imone-container .right-side {
-  width: 45%;
+  width: 27%;
   padding-left: 20px;
   display: inline-block;
-  font-size: 15.5px; }
+  font-size: 15.5px;
+  float: right;
+  height: 100%;
+  border-left: 1px solid white; }
+  @media screen and (min-width: 1280px) {
+    .main-container .imone-container .right-side {
+      width: 37%; } }
 
 .main-container .imone-container .right-side p:first-child {
   margin-top: 0; }
@@ -2578,6 +2579,75 @@ p.litred {
   .main-container .main-map img {
     max-height: 550px;
     max-width: 690px; } }
+
+li.darbo-laikas-about span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px; }
+
+/************ RESPONSIVENESS *************/
+.main-container .imone-container .left-side {
+  width: 70%; }
+  .main-container .imone-container .left-side .logo-cont {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 150px;
+    margin-right: 10px;
+    float: left; }
+    .main-container .imone-container .left-side .logo-cont img {
+      max-width: 100%;
+      vertical-align: middle; }
+
+.main-container .imone-container .right-side .nano-content {
+  padding: 0 15px; }
+
+@media screen and (min-width: 1280px) {
+  .main-container .imone-container .left-side {
+    width: 60%; }
+  .main-container .imone-container .right-side {
+    width: 37%; } }
+
+.main-container .paslaugu-sarasas .sarasas-wrapper .sarasas-container {
+  text-align: left; }
+
+.main-container .paslaugu-sarasas div.patvirtinti {
+  display: inline-block;
+  border-radius: 30px;
+  height: 40px;
+  line-height: 40px;
+  width: 200px;
+  border: none;
+  background-color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+  float: right;
+  margin-right: 30px;
+  cursor: pointer; }
+
+div.search-clues .nano {
+  height: 150px; }
+
+.main-container .right-column .rezultatu-sarasas .vienas-rezultatas .top-left-side .logo-cont {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 100px;
+  margin-right: 5px;
+  float: left; }
+  .main-container .right-column .rezultatu-sarasas .vienas-rezultatas .top-left-side .logo-cont img {
+    max-width: 100%;
+    vertical-align: middle; }
 
 /*# sourceMappingURL=style.css.map */
 
