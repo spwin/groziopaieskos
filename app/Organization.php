@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Organization extends Model
 {
     protected $fillable = [
-        'title', 'phone', 'address', 'logo', 'approved', 'type', 'description', 'category_id', 'city_id', 'opening_time_id', 'email', 'place', 'organization_data_id'
+        'junction_id', 'title', 'phone', 'address', 'logo', 'approved', 'type', 'description', 'category_id', 'city_id', 'opening_time_id', 'email', 'place', 'organization_data_id'
     ];
 
     public function getCategory(){

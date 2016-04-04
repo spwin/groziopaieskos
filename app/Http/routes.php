@@ -13,12 +13,15 @@ Route::group(['prefix' => 'registracija'], function () {
 });
 
 Route::get('search/autocomplete', 'FrontendController@autocomplete');
+
 Route::get('imones/{region}', 'FrontendController@region');
 Route::get('imones/{region}/{city}', 'FrontendController@city');
-Route::get('tooltip/{city}', 'FrontendController@tooltip');
-
 Route::get('imones/{region}/{city}/paieska', 'FrontendController@results');
+Route::get('imones/{region}/{city}/{category}', 'FrontendController@service');
+
+Route::get('tooltip/{city}', 'FrontendController@tooltip');
 Route::get('apie-imone/{id}/{slug}', 'FrontendController@about');
+
 // BACKEND
 
 Route::get('login', 'Auth\AuthController@getLogin');

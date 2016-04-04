@@ -31,7 +31,7 @@ class FrontendController extends Controller
         $junctions_db = Junctions::all();
         $junctions = [];
         foreach($junctions_db as $junction){
-            $junctions[$junction->city_id][$junction->slug] = $junction->name;
+            $junctions[$junction->city_id][$junction->id] = $junction->name;
         }
         $regions = Regions::lists('name', 'id');
         $cities = Cities::lists('name', 'id');
@@ -93,14 +93,18 @@ class FrontendController extends Controller
                 'city_db' => $city_db,
                 'city' => $city,
                 'region' => $region,
-                'categories' => $categories
+                'categories' => $categories,
+                'type' => 'categories',
+                'filter' => 'filter_junction'
             ]);
         } else {
             return view('frontend.filter')->with([
                 'city_db' => $city_db,
                 'city' => $city,
                 'categories' => $categories,
-                'region' => $region
+                'region' => $region,
+                'type' => 'categories',
+                'filter' => 'filter_city'
             ]);
         }
     }
@@ -138,6 +142,32 @@ class FrontendController extends Controller
         }
         $output = '<div class="toolTipClass"><h3>' . $city_rez . '</h3><ul></div>';
         return $output;
+    }
+
+    public function service($region, $city, $category_slug){
+        $city_db = Cities::with('getJunctions')->where(['slug' => $city])->first();
+        $category = Categories::with('getFacilities')->where(['slug' => $category_slug])->first();
+        $categories = Categories::all();
+        if($city_db->getJunctions()->count() > 0){
+            return view('frontend.map.cities')->with([
+                'city_db' => $city_db,
+                'city' => $city,
+                'region' => $region,
+                'category' => $category,
+                'type' => 'single',
+                'filter' => 'filter_junctions',
+                'categories' => $categories
+            ]);
+        } else {
+            return view('frontend.filter')->with([
+                'city_db' => $city_db,
+                'city' => $city,
+                'category' => $category,
+                'region' => $region,
+                'type' => 'single',
+                'filter' => 'filter_city'
+            ]);
+        }
     }
 
     public function store($type, Request $request){
@@ -210,6 +240,14 @@ class FrontendController extends Controller
         $organization_data->fill($organization_data_input);
         $organization_data->save();
         $global_data['organization_data_id'] = $organization_data->id;
+
+        // JUNCTION
+
+        if(array_key_exists('junction', $input)){
+            $global_data['junction_id'] = $input['junction'];
+        } else {
+            $global_data['junction_id'] = null;
+        }
 
         // SAVE ORGANIZATION
         $organization = new Organization();

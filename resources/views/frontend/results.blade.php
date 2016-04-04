@@ -43,7 +43,7 @@
                                     <div class="top-left-side">
                                         <img src="{{ URL::to('/') }}/uploads/logos/{{ $organization->logo }}">
                                         <div class="name-details">
-                                            <p>DIRBA</p>
+                                            {!! $organization->getOpeningTimes()->first()->getToday()->first()->opened ? '<p>DIRBA</p>' : '<p style="color: red;">NEDIRBA</p>' !!}
                                             <a href="{{ action('FrontendController@about', ['id' => $organization->id, 'slug' => Helper::url($organization->title)]) }}">
                                                 <h3>{{ $organization->title }}</h3>
                                             </a>
