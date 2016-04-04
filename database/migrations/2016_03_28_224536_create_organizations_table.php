@@ -29,6 +29,8 @@ class CreateOrganizationsTable extends Migration
             $table->foreign('organization_data_id')->references('id')->on('organization_data')->onDelete('set null');
             $table->integer('city_id')->nullable()->unsigned();
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('set null');
+            $table->integer('junction_id')->nullable()->unsigned();
+            $table->foreign('junction_id')->references('id')->on('junctions')->onDelete('set null');
             $table->integer('opening_time_id')->nullable()->unsigned();
             $table->foreign('opening_time_id')->references('id')->on('opening_times')->onDelete('set null');
             $table->timestamps();

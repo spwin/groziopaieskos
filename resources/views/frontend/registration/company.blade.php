@@ -197,6 +197,21 @@
     <script type="text/javascript">
         $(function()
         {
+            var junctions = <?php echo json_encode($junctions); ?>;
+            $('select[name="city"]').on('change', function(){
+                var city_id = $(this).val();
+                if(junctions.hasOwnProperty(city_id)){
+                    var output = '<select name="junction" id="junction">';
+                    $.each(junctions[city_id], function(index, value){
+                        output += '<option value="'+index+'">'+value+'</option>';
+                    });
+                    output += '</select>';
+                    $('.second-form-line').prepend(output);
+                } else {
+                    $('select[name="junction"]').remove();
+                }
+            });
+
             $( "#q" ).autocomplete({
                 source: "{{ URL::to('/') }}/search/autocomplete",
                 minLength: 3,

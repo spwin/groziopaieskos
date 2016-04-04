@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Categories;
 use App\Cities;
 use App\Days;
+use App\Junctions;
 use App\OpeningTimes;
 use App\Organization;
 use App\OrganizationData;
@@ -27,12 +28,18 @@ class FrontendController extends Controller
 
     public function company(){
         $categories = Categories::with('getFacilities')->get();
+        $junctions_db = Junctions::all();
+        $junctions = [];
+        foreach($junctions_db as $junction){
+            $junctions[$junction->city_id][$junction->slug] = $junction->name;
+        }
         $regions = Regions::lists('name', 'id');
         $cities = Cities::lists('name', 'id');
         return view('frontend.registration.company')->with([
             'categories' => $categories,
             'regions' => $regions,
-            'cities' => $cities
+            'cities' => $cities,
+            'junctions' => $junctions
         ]);
     }
 
