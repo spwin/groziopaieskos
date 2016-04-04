@@ -17,7 +17,7 @@
                         <img src="{{ URL::to('/') }}/uploads/logos/{{ $organization->logo }}">
                         </div>
                         <div class="name-details">
-                            <p>DIRBA</p>
+                            {!! $organization->getOpeningTimes()->first()->getToday()->first()->opened ? '<p>DIRBA</p>' : '<p style="color: red;">NEDIRBA</p>' !!}
                             <h3>{{ $organization->title }}</h3>
                             <h4>{{ $organization->getCategory()->first()->name_single }}</h4>
                             <img src="{{ URL::to('/') }}/uploads/{{ $organization->getCategory()->first()->image }}">

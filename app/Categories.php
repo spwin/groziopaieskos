@@ -17,4 +17,8 @@ class Categories extends Model
     public function getOrganizations(){
         return $this->hasMany('App\Organization', 'category_id', 'id');
     }
+
+    public function getFacilitiesCategories(){
+        return $this->hasMany('App\FacilitiesCategories', 'category_id', 'id');
+    }
 }

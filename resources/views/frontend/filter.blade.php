@@ -18,7 +18,7 @@
 
         </div>
 
-        @include('frontend._filter_city')
+        @include('frontend.parts.'.$type.'._'.$filter)
 
     </div>
 @endsection

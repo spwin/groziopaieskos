@@ -8,4 +8,4 @@
     <img src="{{ URL::to('/') }}/img/cities/{{ $city_db->slug }}-map.png" alt="{{ $city_db->slug }} map">
 </div>
 
-@include('frontend._filter_junction')
+@include('frontend.parts.'.$type.'._filter_junction')

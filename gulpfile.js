@@ -22,4 +22,5 @@ elixir(function(mix) {
         .scripts(['script.js'], 'public/js/frontend.js');
 
     mix.copy('resources/assets/uploads', 'public/uploads');
+    mix.copy('resources/assets/uploads', 'public/uploads');
 });

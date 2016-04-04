@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Categories;
+use App\FacilitiesCategories;
 use \App\Facilities;
 
 class CategoriesSeeder extends Seeder
@@ -24,28 +25,50 @@ class CategoriesSeeder extends Seeder
                 'image' => 'grozio-salonai.png',
                 'order' => 1
             ],
-            'facilities' => [
-                'Vyrų kirpimas',
-                'Moterų kirpimas',
-                'Plaukų dažymas',
-                'Plaukų šukavimas',
-                'Plaukų tiesinimas',
-                'Plaukų tiesinimas keratinu',
-                'Plaukų priauginimas',
-                'Šukuosenų darymas',
-                'Afrikietiškų kasyčių pynimas',
-                'Manikiūras',
-                'Pedikiūras',
-                'Gelinis nagų lakavimas',
-                'Nagų priauginimas geliu',
-                'Nagų priauginimas akrilu',
-                'Antakių korekcija',
-                'Blakstienų priauginimas',
-                'Blakstienų dažymas',
-                'Blakstienų rietimas',
-                'Makiažas',
-                'Ilgalaikis makiažas (permanentinis)'
-            ]
+            'facilities_categories' => [
+                [
+                    'name' => 'plaukai',
+                    'order' => 1,
+                    'image' => 'plaukai.png',
+                    'facilities' => [
+                        'Vyrų kirpimas',
+                        'Moterų kirpimas',
+                        'Plaukų dažymas',
+                        'Plaukų šukavimas',
+                        'Plaukų tiesinimas',
+                        'Plaukų tiesinimas keratinu',
+                        'Plaukų priauginimas',
+                        'Šukuosenų darymas',
+                        'Afrikietiškų kasyčių pynimas'
+                    ]
+                ],
+                [
+                    'name' => 'nagai',
+                    'order' => 2,
+                    'image' => 'nagas.png',
+                    'facilities' => [
+                        'Manikiūras',
+                        'Pedikiūras',
+                        'Gelinis nagų lakavimas',
+                        'Nagų priauginimas geliu',
+                        'Nagų priauginimas akrilu',
+                    ]
+
+                ],
+                [
+                    'name' => 'veidas',
+                    'order' => 3,
+                    'image' => 'profilis.png',
+                    'facilities' => [
+                        'Antakių korekcija',
+                        'Blakstienų priauginimas',
+                        'Blakstienų dažymas',
+                        'Blakstienų rietimas',
+                        'Makiažas',
+                        'Ilgalaikis makiažas (permanentinis)',
+                    ]
+                ],
+            ],
         ];
 
         $categories[] = [
@@ -164,13 +187,35 @@ class CategoriesSeeder extends Seeder
             $new_cat = new Categories();
             $new_cat->fill($category['category']);
             $new_cat->save();
-            foreach($category['facilities'] as $facility){
-                $new_facility = new Facilities();
-                $new_facility->fill([
-                    'name' => $facility,
-                    'category_id' => $new_cat->id
-                ]);
-                $new_facility->save();
+            if(array_key_exists('facilities_categories', $category)){
+                foreach($category['facilities_categories'] as $fc){
+                    $facility_category = new FacilitiesCategories();
+                    $facility_category->fill([
+                        'name' => $fc['name'],
+                        'order' => $fc['order'],
+                        'image' => $fc['image'],
+                        'category_id' => $new_cat->id
+                    ]);
+                    $facility_category->save();
+                    foreach($fc['facilities'] as $facility){
+                        $new_facility = new Facilities();
+                        $new_facility->fill([
+                            'name' => $facility,
+                            'category_id' => $new_cat->id,
+                            'facility_category_id' => $facility_category->id
+                        ]);
+                        $new_facility->save();
+                    }
+                }
+            } else {
+                foreach ($category['facilities'] as $facility) {
+                    $new_facility = new Facilities();
+                    $new_facility->fill([
+                        'name' => $facility,
+                        'category_id' => $new_cat->id
+                    ]);
+                    $new_facility->save();
+                }
             }
         }
     }

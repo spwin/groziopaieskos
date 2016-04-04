@@ -99,4 +99,4 @@
     </map>
 </div>
 
-@include('frontend._filter_junction')
+@include('frontend.parts.'.$type.'._filter_junction')
