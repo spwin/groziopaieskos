@@ -54,7 +54,7 @@ class CitiesSeeder extends Seeder
                 'silutes-raj' => 'Šilutės raj.'
             ],
             'panevezys' => [
-                'panevezys-city' => 'Panevėžys',
+                'panevezys-miestas' => 'Panevėžys',
                 'panevezio-raj' => 'Panevėžio raj.',
                 'pasvalio-raj' => 'Pasvalio raj.',
                 'birzu-raj' => 'Biržų raj.',

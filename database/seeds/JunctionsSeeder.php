@@ -15,12 +15,6 @@ class JunctionsSeeder extends Seeder
         DB::table('junctions')->delete();
 
         $cities = [
-            'alytus-miestas' => [
-                'alytus-verkiai' => 'Verkiai',
-                'alytus-antakalnis' => 'Antakalnis',
-                'alytus-pasilaiciai' => 'Pašilaičiai',
-                'alytus-fabijoniskes' => 'Fabijoniškės'
-            ],
             'vilnius-miestas' => [
                 'verkiai' => 'Verkiai',
                 'antakalnis' => 'Antakalnis',
@@ -44,9 +38,24 @@ class JunctionsSeeder extends Seeder
                 'naujininkai' => 'Naujininkai',
                 'rasai' => 'Rasai'
             ],
-            'kaunas-miestas' => [],
-            'klaipeda-miestas' => [],
-            'siauliai-miestas' => []
+            'kaunas-miestas' => [
+                'sanciu' => 'Šančių',
+                'centro' => 'Centro',
+                'aleksoto' => 'Aleksoto',
+                'griciupio' => 'Gričiupio',
+                'zaliakalnio' => 'Žaliakalnio',
+                'petrasiunu' => 'Petrašiūnų',
+                'dainavos' => 'Dainavos',
+                'vilijampoles' => 'Vilijampolės',
+                'eiguliu' => 'Eigulių',
+                'silainiu' => 'Šilainių',
+                'panemunes' => 'Panemunės'
+            ],
+            'klaipeda-miestas' => [
+                'sanciuasd' => 'Šančių',
+                'centroasd' => 'Centro',
+                'aleksotoasd' => 'Aleksoto'
+            ]
         ];
 
         foreach($cities as $slug => $junctions) {

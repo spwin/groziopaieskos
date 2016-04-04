@@ -358,21 +358,16 @@ function sliderOn7() {
                 }
             },
             style: {
-                classes: 'qtip-dark',
-                tip: {
-                    corner: 'bottom center',
-                    mimic: 'bottom center',
-                    border: 1,
-                    width: 40,
-                    height: 26
-                }
+                classes: 'qtip-dark'
             },
             show: {
                 solo: true
             },
             position: {
-                my: 'bottom center',
-                at: 'center center'
+                target: 'mouse',
+                adjust: { x: 15 },
+                at: 'center left',
+                my: 'center left'
             },
             hide: {
                 fixed: true,
