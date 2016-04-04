@@ -37,7 +37,7 @@ class CitiesSeeder extends Seeder
             ],
             'siauliai' => [
                 'siauliai-miestas' => 'Šiauliai',
-                'siauliai-raj' => 'Šiauliai raj.',
+                'siauliu-raj' => 'Šiaulių raj.',
                 'akmenes-raj' => 'Akmenės raj.',
                 'joniskio-raj' => 'Joniškio raj.',
                 'pakruojo-raj' => 'Pakruojo raj.',

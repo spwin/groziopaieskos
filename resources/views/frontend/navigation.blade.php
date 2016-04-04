@@ -48,6 +48,7 @@
     <div class="hover-container">
         @foreach(Helper::regions() as $region)
             <div class="hover-button">
+                <a href="{{ action('FrontendController@region', ['region' => $region->slug]) }}">
                 <div class="hover-button-header">
                     {{ $region->name }}
                 </div>
@@ -58,6 +59,7 @@
                     <p>{{ $region->getCities()->join('organizations', 'cities.id', '=', 'organizations.city_id')->where(['organizations.type' => 'imone'])->count() }} įmonės</p>
                     <p>{{ $region->getCities()->join('organizations', 'cities.id', '=', 'organizations.city_id')->where(['organizations.type' => 'asmuo'])->count() }} fiziniai asmenys</p>
                 </div>
+                </a>
             </div>
         @endforeach
     </div>

@@ -103,11 +103,29 @@ jQuery( document ).ready(function($){
 
     $('.category-facilities').each(function(){
         $(this).on('click', function(){
+            var id = $(this).attr('data-id');
             $('.paslaugu-sarasas').hide();
-            $('input[name="category"]').val($(this).attr('data-id'));
-            $('.facilities-'+$(this).attr('data-id')).toggle();
+            $('input[name="category"]').val(id);
+            $('#category-search').html($('.category-'+id+' .category-name').html());
+            $('.facilities-'+id).toggle();
+            fillSearchFacilities(id);
         });
     });
+
+    $('.paslaugu-sarasas input').on('click', function(){
+        fillSearchFacilities($('input[name="category"]').val());
+    });
+
+    function fillSearchFacilities(category_id){
+        var facilities = $('#facilities-search');
+        facilities.html('');
+        $('.facilities-'+category_id+' .facilities-container').each(function(){
+            if($(this).find('input').is(':checked')){
+                facilities.append('<p>'+$(this).find('label').html()+'</p>');
+            }
+        });
+    }
+
     $('.patvirtinti').on('click', function(){
         $('.paslaugu-sarasas').hide();
     });
@@ -342,12 +360,12 @@ function sliderOn7() {
 
     $('#lithuania area').each(function() {
         $(this).on('click', function(){
-            window.location.href=root+'/region/'+$(this).attr('data-name');
+            window.location.href=root+'/imones/'+$(this).attr('data-name');
         });
     });
     $('#region area').each(function() {
         $(this).on('click', function(){
-            window.location.href=root+'/region/'+$(this).attr('href');
+            window.location.href=root+'/imones/'+$(this).attr('href');
         });
         $(this).qtip({
             content: {
@@ -395,7 +413,19 @@ function sliderOn7() {
         });
     });
 
+    /*$('form.filter-form').on('submit', function(e){
+        var category_id = $('input[name="category"]').val();
+        var query = '';
+        if(category_id){
+            $('.facilities-'+category_id+' .facilities-container').each(function(){
+                var input = $(this).find('input');
+                if(input.is(':checked')) {
+                    query += ((query == '' ? '' : ',') + input.attr('data-name'));
+                }
+            });
+        }
+        $(this).find('input[name="facilities"]').val(query);
+    });*/
 
-
-})
+});
 //# sourceMappingURL=frontend.js.map

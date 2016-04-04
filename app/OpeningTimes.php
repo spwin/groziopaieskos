@@ -10,6 +10,32 @@ class OpeningTimes extends Model
         'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
     ];
 
+    public function getToday(){
+        $today = date('l', time());
+        switch($today){
+            case 'monday' :
+                $result = $this->getMonday();
+                break;
+            case 'tuesday' :
+                $result = $this->getTuesday();
+                break;
+            case 'wednesday' :
+                $result = $this->getWednesday();
+                break;
+            case 'thursday' :
+                $result = $this->getThursday();
+                break;
+            case 'friday' :
+                $result = $this->getFriday();
+                break;
+            case 'saturday' :
+                $result = $this->getSaturday();
+                break;
+            default: $result = $this->getSunday(); break;
+        }
+        return $result;
+    }
+
     public function getMonday(){
         return $this->hasOne('App\Days', 'id', 'monday');
     }

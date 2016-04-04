@@ -27,6 +27,6 @@ class Organization extends Model
     }
 
     public function getFacilities(){
-        return $this->belongsToMany('App\Facilities', 'organizations_facilities', 'organization_id');
+        return $this->belongsToMany('App\Facilities', 'organizations_facilities', 'organization_id', 'facility_id');
     }
 }

@@ -79,15 +79,34 @@ class FrontendController extends Controller
             return view('frontend.map.cities')->with([
                 'city_db' => $city_db,
                 'city' => $city,
+                'region' => $region,
                 'categories' => $categories
             ]);
         } else {
             return view('frontend.filter')->with([
                 'city_db' => $city_db,
                 'city' => $city,
-                'categories' => $categories
+                'categories' => $categories,
+                'region' => $region
             ]);
         }
+    }
+
+    public function results($region, $city, Request $request){
+        $input = $request->all();
+        $city_db = Cities::with('getRegion')->where(['slug' => $city])->first();
+        $organizations = Organization::with(['getCategory', 'getFacilities', 'getOpeningTimes', 'getOrganizationData'])->get();
+        return view('frontend.results')->with([
+            'organizations' => $organizations,
+            'city_db' => $city_db
+        ]);
+    }
+
+    public function about($id, $slug){
+        $organization = Organization::with(['getCategory', 'getFacilities', 'getOpeningTimes', 'getOrganizationData'])->where(['id' => $id])->first();
+        return view('frontend.about')->with([
+            'organization' => $organization
+        ]);
     }
 
     public function formTest(Request $request){
@@ -100,11 +119,11 @@ class FrontendController extends Controller
     public function tooltip($city){
         $city_db = Cities::where(['slug' => $city])->with('getJunctions')->first();
         if(count($city_db) > 0) {
-            $city = $city_db->name;
+            $city_rez = $city_db->name;
         } else {
-            $city = 'Unknown';
+            $city_rez = 'Unknown';
         }
-        $output = '<div class="toolTipClass"><h3>' . $city . '</h3><ul></div>';
+        $output = '<div class="toolTipClass"><h3>' . $city_rez . '</h3><ul></div>';
         return $output;
     }
 

@@ -55,6 +55,9 @@ class JunctionsSeeder extends Seeder
                 'sanciuasd' => 'Šančių',
                 'centroasd' => 'Centro',
                 'aleksotoasd' => 'Aleksoto'
+            ],
+            'alytus-miestas' => [
+                'alytaus-rajonai' => 'Alytaus rajonas'
             ]
         ];
 
