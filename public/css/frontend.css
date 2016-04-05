@@ -1721,20 +1721,38 @@ header,
 .visible {
   display: block !important; }
 
-/** main **/
+/** region maps **/
 .main-container {
   width: 83.333333%;
   margin: 0 auto;
   position: relative;
   max-width: 1150px; }
 
-.main-container .main-map {
-  width: 715px;
-  margin-top: 30px; }
+.main-container.region-page {
+  height: 600px;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }
 
-.main-container .main-map img {
+.main-container.region-page .main-map {
+  max-width: 61.33%;
+  margin-left: 11%;
   max-height: 500px;
-  max-width: 600px; }
+  /*
+      @media screen and (min-width: 1080px) {
+      max-width: 715px;
+    }
+*/ }
+
+.main-container.region-page .main-map img {
+  max-width: 100%;
+  max-height: 500px; }
+
+.main-container.region-page .mikrorajonai {
+  top: 0; }
 
 .main-container .main-header {
   position: absolute;
@@ -1901,7 +1919,7 @@ header,
   margin-top: 10px; }
 
 .main-container .paslaugu-sarasas {
-  width: 75%;
+  width: auto;
   display: none;
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
@@ -1926,7 +1944,8 @@ header,
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  margin-top: 10px; }
+  margin-top: 10px;
+  padding: 0 25px; }
 
 .main-container .paslaugu-sarasas .sarasas-wrapper .sarasas-container .image-header {
   text-align: left; }
@@ -1972,7 +1991,8 @@ header,
   color: black;
   margin-bottom: 20px;
   float: right;
-  margin-right: 30px; }
+  margin-right: 30px;
+  margin-top: 10px; }
 
 /********** Rezultatai page ************/
 .main-container {
@@ -2172,17 +2192,64 @@ header,
     font-size: 15px; } }
 
 /***** MAIN *****/
-@media screen and (min-width: 1280px) {
-  .main-container .main-map {
-    width: 780px; }
-  .main-container .main-header p {
-    font-size: 50px; }
-  .main-container .main-header p .line-break {
-    font-size: 28px; }
-  .main-container .main-header.main-paieska input[type=search] {
-    width: 230px; }
-  .main-container .main-header.main-paieska input[type=submit] {
-    width: 100px; } }
+.main-container .main-header p {
+  font-size: 50px; }
+
+.main-container .main-header p .line-break {
+  font-size: 28px; }
+
+.main-container .main-header.main-paieska input[type=search] {
+  width: 230px; }
+
+.main-container .main-header.main-paieska input[type=submit] {
+  width: 100px; }
+
+.main-container.main-page {
+  height: 600px; }
+
+/*
+.main-container.main-page .main-map {
+  max-width: 600px;
+
+  @media screen and (min-width: 1280px) {
+      max-width: 780px;
+    }
+  @media screen and (min-width: 1380px) {
+    max-width: 850px;
+  }
+  @media screen and (min-width: 1600px) {
+    max-width: 1000px;
+  }
+
+    img {
+      max-width:100%;
+    }
+}
+
+.main-container.main-page {
+  @media screen and (min-width: 1600px) {
+    max-width: 1250px;
+  }
+}*/
+.main-container.main-page {
+  height: 600px;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }
+
+.main-container.main-page .main-map {
+  max-width: 73.33%;
+  /*
+    @media screen and (min-width: 1080px) {
+    max-width: 715px;
+  }
+*/ }
+
+.main-container.main-page .main-map img {
+  max-width: 100%; }
 
 /*** Pasirinkta paslauga ***/
 .main-container.pasirinkta-paslauga .mikrorajonu-sidebar .sidebar-icons {
@@ -2595,11 +2662,6 @@ p.litred {
   display: none;
   color: #FFB2B2; }
 
-@media screen and (min-width: 1380px) {
-  .main-container .main-map img {
-    max-height: 550px;
-    max-width: 690px; } }
-
 li.darbo-laikas-about span {
   display: inline-block;
   width: 15px;
@@ -2633,7 +2695,8 @@ li.darbo-laikas-about span {
     width: 37%; } }
 
 .main-container .paslaugu-sarasas .sarasas-wrapper .sarasas-container {
-  text-align: left; }
+  text-align: left;
+  width: 240px; }
 
 .main-container .paslaugu-sarasas div.patvirtinti {
   display: inline-block;
@@ -2650,7 +2713,8 @@ li.darbo-laikas-about span {
   margin-bottom: 20px;
   float: right;
   margin-right: 30px;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-top: 10px; }
 
 div.search-clues .nano {
   height: 85px; }

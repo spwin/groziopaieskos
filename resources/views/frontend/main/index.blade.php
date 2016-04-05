@@ -2,7 +2,7 @@
 @section('content')
     @include('frontend.navigation')
     @include('flash::message')
-    <div class="main-container">
+    <div class="main-container main-page">
         <div class="main-map">
             <img id="myimg" src="img/Lietuva_final.png" usemap="#mymap">
             <map name="mymap" id="lithuania">

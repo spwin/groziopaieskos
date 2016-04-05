@@ -2,7 +2,12 @@
 @section('content')
     @include('frontend.navigation')
     @include('flash::message')
-    <div class="main-container">
+    <div class="main-container region-page">
+        <ul class="mikrorajonai">
+            @foreach($region_db->getCities()->get() as $city)
+                <li data-name="{{ $city->slug }}">{{ $city->name }}</li>
+            @endforeach
+        </ul>
         <div class="main-map">
             <img id="myimg" src="{{ URL::to('/') }}/img/regions/{{ $region_db->slug }}-map.png" usemap="#mymap">
             <map name="mymap" id="region">

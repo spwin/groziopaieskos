@@ -420,6 +420,35 @@ function sliderOn7() {
         });
     });
 
+    /** rajonai bold on hover  ***/
+
+    $('.main-map area').each( function(){
+        var rajono_slug = $(this).attr('data-name');
+        $(this).hover(function() {
+                $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('list-style', 'inside');
+                $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('font-weight', '700');
+        },
+            function() {
+                $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('list-style', 'none');
+                $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('font-weight', '500');
+            })
+    });
+    $('..mikrorajonai li').each( function(){
+        var li_slug = $(this).attr('data-name');
+        $(this).hover(function() {
+                $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('list-style', 'inside');
+                $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('font-weight', '700');
+            },
+            function() {
+                $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('list-style', 'none');
+                $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('font-weight', '500');
+            })
+    });
+
+
+
+
+
     /*$('form.filter-form').on('submit', function(e){
         var category_id = $('input[name="category"]').val();
         var query = '';
