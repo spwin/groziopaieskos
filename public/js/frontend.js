@@ -75,21 +75,20 @@ jQuery( document ).ready(function($){
 
     $(".hover-menu.paslaugos-menu .hover-button")
         .on('mouseenter', function() {
-            $(this).append(' <ul class="city-list visible"> <li>MIESTAS</li> <li>Vilnius</li> <li>Kaunas</li> <li>Klaipėda</li> <li>Šiauliai</li> <li>Panevežys</li> </ul>');
+            $(this).find('ul.city-list').addClass('visible');
         })
-        /*find('ul.city-list').toggleClass('visible');*/
         .on( "mouseleave", function() {
-            $(this).find('ul.city-list').remove();
+            $(this).find('ul.city-list').removeClass('visible');
         });
 
     $(".hover-menu.miestai-menu .hover-button")
         .on('mouseenter', function() {
-            $(this).append(' <ul class="city-list visible"> <li>MIESTELIAI</li> <li>Ieškoti pagal miestelį</li> </ul>');
+            $(this).find('ul.city-list').addClass('visible');
         })
-        /*find('ul.city-list').toggleClass('visible');*/
         .on( "mouseleave", function() {
-            $(this).find('ul.city-list').remove();
+            $(this).find('ul.city-list').removeClass('visible');
         });
+
 
         /************* MENU ITEMS HOVER BOTTOM LINE *****************/
 
@@ -128,6 +127,14 @@ jQuery( document ).ready(function($){
 
     $('.patvirtinti').on('click', function(){
         $('.paslaugu-sarasas').hide();
+    });
+
+    /******** Miesteliu sarasas toggle **************/
+
+    $('.miesteliu-trigger').each(function() {
+       $(this).on('click', function(){
+           $('.miesteliu-sarasas').show();
+       })
     });
 
     /************** CUSTOM SCROLLBAR **************/
@@ -354,7 +361,7 @@ function sliderOn7() {
         strokeWidth: 1,
         fill: true,
         fillColor: 'c9eafe',
-        fillOpacity: 0.3,
+        fillOpacity: 0.4,
         isSelectable: false
     });
 

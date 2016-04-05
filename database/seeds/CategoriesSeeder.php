@@ -27,7 +27,7 @@ class CategoriesSeeder extends Seeder
             ],
             'facilities_categories' => [
                 [
-                    'name' => 'plaukai',
+                    'name' => 'Plaukai',
                     'order' => 1,
                     'image' => 'plaukai.png',
                     'facilities' => [
@@ -43,7 +43,7 @@ class CategoriesSeeder extends Seeder
                     ]
                 ],
                 [
-                    'name' => 'nagai',
+                    'name' => 'Nagai',
                     'order' => 2,
                     'image' => 'nagas.png',
                     'facilities' => [
@@ -56,7 +56,7 @@ class CategoriesSeeder extends Seeder
 
                 ],
                 [
-                    'name' => 'veidas',
+                    'name' => 'Veidas',
                     'order' => 3,
                     'image' => 'profilis.png',
                     'facilities' => [

@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="second-form-line">
-
+                <div class="inputs-block">
                     <div class="inputs">
                         {!! Form::label('region', 'Apskritis') !!}
                         {!! Form::select('region', $regions, null, ['required' => 'required']) !!}
@@ -87,6 +87,7 @@
                         {!! Form::label('website', 'Internetinis puslapis') !!}
                         {!! Form::text('website', null, ['required' => 'required']) !!}
                     </div>
+                </div>
                     <div class="darbo-laikas">
                         <p>Darbo Laikas:</p>
 
@@ -163,8 +164,11 @@
 
                 </div>
 
-
+            <div class="taisykles-input">
+                <input id="taisykles-input" type="checkbox" name="taisykles-input">
+                <label for="taisykles-input"><span></span>Sutinku su šiuo puslapio </label> <a style="font-weight: 700;" href="http://www.failed.lt/upload/image/preview/2012-08-18_04.jpg"> taisyklėmis</a>
                 <input type="submit" value="Siųsti užklausą">
+            </div>
 
             @foreach($categories as $category)
                 @if($category->getFacilitiesCategories()->count() > 0)
@@ -217,14 +221,15 @@
             $('select[name="city"]').on('change', function(){
                 var city_id = $(this).val();
                 if(junctions.hasOwnProperty(city_id)){
-                    var output = '<select name="junction" id="junction">';
+                    $('.junctions-input').remove();
+                    var output = '<div class="inputs junctions-input"><label for="junction">Mikrorajonas</label><select name="junction" id="junction">';
                     $.each(junctions[city_id], function(index, value){
                         output += '<option value="'+index+'">'+value+'</option>';
                     });
-                    output += '</select>';
-                    $('.second-form-line').prepend(output);
+                    output += '</select></div>';
+                    $('.inputs-block').append(output);
                 } else {
-                    $('select[name="junction"]').remove();
+                    $('.junctions-input').remove();
                 }
             });
 

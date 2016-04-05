@@ -36,6 +36,14 @@
                     <p>{{ $category->getOrganizations()->where(['type' => 'imone'])->count() }} įmonės</p>
                     <p>{{ $category->getOrganizations()->where(['type' => 'asmuo'])->count() }} fiziniai asmenys</p>
                 </div>
+                <ul class="city-list">
+                    <li>MIESTAS</li>
+                    <a href="/imones/vilnius/vilnius-miestas"><li>Vilnius</li></a>
+                    <a href="/imones/vilnius/kaunas-miestas"><li>Kaunas</li></a>
+                    <a href="/imones/vilnius/klaipeda-miestas"><li>Klaipėda</li></a>
+                    <a href="/imones/vilnius/siauliai-miestas"><li>Šiauliai</li></a>
+                    <a href="/imones/vilnius/panevezys-miestas"><li>Panevežys</li></a>
+                </ul>
             </div>
         @endforeach
     </div>
@@ -60,15 +68,27 @@
                     <p>{{ $region->getCities()->join('organizations', 'cities.id', '=', 'organizations.city_id')->where(['organizations.type' => 'asmuo'])->count() }} fiziniai asmenys</p>
                 </div>
                 </a>
+                <ul class="city-list">
+                    <li>MIESTELIAI</li>
+                    <li class="miesteliu-trigger">Ieškoti pagal<br> miestelį</li>
+                </ul>
             </div>
         @endforeach
     </div>
 </div>
 
 <!-- APIE MUS MENU -->
-<div id="e" class="hover-menu kontaktai-menu">
+<div id="e" class="hover-menu apie-mus-menu">
     <div class="hover-container">
-
+        <div class="apie-mus-menu-container">
+            <h3>APIE MUS</h3>
+            <p>"Grožio paieškos" - tai naujas projektas Lietuvoje, sukurtas 2016 metais. Šiuo projektu
+                siekiame palengvinti Jusu su grožio proceduromis susijusias paieškas.
+                Musu tikslas - taupyti Jusu laika ir suteikti greita ir patogia Jus dominancia informacija.
+                Puslapyje rasite: grožio salonu, sporto klubu, spa centru, tatuiruociu salonu, kosmetologijos bei odontologijos
+                kabinetu informacija bei teikiamas paslaugas. </p>
+            <p class="skaityti-daugiau">Skaityti daugiau</p>
+        </div>
     </div>
 </div>
 <!-- KONTAKTAI MENU -->
@@ -103,4 +123,38 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- Miesteliu sarasas -->
+
+<div class="paslaugu-sarasas miesteliu-sarasas">
+    <div class="header-of-headers">
+        <h3>MIESTELIAI</h3>
+        <span>Uždaryti</span>
+    </div>
+    <div class="sarasas-wrapper">
+        <div class="nano sarasas-container">
+            <ul class="nano-content">
+                <li>Nemenčinė</li>
+                <li>Pabradė</li>
+                <li>Meškonys</li>
+                <li>Nemenčinė</li>
+                <li>Pabradė</li>
+                <li>Meškonys</li>
+                <li>Nemenčinė</li>
+                <li>Pabradė</li>
+                <li>Meškonys</li>
+                <li>Nemenčinė</li>
+                <li>Pabradė</li>
+                <li>Meškonys</li>
+                <li>Nemenčinė</li>
+                <li>Pabradė</li>
+                <li>Meškonys</li>
+                <li>Nemenčinė</li>
+                <li>Pabradė</li>
+                <li>Meškonys</li>
+            </ul>
+        </div>
+    </div>
+    <div class="patvirtinti">PATVIRTINTI</div>
 </div>

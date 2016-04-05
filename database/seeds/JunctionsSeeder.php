@@ -52,12 +52,10 @@ class JunctionsSeeder extends Seeder
                 'panemunes' => 'Panemunės'
             ],
             'klaipeda-miestas' => [
-                'sanciuasd' => 'Šančių',
-                'centroasd' => 'Centro',
-                'aleksotoasd' => 'Aleksoto'
-            ],
-            'alytus-miestas' => [
-                'alytaus-rajonai' => 'Alytaus rajonas'
+                'danes' => 'Danės',
+                'baltijos' => 'Baltijos',
+                'mariu' => 'Marių',
+                'pajurio' => 'Pajūrio'
             ]
         ];
 
