@@ -433,7 +433,7 @@ function sliderOn7() {
                 $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('font-weight', '500');
             })
     });
-    $('..mikrorajonai li').each( function(){
+    $('.mikrorajonai li').each( function(){
         var li_slug = $(this).attr('data-name');
         $(this).hover(function() {
                 $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('list-style', 'inside');
