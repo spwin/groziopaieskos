@@ -401,6 +401,38 @@ function sliderOn7() {
         });
     });
 
+    $('#city area').each(function() {
+        $(this).on('click', function(){
+            alert('I selected a junction!');
+            return false;
+        });
+        $(this).qtip({
+            content: {
+                text: function(event, api) {
+                    return $.ajax({
+                        url: root + '/tooltip/junction/' + $(this).attr('data-name')
+                    });
+                }
+            },
+            style: {
+                classes: 'qtip-dark'
+            },
+            show: {
+                solo: true
+            },
+            position: {
+                target: 'mouse',
+                adjust: { x: 15 },
+                at: 'center left',
+                my: 'center left'
+            },
+            hide: {
+                fixed: true,
+                delay: 300
+            }
+        });
+    });
+
     // Close messages button
     $('button.close').on('click', function(){
         $('div.alert').remove();
@@ -433,7 +465,7 @@ function sliderOn7() {
                 $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('font-weight', '500');
             })
     });
-    $('..mikrorajonai li').each( function(){
+    $('.mikrorajonai li').each( function(){
         var li_slug = $(this).attr('data-name');
         $(this).hover(function() {
                 $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('list-style', 'inside');

@@ -15,14 +15,14 @@
 
         <div class="sidebar-icon">
             <div class="icon-image">
-                <img src="{{ URL::to('/') }}/img/header-icons/grozio-salonai.png" alt="grozio salonai">
+                <img src="{{ URL::to('/') }}/uploads/{{ $category->image }}" alt="grozio salonai">
             </div>
-            <p>Grožio salonai</p>
+            <p>{{ $category->name_plural }}</p>
         </div>
 
         <div class="pasirinkti-ziureti-paslaugas">
 
-            <div class="transparent-button grozio-salonai-button"><p>Pasirinkti grožio salonų paslaugas</p></div>
+            <div class="transparent-button grozio-salonai-button"><p>{{ $category->name_plural }} - pasirinkti paslaugas</p></div>
             <div class="transparent-button"><p>Žiūrėti visas paslaugas</p></div>
 
         </div>

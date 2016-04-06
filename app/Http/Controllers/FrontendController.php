@@ -144,6 +144,17 @@ class FrontendController extends Controller
         return $output;
     }
 
+    public function tooltipJunction($city){
+        $city_db = Junctions::where(['slug' => $city])->first();
+        if(count($city_db) > 0) {
+            $city_rez = $city_db->name;
+        } else {
+            $city_rez = 'Unknown';
+        }
+        $output = '<div class="toolTipClass"><h3>' . $city_rez . '</h3><ul></div>';
+        return $output;
+    }
+
     public function service($region, $city, $category_slug){
         $city_db = Cities::with('getJunctions')->where(['slug' => $city])->first();
         $category = Categories::with('getFacilities')->where(['slug' => $category_slug])->first();
