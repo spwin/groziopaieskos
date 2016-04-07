@@ -1,10 +1,10 @@
-<!--
+
 <ul class="mikrorajonai">
     @foreach($city_db->getJunctions()->get() as $junction)
-        <li>{{ $junction->name }}</li>
+        <li data-name="{{ $junction->slug }}">{{ $junction->name }}</li>
     @endforeach
 </ul>
--->
+
 <div class="vilnius-map">
     <img id="myimg" src="{{ URL::to('/') }}/img/cities/{{ $city_db->slug }}-map.png" alt="{{ $city_db->slug }} map" usemap="#mymap">
     <map  name="mymap" id="city">

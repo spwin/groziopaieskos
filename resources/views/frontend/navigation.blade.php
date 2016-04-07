@@ -21,7 +21,6 @@
 </header>
 
 <!-- PASLAUGU MENU -->
-
 <div id="b" class="hover-menu paslaugos-menu">
     <div class="hover-container">
         @foreach(Helper::categories() as $category)

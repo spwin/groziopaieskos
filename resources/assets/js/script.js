@@ -454,7 +454,7 @@ function sliderOn7() {
 
     /** rajonai bold on hover  ***/
 
-    $('.main-map area').each( function(){
+    $('.main-map area, .vilnius-map area, .klaipeda-map area').each( function(){
         var rajono_slug = $(this).attr('data-name');
         $(this).hover(function() {
                 $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('list-style', 'inside');
@@ -465,20 +465,18 @@ function sliderOn7() {
                 $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('font-weight', '500');
             })
     });
-    $('.mikrorajonai li').each( function(){
-        var li_slug = $(this).attr('data-name');
-        $(this).hover(function() {
-                $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('list-style', 'inside');
-                $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('font-weight', '700');
-            },
-            function() {
-                $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('list-style', 'none');
-                $('.mikrorajonai li[data-name=' + rajono_slug + ']').css('font-weight', '500');
-            })
-    });
 
 
 
+    /*************** dynamic gmap markers *****************/
+
+
+
+/*
+
+
+
+*/
 
 
     /*$('form.filter-form').on('submit', function(e){

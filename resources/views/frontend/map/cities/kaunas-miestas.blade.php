@@ -1,11 +1,11 @@
-<!--
+
 <ul class="mikrorajonai">
     @foreach($city_db->getJunctions()->get() as $junction)
-        <li>{{ $junction->name }}</li>
+        <li data-name="{{ $junction->slug }}" >{{ $junction->name }}</li>
     @endforeach
 </ul>
--->
-<div class="vilnius-map">
+
+<div class="vilnius-map kaunas-map">
     <img id="myimg" src="{{ URL::to('/') }}/img/cities/{{ $city_db->slug }}-map.png" alt="{{ $city_db->slug }} map" usemap="#mymap">
     <map  name="mymap" id="city">
         <area shape="poly" alt="" data-name="aleksoto" coords="194,398, 196,404, 197,404, 197,405, 197,405, 197,407, 198,407, 198,409, 199,409, 199,412, 200,412, 201,415, 202,415, 202,416, 202,416, 203,420, 204,420, 204,421, 204,421, 204,423, 205,423, 206,426, 207,426, 207,427, 207,427, 208,430, 209,430, 209,432, 209,432, 210,435,

@@ -129,6 +129,7 @@
 
         <div class="main-header main-paieska">
             <p>arba<span class="line-break"> pasinaudokite paieška</span></p>
+
             {!! Form::open([
                 'action' => 'FrontendController@search',
                 'class' => 'pure-form pure-form-aligned',
@@ -141,6 +142,7 @@
             {!! Form::submit('Ieškoti') !!}
 
             {!! Form::close() !!}
+
         </div>
     </div>
     <div class="hidden">
