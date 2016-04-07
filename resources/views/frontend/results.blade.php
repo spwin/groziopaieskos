@@ -4,6 +4,8 @@
     @include('flash::message')
     <div class="main-container">
 
+        {!! $type == 'search' ? '<h2>Paieška pagal "'.$query.'"</h2>' : '' !!}
+
         <div class="left-column">
 
             <div class="rusiavimas">
