@@ -130,7 +130,7 @@
         <div class="main-header main-paieska">
             <p>arba<span class="line-break"> pasinaudokite paieška</span></p>
             <input type="search">
-            <a href="http://groziopaieskos.lt/test/pagal-mikrorajonus"><input type="submit" value="Ieškoti"></a>
+            <a href="#"><input type="submit" value="Ieškoti"></a>
         </div>
     </div>
     <div class="hidden">

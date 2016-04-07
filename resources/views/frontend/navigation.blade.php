@@ -21,7 +21,6 @@
 </header>
 
 <!-- PASLAUGU MENU -->
-
 <div id="b" class="hover-menu paslaugos-menu">
     <div class="hover-container">
         @foreach(Helper::categories() as $category)
@@ -38,11 +37,11 @@
                 </div>
                 <ul class="city-list">
                     <li>MIESTAS</li>
-                    <a href="/imones/vilnius/vilnius-miestas"><li>Vilnius</li></a>
-                    <a href="/imones/vilnius/kaunas-miestas"><li>Kaunas</li></a>
-                    <a href="/imones/vilnius/klaipeda-miestas"><li>Klaipėda</li></a>
-                    <a href="/imones/vilnius/siauliai-miestas"><li>Šiauliai</li></a>
-                    <a href="/imones/vilnius/panevezys-miestas"><li>Panevežys</li></a>
+                    <a href="/imones/vilnius/vilnius-miestas/{{ $category->slug }}"><li>Vilnius</li></a>
+                    <a href="/imones/vilnius/kaunas-miestas/{{ $category->slug }}"><li>Kaunas</li></a>
+                    <a href="/imones/vilnius/klaipeda-miestas/{{ $category->slug }}"><li>Klaipėda</li></a>
+                    <a href="/imones/vilnius/siauliai-miestas/{{ $category->slug }}"><li>Šiauliai</li></a>
+                    <a href="/imones/vilnius/panevezys-miestas/{{ $category->slug }}"><li>Panevežys</li></a>
                 </ul>
             </div>
         @endforeach

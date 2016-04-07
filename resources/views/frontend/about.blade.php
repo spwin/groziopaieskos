@@ -46,8 +46,12 @@
                                 <span style="background-color: {{ $organization->getOpeningTimes()->first()->getSunday()->first()->opened ? 'green' : 'red' }}"></span>
                             </li>
                             <li>Vieta: {{ $organization->getCity()->first()->name }} - {{ $organization->place }} - {{ $organization->address }}</li>
-                            <li>PVM kodas: {{ $organization->getOrganizationData()->first()->pvm_kodas }}</li>
-                            <li>Įmonės kodas: {{ $organization->getOrganizationData()->first()->imones_kodas }}</li>
+                             @if ( $organization->getOrganizationData()->first()->ind_veikl_nr > 0 )
+                                <li>Ind. veiklos nr.: {{ $organization->getOrganizationData()->first()->ind_veikl_nr }}</li>
+                             @else
+                                <li>PVM kodas: {{ $organization->getOrganizationData()->first()->pvm_kodas }}</li>
+                                <li>Įmonės kodas: {{ $organization->getOrganizationData()->first()->imones_kodas }}</li>
+                             @endif
                         </ul>
                     </div>
 

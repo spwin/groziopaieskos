@@ -337,6 +337,10 @@ header,
 .main-container .vilnius-map {
   margin-top: 30px;
   width: 570px; }
+.main-container .vilnius-map.kaunas-map {
+  width: 570px;
+  padding-top: 100px;
+}
   @media screen and (min-width: 1170px) {
     .main-container .vilnius-map {
       margin-left: 85px; } }
@@ -1339,5 +1343,15 @@ p.skaityti-daugiau {
   background-color: rgb(255,255,255);
   float: right;
   border-radius: 15px;
+}
+
+.apie-mus-menu-container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#gmap {
+  width: 100%;
+  height: 500px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -11,6 +11,7 @@
     </div>
 
     <div class="sidebar-icons">
+
         @foreach($categories as $category)
             <div class="sidebar-icon category-facilities category-{{ $category->id }}" data-id="{{ $category->id }}">
                 <div class="icon-image">
@@ -29,7 +30,7 @@
         <h3>{{ $city_db->name }}</h3>
         <h4 id="category-search"></h4>
         <div id="facilities-search"></div>
-        <a href="http://groziopaieskos.lt/test/rezultatai"><input type="submit" value="Ieškoti"></a>
+        <a href="#"><input type="submit" value="Ieškoti"></a>
     </div>
 
 </div>
