@@ -72,8 +72,8 @@
             });
 
                     google.maps.event.addListener(pointMarker[i], 'click', function(){
-                            alert('as esu grozio salonas');
-                        //   window.open("blog/page01.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=yes, copyhistory=yes");
+                            alert('Labas. As esu grozio salonas');
+                        //   window.open(blog/page01.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=yes, copyhistory=yes");
                     });
                 }
             }
