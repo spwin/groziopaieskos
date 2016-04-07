@@ -37,6 +37,8 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
 
+Route::get('search', 'FrontendController@search');
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::get('/', 'AdminController@index');

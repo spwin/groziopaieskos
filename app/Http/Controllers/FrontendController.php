@@ -26,6 +26,41 @@ class FrontendController extends Controller
         return view('frontend.main.index');
     }
 
+    public function search(){
+        $input = Input::all();
+        $type = 'search';
+        $query = array_key_exists('query', $input) ? $input['query'] : '';
+        $city_db = Cities::with('getRegion')->where(['slug' => 'vilnius'])->first();
+        $organizations = Organization::with(['getCategory', 'getFacilities', 'getOpeningTimes', 'getOrganizationData'])
+            ->join('cities', 'organizations.city_id', '=', 'cities.id')
+            ->join('organization_data', 'organizations.organization_data_id', '=', 'organization_data.id')
+            ->join('junctions', 'cities.id', '=', 'junctions.city_id')
+            ->join('regions', 'cities.region_id', '=', 'regions.id')
+            ->join('categories', 'organizations.category_id', '=', 'categories.id')
+            ->where(function ($organizations) {
+                $query = Input::has('query') ? Input::get('query') : '';
+                $words = explode(' ', $query);
+                foreach($words as $word){
+                    $organizations
+                        ->orwhere('organizations.title', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                        ->orWhere('categories.name_plural', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                        ->orWhere('cities.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                        ->orWhere('junctions.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                        ->orWhere('regions.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                        ->orWhere('organizations.place', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                        ->orWhere('organization_data.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                        ->orWhere('organization_data.pavarde', 'LIKE', '%'.($word ? $word : 'unknown').'%');
+                }
+            })
+            ->groupBy('organizations.id')->get();
+        return view('frontend.results')->with([
+            'organizations' => $organizations,
+            'city_db' => $city_db,
+            'type' => $type,
+            'query' => $query
+        ]);
+    }
+
     public function company(){
         $categories = Categories::with(['getFacilities', 'getFacilitiesCategories'])->get();
         $junctions_db = Junctions::all();
@@ -111,11 +146,13 @@ class FrontendController extends Controller
 
     public function results($region, $city, Request $request){
         $input = $request->all();
+        $type = array_key_exists('type', $input) ? $input['type'] : 'unknown';
         $city_db = Cities::with('getRegion')->where(['slug' => $city])->first();
         $organizations = Organization::with(['getCategory', 'getFacilities', 'getOpeningTimes', 'getOrganizationData'])->get();
         return view('frontend.results')->with([
             'organizations' => $organizations,
-            'city_db' => $city_db
+            'city_db' => $city_db,
+            'type' => $type
         ]);
     }
 

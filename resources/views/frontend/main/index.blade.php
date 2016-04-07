@@ -129,8 +129,18 @@
 
         <div class="main-header main-paieska">
             <p>arba<span class="line-break"> pasinaudokite paieška</span></p>
-            <input type="search">
-            <a href="http://groziopaieskos.lt/test/pagal-mikrorajonus"><input type="submit" value="Ieškoti"></a>
+            {!! Form::open([
+                'action' => 'FrontendController@search',
+                'class' => 'pure-form pure-form-aligned',
+                'role' => 'form',
+                'method' => 'GET'
+                ]) !!}
+
+            {!! Form::input('search', 'query', null) !!}
+
+            {!! Form::submit('Ieškoti') !!}
+
+            {!! Form::close() !!}
         </div>
     </div>
     <div class="hidden">
