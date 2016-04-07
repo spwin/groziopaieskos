@@ -41,15 +41,17 @@ class FrontendController extends Controller
                 $query = Input::has('query') ? Input::get('query') : '';
                 $words = explode(' ', $query);
                 foreach($words as $word){
-                    $organizations
-                        ->orwhere('organizations.title', 'LIKE', '%'.($word ? $word : 'unknown').'%')
-                        ->orWhere('categories.name_plural', 'LIKE', '%'.($word ? $word : 'unknown').'%')
-                        ->orWhere('cities.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
-                        ->orWhere('junctions.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
-                        ->orWhere('regions.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
-                        ->orWhere('organizations.place', 'LIKE', '%'.($word ? $word : 'unknown').'%')
-                        ->orWhere('organization_data.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
-                        ->orWhere('organization_data.pavarde', 'LIKE', '%'.($word ? $word : 'unknown').'%');
+                    $organizations->where( function ($organizations) use ($word){
+                        $organizations
+                            ->orwhere('organizations.title', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                            ->orWhere('categories.name_plural', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                            ->orWhere('cities.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                            ->orWhere('junctions.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                            ->orWhere('regions.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                            ->orWhere('organizations.place', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                            ->orWhere('organization_data.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                            ->orWhere('organization_data.pavarde', 'LIKE', '%'.($word ? $word : 'unknown').'%');
+                        });
                 }
             })
             ->groupBy('organizations.id')->get();
