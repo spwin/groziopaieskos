@@ -470,15 +470,6 @@ function sliderOn7() {
 
     /*************** dynamic gmap markers *****************/
 
-
-
-/*
-
-
-
-*/
-
-
     /*$('form.filter-form').on('submit', function(e){
         var category_id = $('input[name="category"]').val();
         var query = '';

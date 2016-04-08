@@ -49,8 +49,10 @@
                             <img src="{{ URL::to('/') }}/uploads/{{ $fc->image }}">
                             <h3>{{ $fc->name }}</h3>
                             @foreach($fc->getFacilities()->get() as $facility)
-                                <input id="{{ $category->id }}_{{ $facility->id }}" type="checkbox" name="facilities[{{ $category->id }}][{{ $facility->id }}]">
-                                <label for="{{ $category->id }}_{{ $facility->id }}"><span></span>{{ $facility->name }}</label>
+                                <div class="facilities-container">
+                                    <input id="{{ $category->id }}_{{ $facility->id }}" type="checkbox" name="facilities[{{ $category->id }}][{{ $facility->id }}]">
+                                    <label for="{{ $category->id }}_{{ $facility->id }}"><span></span>{{ $facility->name }}</label>
+                                </div>
                             @endforeach
                         </div>
                     </div>
@@ -67,8 +69,10 @@
             <div class="sarasas-wrapper">
                 <div class="sarasas-container">
                     @foreach($category->getFacilities()->get() as $facility)
-                        <input id="{{ $category->id }}_{{ $facility->id }}" type="checkbox" name="facilities[{{ $category->id }}][{{ $facility->id }}]">
-                        <label for="{{ $category->id }}_{{ $facility->id }}"><span></span>{{ $facility->name }}</label>
+                        <div class="facilities-container">
+                            <input id="{{ $category->id }}_{{ $facility->id }}" type="checkbox" name="facilities[{{ $category->id }}][{{ $facility->id }}]">
+                            <label for="{{ $category->id }}_{{ $facility->id }}"><span></span>{{ $facility->name }}</label>
+                        </div>
                     @endforeach
                 </div>
             </div>
