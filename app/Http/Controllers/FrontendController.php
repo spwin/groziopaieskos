@@ -112,6 +112,16 @@ class FrontendController extends Controller
         return Response::json($results);
     }
 
+    public function populateRegions(Request $request){
+        $input = $request->all();
+        $cities = Cities::where(['region_id' => $input['region_id']])->get();
+        $results = [];
+        foreach($cities as $city){
+            $results[] = ['id' => $city->id, 'value' => $city->name];
+        }
+        return Response::json($results);
+    }
+
     public function region($region){
         $region_db = Regions::where(['slug' => $region])->with('getCities')->first();
         $categories = Categories::with('getFacilities')->get();

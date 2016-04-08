@@ -13,6 +13,7 @@ Route::group(['prefix' => 'registracija'], function () {
 });
 
 Route::get('search/autocomplete', 'FrontendController@autocomplete');
+Route::get('populate/regions', 'FrontendController@populateRegions');
 
 Route::get('imones/{region}', 'FrontendController@region');
 Route::get('imones/{region}/{city}', 'FrontendController@city');

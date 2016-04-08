@@ -221,8 +221,9 @@
         $(function()
         {
             var junctions = <?php echo json_encode($junctions); ?>;
-            $('select[name="city"]').on('change', function(){
-                var city_id = $(this).val();
+
+            function checkMikrorajonas(input){
+                var city_id = input.val();
                 if(junctions.hasOwnProperty(city_id)){
                     $('.junctions-input').remove();
                     var output = '<div class="inputs junctions-input"><label for="junction">Mikrorajonas</label><select name="junction" id="junction">';
@@ -234,7 +235,40 @@
                 } else {
                     $('.junctions-input').remove();
                 }
+            }
+
+            function checkRajonas(input){
+                var region_id = input.val();
+                $.ajax({
+                    url: "{{ action('FrontendController@populateRegions') }}",
+                    type: "get",
+                    data:{ region_id : region_id },
+                    success: function(response) {
+                        var output = '';
+                        $.each(response, function(index, value){
+                            output += '<option value="'+value.id+'">'+value.value+'</option>';
+                        });
+                        $('select[name="city"]').html(output);
+                        checkMikrorajonas($('select[name="city"]'));
+                    },
+                    error: function(xhr) {
+                        console.log('error');
+                    }
+                });
+            }
+
+            $('select[name="region"]').on('change', function(){
+                checkRajonas($(this));
             });
+
+            checkRajonas($('select[name="region"]'));
+
+            $('select[name="city"]').on('change', function(){
+                checkMikrorajonas($(this));
+            });
+
+            checkMikrorajonas($('select[name="city"]'));
+
 
             $( "#q" ).autocomplete({
                 source: "{{ URL::to('/') }}/search/autocomplete",
