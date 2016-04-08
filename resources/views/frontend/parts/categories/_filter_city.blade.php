@@ -23,7 +23,7 @@
     </div>
 
     {!! Form::hidden('type', 'city') !!}
-    {!! Form::hidden('') !!}
+    {!! Form::hidden('place_name', null) !!}
 
     <div class="search-clues">
         <div class="nano">

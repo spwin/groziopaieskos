@@ -23,8 +23,8 @@
         {!! Form::hidden('category', null) !!}
     </div>
 
-    {!! Form::hidden('type', 'city') !!}
-    {!! Form::hidden('') !!}
+    {!! Form::hidden('type', 'junction') !!}
+    {!! Form::hidden('place_name', null) !!}
 
     <div class="search-clues">
         <h3>{{ $city_db->name }}</h3>
