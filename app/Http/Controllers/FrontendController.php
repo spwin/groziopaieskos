@@ -160,7 +160,27 @@ class FrontendController extends Controller
         $input = $request->all();
         $type = array_key_exists('type', $input) ? $input['type'] : 'unknown';
         $city_db = Cities::with('getRegion')->where(['slug' => $city])->first();
-        $organizations = Organization::with(['getCategory', 'getFacilities', 'getOpeningTimes', 'getOrganizationData'])->get();
+        if($type == 'junction') {
+            $junction = Junctions::where(['slug' => $input['place_name']])->first();
+            $place = ['junction_id' => $junction->id];
+        } else {
+            $place = ['city_id' => $city_db->id];
+        }
+        $facilities = array_key_exists('facilities', $input) ? (array_key_exists($input['category'], $input['facilities']) ? $input['facilities'][$input['category']] : []) : [];
+        $facilities_array = [];
+        foreach($facilities as $facility => $status){
+            if($status == 'on'){
+                $facilities_array[] = $facility;
+            }
+        }
+        $organizations = Organization::with(['getCategory', 'getFacilities', 'getOpeningTimes', 'getOrganizationData'])
+            ->where(['organizations.category_id' => $input['category']])
+            ->where($place)
+            ->join('organizations_facilities', 'organizations.id', '=', 'organizations_facilities.organization_id')
+            ->whereIn('organizations_facilities.facility_id', $facilities_array)
+            ->groupBy('organizations.id')
+            ->get();
+
         return view('frontend.results')->with([
             'organizations' => $organizations,
             'city_db' => $city_db,
