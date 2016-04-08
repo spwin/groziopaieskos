@@ -33,7 +33,7 @@
 
     {!! Form::hidden('category', $category->id) !!}
     {!! Form::hidden('type', 'city') !!}
-    {!! Form::hidden('place_name', null) !!}
+    {!! Form::hidden('place_name', $city_db->slug) !!}
 
     <div class="search-clues">
         <h3>{{ $city_db->name }}</h3>
