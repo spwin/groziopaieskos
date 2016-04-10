@@ -24,8 +24,11 @@
 
                     });
                     var latLng;
-
-                    $('.adresas-mapsui').each(function(geocoder, n){
+                    var LatLngList = [];
+                    var latlngbounds = new google.maps.LatLngBounds();
+                    var $set = $('.adresas-mapsui');
+                    var len = $set.length;
+                    $('.adresas-mapsui').each(function(index, geocoder, n){
                         var geocoder = new google.maps.Geocoder();
                         var address = this.innerHTML;
                         var salono_kategorija = $(this).closest('.left-side').find('.name-details h4').html();
@@ -45,6 +48,10 @@
                                     animation: google.maps.Animation.DROP,
                                     map: map
                                 });
+
+                                var positioner = new google.maps.LatLng(lat, lng);
+                                LatLngList.push(positioner);
+
                                 var infowindow = new google.maps.InfoWindow({
                                     content: '<p style="color:black;">' + salono_kategorija + ' '+ salono_pavadinimas +'</p>'
                                 });
@@ -55,8 +62,14 @@
                                     $(result).css('opacity', '1');
                                 });
                                 latLng = marker.getPosition();
-                                map.setCenter(latLng);
+                                if (index == len - 1) {
+                                    for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
+                                        latlngbounds.extend (LatLngList[i]);
+                                    }
+                                    map.fitBounds(latlngbounds);
+                                }
                             }
+
                         });
 
                     });

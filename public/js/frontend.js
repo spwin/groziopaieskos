@@ -362,7 +362,9 @@ function sliderOn7() {
         fill: true,
         fillColor: 'c9eafe',
         fillOpacity: 0.4,
-        isSelectable: false
+        onClick: function (data) {
+            $('area').mapster('deselect');
+        }
     });
 
     $('#lithuania area').each(function() {

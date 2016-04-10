@@ -1,4 +1,8 @@
-
+<div class="pasirinkite">
+    <div class="fleft">{{ $city_db->name }}</div>
+    <div class="center">Pasirinkite rajoną</div>
+    <div class="fright">Pasirinkite paslaugą</div>
+</div>
 <ul class="mikrorajonai">
     @foreach($city_db->getJunctions()->get() as $junction)
         <li data-name="{{ $junction->slug }}" >{{ $junction->name }}</li>

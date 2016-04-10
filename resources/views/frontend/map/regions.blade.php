@@ -4,6 +4,7 @@
     @include('flash::message')
     <div class="main-container region-page">
         <ul class="mikrorajonai">
+            <span style="font-size:25px;">{{ $region_db->name }} apskr.</span>
             @foreach($region_db->getCities()->get() as $city)
                 <li data-name="{{ $city->slug }}">{{ $city->name }}</li>
             @endforeach

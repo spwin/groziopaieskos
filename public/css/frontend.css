@@ -1738,13 +1738,13 @@ header,
   align-items: center; }
 
 .main-container.region-page .main-map {
-  max-width: 61.33%;
-  margin-left: 11%;
+  max-width: 58.33%;
+  margin-left: 14%;
   max-height: 500px;
   /*
-      @media screen and (min-width: 1080px) {
-      max-width: 715px;
-    }
+    @media screen and (min-width: 1080px) {
+    max-width: 715px;
+  }
 */ }
 
 .main-container.region-page .main-map img {
@@ -1838,6 +1838,12 @@ header,
   width: 570px;
   padding-top: 100px; }
 
+.main-container .mikrorajonai.kaunass {
+  height: 140px; }
+
+.pasirinkite {
+  font-size: 26px; }
+
 @media screen and (min-width: 1170px) {
   .main-container .vilnius-map {
     margin-left: 85px; } }
@@ -1848,9 +1854,9 @@ header,
 
 .main-container .mikrorajonu-sidebar {
   width: 40%;
-  top: 0;
+  top: 30px;
   position: absolute;
-  right: 50px; }
+  right: 0; }
 
 .main-container .mikrorajonu-sidebar .main-header {
   position: relative; }
@@ -2900,11 +2906,43 @@ p.skaityti-daugiau {
     margin: 0;
     font-size: 37px; }
   .main-container .main-header p .line-break {
-    font-size: 20px; } }
+    font-size: 20px; }
+  .main-container .mikrorajonu-sidebar .sidebar-icons .sidebar-icon {
+    margin-left: 11px;
+    width: 75px; }
+    .main-container .mikrorajonu-sidebar .sidebar-icons .sidebar-icon p {
+      font-size: 11px; } }
 
 div.about-us {
   width: 65%;
   margin: 0 auto; }
+
+.fleft {
+  float: left; }
+
+.fright {
+  float: right; }
+
+.center {
+  display: inline-block; }
+
+.pasirinkite {
+  text-align: center; }
+
+@media screen and (min-width: 1230px) {
+  .main-container .vilnius-map.kaunas-map {
+    margin-left: 15%;
+    padding-top: 66px; } }
+
+.transparent-button:hover {
+  background-color: #173e4e; }
+
+input[type=submit]:hover,
+.skaityti-daugiau:hover {
+  opacity: 0.8; }
+
+div.alert.alert-info button {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
 

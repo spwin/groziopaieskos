@@ -5,11 +5,11 @@
                 'method' => 'GET'
                 ]) !!}
 <div class="mikrorajonu-sidebar">
-
+<!--
     <div class="main-header">
         <p>{{ $city_db->name }}<span class="line-break">Pasirinkite rajoną ir paslaugą</span></p>
     </div>
-
+-->
     <div class="sidebar-icons">
 
         @foreach($categories as $category)

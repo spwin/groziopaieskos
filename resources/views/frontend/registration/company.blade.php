@@ -182,6 +182,7 @@
                             <h3>{{ strtoupper($category->name_plural) }}</h3>
                             <span>X</span>
                         </div>
+                        <div class="sarasas-wrapper">
                         @foreach($category->getFacilitiesCategories()->get() as $fc)
                             <div class="sarasas-container">
                                 <div class="image-header">

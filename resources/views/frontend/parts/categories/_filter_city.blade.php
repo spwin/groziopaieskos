@@ -7,7 +7,7 @@
 <div class="mikrorajonu-sidebar">
 
     <div class="main-header">
-        <p>{{ $city_db->name }}<span class="line-break">Pasirinkite rajoną ir paslaugą</span></p>
+        <p>{{ $city_db->name }}<span class="line-break">Pasirinkite paslaugą</span></p>
     </div>
 
     <div class="sidebar-icons">
