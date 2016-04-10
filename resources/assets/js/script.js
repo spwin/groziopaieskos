@@ -113,6 +113,7 @@ jQuery( document ).ready(function($){
 
     $('.paslaugu-sarasas input').on('click', function(){
         fillSearchFacilities($('input[name="category"]').val());
+        $(".nano").nanoScroller();
     });
 
     function fillSearchFacilities(category_id){

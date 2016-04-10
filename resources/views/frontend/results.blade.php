@@ -60,6 +60,7 @@
                                     infowindow.open(marker.get('map'), marker);
                                     $('.vienas-rezultatas').css('opacity', '0.6');
                                     $(result).css('opacity', '1');
+                                    $(".nano").nanoScroller({ scrollTo: $(id_for_scroll) });
                                 });
                                 latLng = marker.getPosition();
                                 if (index == len - 1) {
