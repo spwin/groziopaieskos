@@ -23,7 +23,7 @@ jQuery( document ).ready(function($){
 
     $('#miestai, #c').mouseover(function(){
         $('#c').show();
-        $('header').css('background-color', 'rgba(0,0,0,0.7)');
+        $('header').css('background-color', 'rgba(0,0,0,0.8)');
         $('#miestai').css('border-bottom', '3px solid white');
     });
     $('#miestai, #c').mouseout(function(){
@@ -34,7 +34,7 @@ jQuery( document ).ready(function($){
 
     $('#paslaugos, #b').mouseover(function(){
         $('#b').show();
-        $('header').css('background-color', 'rgba(0,0,0,0.7)');
+        $('header').css('background-color', 'rgba(0,0,0,0.8)');
         $('#paslaugos').css('border-bottom', '3px solid white');
     });
     $('#paslaugos, #b').mouseout(function(){
@@ -46,7 +46,7 @@ jQuery( document ).ready(function($){
 
     $('#kontaktai, #d').mouseover(function(){
         $('#d').show();
-        $('header').css('background-color', 'rgba(0,0,0,0.7)');
+        $('header').css('background-color', 'rgba(0,0,0,0.8)');
         $('#kontaktai').css('border-bottom', '3px solid white');
     });
     $('#kontaktai, #d').mouseout(function(){
@@ -57,7 +57,7 @@ jQuery( document ).ready(function($){
 
     $('#apiemus, #e').mouseover(function(){
         $('#e').show();
-        $('header').css('background-color', 'rgba(0,0,0,0.7)');
+        $('header').css('background-color', 'rgba(0,0,0,0.8)');
         $('#apiemus').css('border-bottom', '3px solid white');
     });
     $('#apiemus, #e').mouseout(function(){
@@ -389,10 +389,8 @@ function sliderOn7() {
                 solo: true
             },
             position: {
-                target: 'mouse',
-                adjust: { x: 15 },
-                at: 'center left',
-                my: 'center left'
+                at: 'center center',
+                my: 'center center'
             },
             hide: {
                 fixed: true,
@@ -403,7 +401,6 @@ function sliderOn7() {
 
     $('#city area').each(function() {
         $(this).on('click', function(){
-            alert('I selected a junction!');
             return false;
         });
         $(this).qtip({
@@ -421,10 +418,8 @@ function sliderOn7() {
                 solo: true
             },
             position: {
-                target: 'mouse',
-                adjust: { x: 15 },
-                at: 'center left',
-                my: 'center left'
+                at: 'center center',
+                my: 'center center'
             },
             hide: {
                 fixed: true,
@@ -440,19 +435,41 @@ function sliderOn7() {
 
     /********* FORM SUBMIT ********/
 
-
-    $( "form" ).submit(function( event ) {
-        $( ".sidebar-icon .icon-image" ).each( function() {
-            if ( $(this).hasClass('background-color-selected') === true  ) {
-                $('form').unbind('submit').submit();
-            } else {
-                $('p.litred').show();
-                event.preventDefault();
-            }
-        });
+    $( ".filtras form" ).submit(function( event ) {
+        if ( $( ".sidebar-icon .icon-image" ).hasClass('background-color-selected') === true && $("input[name=place_name]").val() !== 'no' ) {
+            $('form').unbind('submit').submit();
+        } else {
+            event.preventDefault();
+        }
     });
 
-    /** rajonai bold on hover  ***/
+     $( ".form-trigger" ).on('click', function(){
+         if ( $( ".sidebar-icon .icon-image" ).hasClass('background-color-selected') === false && $("input[name=place_name]").val() === 'no' ) {
+             $('p.kategorijos-error, p.mikrorajono-error').show();
+         } else if ( $( ".sidebar-icon .icon-image" ).hasClass('background-color-selected') === true && $("input[name=place_name]").val() === 'no' ) {
+             $('p.kategorijos-error').hide();
+             $('p.mikrorajono-error').show();
+         } else if ( $( ".sidebar-icon .icon-image" ).hasClass('background-color-selected') === false && $("input[name=place_name]").val() === true ) {
+             $('p.kategorijos-error').show();
+             $('p.mikrorajono-error').hide();
+         }
+     });
+/*
+    $( "form").submit(function( event ) {
+        if ( $( '#facilities-search' ).is(':empty') ) {
+            $('p.paslaugos-error').show();
+            event.preventDefault();
+        }
+    });
+*/
+    $( "form").submit(function( event ) {
+        if ( $( '#category-search' ).is(':empty') ) {
+            $('p.kategorijos-error').show();
+            event.preventDefault();
+        }
+    });
+
+    /** rajonai bold on hover / area highlight on list hover ***/
 
     $('.main-map area, .vilnius-map area, .klaipeda-map area').each( function(){
         var rajono_slug = $(this).attr('data-name');
@@ -466,6 +483,47 @@ function sliderOn7() {
             })
     });
 
+    $('.mikrorajonai li').each( function(){
+        var li_slug = $(this).attr('data-name');
+        $(this).hover(function() {
+            $('.main-map area[data-name=' + li_slug + ']').mouseover();
+            $('.vilnius-map area[data-name=' + li_slug + ']').mouseover();
+            $('.klaipeda-map area[data-name=' + li_slug + ']').mouseover();
+        }, function() {
+            $(this).css('list-style', 'none');
+            $(this).css('font-weight', '500');
+        })
+
+    });
+
+    $('.mikrorajonai li').each( function(){
+            var li_slug = $(this).attr('data-name');
+        $(this).on('click', function(){
+            $('.main-map area[data-name=' + li_slug + ']').click();
+            $('.vilnius-map area[data-name=' + li_slug + ']').click();
+            $('.klaipeda-map area[data-name=' + li_slug + ']').click();
+        })
+    })
+
+    /************** mikrorajonai filter ******************/
+
+    $('.vilnius-map area, .mikrorajonai li, .klaipeda-map area').each(function() {
+
+        $(this).on('click', function(){
+            var mikrorajono_slug = $(this).attr('data-name');
+            $('input[name=place_name]').val(mikrorajono_slug);
+        })
+
+    });
+
+    $('.vilnius-map area, .klaipeda-map area').each(function() {
+        $(this).on('click', function(){
+//            $('#junction-search').html('');
+            var rajono_slug = $(this).attr('data-name');
+            var rajono_pav = $('.mikrorajonai li[data-name=' + rajono_slug + ']').text();
+            $('#junction-search').html(rajono_pav);
+        })
+    });
 
 
     /*************** dynamic gmap markers *****************/

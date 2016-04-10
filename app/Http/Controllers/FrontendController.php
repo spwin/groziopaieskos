@@ -26,6 +26,10 @@ class FrontendController extends Controller
         return view('frontend.main.index');
     }
 
+    public function aboutus(){
+        return view('frontend.aboutus');
+    }
+
     public function search(){
         $input = Input::all();
         $type = 'search';

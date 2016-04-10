@@ -26,14 +26,14 @@
     {!! Form::hidden('place_name', $city_db->slug) !!}
 
     <div class="search-clues">
+        <h3>{{ $city_db->name }}</h3>
+        <h4 id="category-search"></h4>
         <div class="nano">
-            <div class="nano-content">
-                <h3>{{ $city_db->name }}</h3>
-                <h4 id="category-search"></h4>
-                <div id="facilities-search"></div>
-            </div>
+            <div id="facilities-search" class="nano-content"></div>
         </div>
-        <input type="submit" value="Ieškoti">
+        <div class="horizontal-line"></div>
+        <p class="litred kategorijos-error">Pasirinkite paieškos kategoriją </p>
+    <input type="submit" value="Ieškoti">
     </div>
 
 </div>
@@ -41,7 +41,10 @@
 @foreach($categories as $category)
     @if($category->getFacilitiesCategories()->count() > 0)
         <div class="paslaugu-sarasas facilities-{{ $category->id }}">
-            <h3>{{ strtoupper($category->name_plural) }}</h3>
+            <div class="header-of-headers">
+                <h3>{{ strtoupper($category->name_plural) }}</h3>
+                <span>X</span>
+            </div>
             <div class="sarasas-wrapper">
                 @foreach($category->getFacilitiesCategories()->get() as $fc)
                     <div class="sarasas-container">
@@ -64,7 +67,7 @@
         <div class="paslaugu-sarasas facilities-{{ $category->id }}">
             <div class="header-of-headers">
                 <h3>{{ strtoupper($category->name_plural) }}</h3>
-                <span>Uždaryti</span>
+                <span>X</span>
             </div>
             <div class="sarasas-wrapper">
                 <div class="sarasas-container">

@@ -16,7 +16,7 @@ class CitiesSeeder extends Seeder
 
         $regions = [
             'vilnius' => [
-                'vilnius-miestas' => 'Vilnius',
+                'vilnius-miestas' => 'Vilniaus m. sav.',
                 'vilniaus-raj' => 'Vilniaus raj.',
                 'svencioniu-raj' => 'Švenčionių raj.',
                 'ukmerges-raj' => 'Ukmergės raj.',
@@ -26,7 +26,7 @@ class CitiesSeeder extends Seeder
                 'salcininku-raj' => 'Šalčininkų raj.'
             ],
             'kaunas' => [
-                'kaunas-miestas' => 'Kaunas',
+                'kaunas-miestas' => 'Kauno m. sav.',
                 'kauno-raj' => 'Kauno raj.',
                 'raseiniu-raj' => 'Raseinių raj.',
                 'kedainiu-raj' => 'Kėdainių raj.',
@@ -36,7 +36,7 @@ class CitiesSeeder extends Seeder
                 'birstono-sav' => 'Birštono sav.'
             ],
             'siauliai' => [
-                'siauliai-miestas' => 'Šiauliai',
+                'siauliai-miestas' => 'Šiaulių m. sav.',
                 'siauliu-raj' => 'Šiaulių raj.',
                 'akmenes-raj' => 'Akmenės raj.',
                 'joniskio-raj' => 'Joniškio raj.',
@@ -45,7 +45,7 @@ class CitiesSeeder extends Seeder
                 'kelmes-raj' => 'Kelmės raj.'
             ],
             'klaipeda' => [
-                'klaipeda-miestas' => 'Klaipėda',
+                'klaipeda-miestas' => 'Klaipėdos m. sav.',
                 'klaipedos-raj' => 'Klaipėdos raj.',
                 'kretingos-raj' => 'Kretingos raj.',
                 'palangos-sav' => 'Palangos raj.',
@@ -54,7 +54,7 @@ class CitiesSeeder extends Seeder
                 'silutes-raj' => 'Šilutės raj.'
             ],
             'panevezys' => [
-                'panevezys-miestas' => 'Panevėžys',
+                'panevezys-miestas' => 'Panevėžio m. sav.',
                 'panevezio-raj' => 'Panevėžio raj.',
                 'pasvalio-raj' => 'Pasvalio raj.',
                 'birzu-raj' => 'Biržų raj.',
@@ -69,7 +69,7 @@ class CitiesSeeder extends Seeder
                 'ignalinos-raj' => 'Ignalinos raj.'
             ],
             'alytus' => [
-                'alytus-miestas' => 'Alytus',
+                'alytus-miestas' => 'Alytaus m. sav.',
                 'alytaus-raj' => 'Alytaus raj.',
                 'lazdiju-raj' => 'Lazdijų raj.',
                 'druskininku-sav' => 'Druskininkų sav.',

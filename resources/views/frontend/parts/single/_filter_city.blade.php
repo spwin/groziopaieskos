@@ -5,16 +5,16 @@
                 'method' => 'GET'
                 ]) !!}
 
-<div class="mikrorajonu-sidebar">
+<div class="mikrorajonu-sidebar single-filter">
 
     <div class="main-header">
-        <p>Vilnius<span class="line-break">Grožio salonai</span></p>
+        <p>{{ $city_db->name }}<span class="line-break">{{ $category->name_plural }}</span></p>
     </div>
 
     <div class="sidebar-icons">
 
         <div class="sidebar-icon">
-            <div class="icon-image">
+            <div class="icon-image background-color-selected">
                 <img src="{{ URL::to('/') }}/uploads/{{ $category->image }}" alt="grozio salonai">
             </div>
             <p>{{ $category->name_plural }}</p>
@@ -38,7 +38,10 @@
     <div class="search-clues">
         <h3>{{ $city_db->name }}</h3>
         <h4 id="category-search">{{ $category->name_plural }}</h4>
-        <div id="facilities-search"></div>
+        <div class="nano">
+            <div id="facilities-search" class="nano-content"></div>
+        </div>
+        <div class="horizontal-line"></div>
         <a href="#"><input type="submit" value="Ieškoti"></a>
     </div>
 
@@ -46,7 +49,10 @@
 
 @if($category->getFacilitiesCategories()->count() > 0)
     <div class="paslaugu-sarasas facilities-{{ $category->id }}">
-        <h3>{{ strtoupper($category->name_plural) }}</h3>
+        <div class="header-of-headers">
+            <h3>{{ strtoupper($category->name_plural) }}</h3>
+            <span>X</span>
+        </div>
         <div class="sarasas-wrapper">
             @foreach($category->getFacilitiesCategories()->get() as $fc)
                 <div class="sarasas-container">
@@ -69,7 +75,7 @@
     <div class="paslaugu-sarasas facilities-{{ $category->id }}">
         <div class="header-of-headers">
             <h3>{{ strtoupper($category->name_plural) }}</h3>
-            <span>Uždaryti</span>
+            <span>X</span>
         </div>
         <div class="sarasas-wrapper">
             <div class="sarasas-container">

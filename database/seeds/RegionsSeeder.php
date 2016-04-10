@@ -16,16 +16,16 @@ class RegionsSeeder extends Seeder
         DB::table('regions')->delete();
 
         $regions = [
-            'vilnius' => 'Vilnius',
-            'kaunas' => 'Kaunas',
-            'siauliai' => 'Šiauliai',
-            'klaipeda' => 'Klaipėda',
-            'panevezys' => 'Panevežys',
-            'utena' => 'Utena',
-            'alytus' => 'Alytus',
-            'telsiai' => 'Telšiai',
-            'marijampole' => 'Marijampolė',
-            'taurage' => 'Tauragė',
+            'vilnius' => 'Vilniaus',
+            'kaunas' => 'Kauno',
+            'siauliai' => 'Šiaulių',
+            'klaipeda' => 'Klaipėdos',
+            'panevezys' => 'Panevėžio',
+            'utena' => 'Utenos',
+            'alytus' => 'Alytaus',
+            'telsiai' => 'Telšių',
+            'marijampole' => 'Marijampolės',
+            'taurage' => 'Tauragės',
         ];
 
         foreach($regions as $slug => $name) {

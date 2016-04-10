@@ -2,7 +2,7 @@
 @section('content')
     @include('frontend.navigation')
     @include('flash::message')
-    <div class="main-container">
+    <div class="main-container filtras">
 
         <div class="main-header">
             <p>Registracija</p>
@@ -173,7 +173,10 @@
             @foreach($categories as $category)
                 @if($category->getFacilitiesCategories()->count() > 0)
                     <div class="paslaugu-sarasas facilities-{{ $category->id }}">
-                        <h3>{{ strtoupper($category->name_plural) }}</h3>
+                        <div class="header-of-headers">
+                            <h3>{{ strtoupper($category->name_plural) }}</h3>
+                            <span>X</span>
+                        </div>
                         <div class="sarasas-wrapper">
                             @foreach($category->getFacilitiesCategories()->get() as $fc)
                                 <div class="sarasas-container">
@@ -194,7 +197,7 @@
                     <div class="paslaugu-sarasas facilities-{{ $category->id }}">
                         <div class="header-of-headers">
                             <h3>{{ strtoupper($category->name_plural) }}</h3>
-                            <span>Uždaryti</span>
+                            <span>X</span>
                         </div>
                         <div class="sarasas-wrapper">
                             <div class="sarasas-container">

@@ -86,7 +86,9 @@
                 Musu tikslas - taupyti Jusu laika ir suteikti greita ir patogia Jus dominancia informacija.
                 Puslapyje rasite: grožio salonu, sporto klubu, spa centru, tatuiruociu salonu, kosmetologijos bei odontologijos
                 kabinetu informacija bei teikiamas paslaugas. </p>
-            <p class="skaityti-daugiau">Skaityti daugiau</p>
+            <a href="{{ action('FrontendController@aboutus') }}">
+                <p class="skaityti-daugiau">Skaityti daugiau</p>
+            </a>
         </div>
     </div>
 </div>
@@ -129,7 +131,7 @@
 <div class="paslaugu-sarasas miesteliu-sarasas">
     <div class="header-of-headers">
         <h3>MIESTELIAI</h3>
-        <span>Uždaryti</span>
+        <span>X</span>
     </div>
     <div class="sarasas-wrapper">
         <div class="nano sarasas-container">

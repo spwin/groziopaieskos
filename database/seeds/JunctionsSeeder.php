@@ -36,7 +36,7 @@ class JunctionsSeeder extends Seeder
                 'naujoji_vilnia' => 'Naujoji Vilnia',
                 'paneriai' => 'Paneriai',
                 'naujininkai' => 'Naujininkai',
-                'rasai' => 'Rasai'
+                'rasos' => 'Rasos'
             ],
             'kaunas-miestas' => [
                 'sanciu' => 'Šančių',

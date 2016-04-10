@@ -2,7 +2,7 @@
 @section('content')
     @include('frontend.navigation')
     @include('flash::message')
-    <div class="main-container">
+    <div class="main-container filtras">
 
         <div class="main-header">
             <p>Registracija</p>
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="second-form-line">
-                    <div class="inputs-block">
+
                     <div class="inputs">
                         {!! Form::label('region', 'Apskritis') !!}
                         {!! Form::select('region', $regions, null, ['required' => 'required']) !!}
@@ -72,6 +72,7 @@
                         {!! Form::label('place', 'Miestas') !!}
                         {!! Form::text('place', null, ['id' => 'q', 'required' => 'required']) !!}
                     </div>
+                    <span class="inputs-block">
                     <div class="inputs inputs-adresas">
                         {!! Form::label('address', 'Adresas') !!}
                         {!! Form::text('address', null, ['required' => 'required']) !!}
@@ -92,7 +93,7 @@
                         {!! Form::label('website', 'Internetinis puslapis') !!}
                         {!! Form::text('website', null, ['required' => 'required']) !!}
                     </div>
-                    </div>
+                    </span>
                     <div class="darbo-laikas">
                         <p>Darbo Laikas:</p>
 
@@ -171,13 +172,16 @@
             <div class="taisykles-input">
                 <input id="taisykles-input" type="checkbox" name="taisykles-input">
                 <label for="taisykles-input"><span></span>Sutinku su šiuo puslapio </label> <a style="font-weight: 700;" href="http://www.failed.lt/upload/image/preview/2012-08-18_04.jpg"> taisyklėmis</a>
+                <p class="litred kategorijos-error">Pasirinkite veiklos sritį </p>
                 <input type="submit" value="Siųsti užklausą">
             </div>
                 @foreach($categories as $category)
                     @if($category->getFacilitiesCategories()->count() > 0)
                     <div class="paslaugu-sarasas facilities-{{ $category->id }}">
-                        <h3>{{ strtoupper($category->name_plural) }}</h3>
-                        <div class="sarasas-wrapper">
+                        <div class="header-of-headers">
+                            <h3>{{ strtoupper($category->name_plural) }}</h3>
+                            <span>X</span>
+                        </div>
                         @foreach($category->getFacilitiesCategories()->get() as $fc)
                             <div class="sarasas-container">
                                 <div class="image-header">
@@ -197,7 +201,7 @@
                         <div class="paslaugu-sarasas facilities-{{ $category->id }}">
                             <div class="header-of-headers">
                                 <h3>{{ strtoupper($category->name_plural) }}</h3>
-                                <span>Uždaryti</span>
+                                <span>X</span>
                             </div>
                             <div class="sarasas-wrapper">
                                 <div class="sarasas-container">
@@ -231,7 +235,7 @@
                         output += '<option value="'+index+'">'+value+'</option>';
                     });
                     output += '</select></div>';
-                    $('.inputs-block').append(output);
+                    $('.inputs-block').prepend(output);
                 } else {
                     $('.junctions-input').remove();
                 }

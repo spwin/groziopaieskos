@@ -23,7 +23,7 @@ Route::get('imones/{region}/{city}/{category}', 'FrontendController@service');
 Route::get('tooltip/{city}', 'FrontendController@tooltip');
 Route::get('tooltip/junction/{city}', 'FrontendController@tooltipJunction');
 Route::get('apie-imone/{id}/{slug}', 'FrontendController@about');
-
+Route::get('apie-mus/', 'FrontendController@aboutus');
 // BACKEND
 
 Route::get('login', 'Auth\AuthController@getLogin');
