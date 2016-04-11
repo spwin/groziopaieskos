@@ -59,6 +59,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     });
 
     Route::resource('organizations', 'OrganizationsController');
-    Route::get('organizations/{id}/approve/{approve}', 'OrganizationsController@approve');
+    Route::post('organizations/{id}/approve', 'OrganizationsController@approve');
 
 });

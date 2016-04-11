@@ -32,8 +32,8 @@
                     <img class="salonas-icon" src="{{ URL::to('/') }}/uploads/{{ $category->image }}" alt="grozio salonai icon">
                 </div>
                 <div class="hover-button-text">
-                    <p>{{ $category->getOrganizations()->where(['type' => 'imone'])->count() }} įmonės</p>
-                    <p>{{ $category->getOrganizations()->where(['type' => 'asmuo'])->count() }} fiziniai asmenys</p>
+                    <p>{{ $category->getOrganizations()->where(['type' => 'imone', 'approved' => 1])->count() }} įmonės</p>
+                    <p>{{ $category->getOrganizations()->where(['type' => 'asmuo', 'approved' => 1])->count() }} fiziniai asmenys</p>
                 </div>
                 <ul class="city-list">
                     <li>MIESTAS</li>
@@ -63,8 +63,8 @@
                     <img src="{{ URL::to('/') }}/img/header-icons/miestai/{{ $region->slug }}.png" alt="{{ $region->slug }} icon">
                 </div>
                 <div class="hover-button-text">
-                    <p>{{ $region->getCities()->join('organizations', 'cities.id', '=', 'organizations.city_id')->where(['organizations.type' => 'imone'])->count() }} įmonės</p>
-                    <p>{{ $region->getCities()->join('organizations', 'cities.id', '=', 'organizations.city_id')->where(['organizations.type' => 'asmuo'])->count() }} fiziniai asmenys</p>
+                    <p>{{ $region->getCities()->join('organizations', 'cities.id', '=', 'organizations.city_id')->where(['organizations.type' => 'imone', 'organizations.approved' => 1])->count() }} įmonės</p>
+                    <p>{{ $region->getCities()->join('organizations', 'cities.id', '=', 'organizations.city_id')->where(['organizations.type' => 'asmuo', 'organizations.approved' => 1])->count() }} fiziniai asmenys</p>
                 </div>
                 </a>
                 <ul class="city-list">

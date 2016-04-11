@@ -18,6 +18,7 @@
             <th>Category</th>
             <th>WEB</th>
             <th>Email</th>
+            <th>Address</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -31,12 +32,25 @@
                 <td>{{ $organization->getCategory()->first()->name_plural }}</td>
                 <td>{{ $organization->getOrganizationData()->first()->website }}</td>
                 <td>{{ $organization->email }}</td>
+                {!! Form::open([
+                    'method' => 'POST',
+                    'action' => ['OrganizationsController@approve', $organization->id],
+                    'class' => 'inline-block'
+                    ]) !!}
+                <td>
+                    {!! Form::text('place', $organization->place, ['class' => 'autocomplete-field']) !!}
+                </td>
                 <td>
                     @if($organization->approved)
-                        <a href="{{ action('OrganizationsController@approve', ['id' => $organization->id, 'approved' => 0]) }}" class="btn btn-xs btn-warning">Slepti</a>
+                        {!! Form::hidden('approved', 0) !!}
+                        <button type="submit" href="{{ action('OrganizationsController@approve', ['id' => $organization->id]) }}" class="btn btn-xs btn-warning">Slepti</button>
                     @else
-                        <a href="{{ action('OrganizationsController@approve', ['id' => $organization->id, 'approved' => 1]) }}" class="btn btn-xs btn-success">Patvirtinti</a>
+                        {!! Form::hidden('approved', 1) !!}
+                        <button type="submit" href="{{ action('OrganizationsController@approve', ['id' => $organization->id]) }}" class="btn btn-xs btn-success">Patvirtinti</button>
                     @endif
+                </td>
+                {!! Form::close() !!}
+                <td>
                     <a href="{{ action('OrganizationsController@edit', $organization->id) }}" class="btn btn-xs btn-primary">Keisti</a>
                     {!! Form::open([
                     'method' => 'DELETE',
@@ -52,3 +66,18 @@
         </tbody>
     </table>
 @endsection
+@push('scripts')
+<script type="text/javascript">
+    $(document).on('ready', function(){
+        $( ".autocomplete-field").each(function(){
+            $(this).autocomplete({
+                source: "{{ URL::to('/') }}/search/autocomplete",
+                minLength: 3,
+                select: function(event, ui) {
+                    $(this).val(ui.item.value);
+                }
+        });
+        });
+    });
+</script>
+@endpush

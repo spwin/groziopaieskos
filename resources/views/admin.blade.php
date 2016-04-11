@@ -13,7 +13,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::to('/') }}/css/admin.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="{{ URL::to('/') }}/js/libraries.js"></script>
+    <script src="{{ URL::to('/') }}/js/frontend.js"></script>
     <script src="{{ URL::to('/') }}/js/bootstrap.min.js"></script>
 
 </head>
@@ -25,5 +26,6 @@
     @yield('content')
 
 </div> <!-- /container -->
+@stack('scripts')
 </body>
 </html>

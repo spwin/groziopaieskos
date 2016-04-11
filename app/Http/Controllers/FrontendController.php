@@ -35,10 +35,11 @@ class FrontendController extends Controller
         $type = 'search';
         $query = array_key_exists('query', $input) ? $input['query'] : '';
         $city_db = Cities::with('getRegion')->where(['slug' => 'vilnius'])->first();
-        $organizations = Organization::with(['getCategory', 'getFacilities', 'getOpeningTimes', 'getOrganizationData'])
+        $organizations = Organization::select('cities.*', 'organization_data.*', 'regions.*', 'categories.*', 'organizations.*')
+            ->with(['getCategory', 'getFacilities', 'getOpeningTimes', 'getOrganizationData'])
             ->join('cities', 'organizations.city_id', '=', 'cities.id')
             ->join('organization_data', 'organizations.organization_data_id', '=', 'organization_data.id')
-            ->join('junctions', 'cities.id', '=', 'junctions.city_id')
+            ->leftJoin('junctions', 'cities.id', '=', 'junctions.city_id')
             ->join('regions', 'cities.region_id', '=', 'regions.id')
             ->join('categories', 'organizations.category_id', '=', 'categories.id')
             ->where(function ($organizations) {
@@ -58,6 +59,7 @@ class FrontendController extends Controller
                         });
                 }
             })
+            ->where('organizations.approved', '=', 1)
             ->groupBy('organizations.id')->get();
         return view('frontend.results')->with([
             'organizations' => $organizations,
@@ -89,7 +91,7 @@ class FrontendController extends Controller
         $junctions_db = Junctions::all();
         $junctions = [];
         foreach($junctions_db as $junction){
-            $junctions[$junction->city_id][$junction->slug] = $junction->name;
+            $junctions[$junction->city_id][$junction->id] = $junction->name;
         }
         $regions = Regions::lists('name', 'id');
         $cities = Cities::lists('name', 'id');
@@ -178,7 +180,7 @@ class FrontendController extends Controller
             }
         }
         $organizations = Organization::with(['getCategory', 'getFacilities', 'getOpeningTimes', 'getOrganizationData'])
-            ->where(['organizations.category_id' => $input['category']])
+            ->where(['organizations.category_id' => $input['category'], 'organizations.approved' => 1])
             ->where($place)
             ->join('organizations_facilities', 'organizations.id', '=', 'organizations_facilities.organization_id')
             ->whereIn('organizations_facilities.facility_id', $facilities_array)
@@ -283,7 +285,7 @@ class FrontendController extends Controller
 
         // SAVE OPENING TIME
         $week = [];
-        foreach($input['open_time']as $dayName => $_ot){
+        foreach($input['open_time'] as $dayName => $_ot){
             $times = explode(' - ', (string) $_ot['time']);
             $data = [
                 'opened' => array_key_exists('open', $_ot) && $_ot['open'] == 'on' ? 1 : 0,
