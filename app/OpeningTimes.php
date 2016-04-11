@@ -11,7 +11,7 @@ class OpeningTimes extends Model
     ];
 
     public function getToday(){
-        $today = date('l', time());
+        $today = strtolower(date('l', time()));
         switch($today){
             case 'monday' :
                 $result = $this->getMonday();
