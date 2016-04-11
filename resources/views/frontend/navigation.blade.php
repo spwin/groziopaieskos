@@ -69,7 +69,7 @@
                 </a>
                 <ul class="city-list">
                     <li>MIESTELIAI</li>
-                    <li class="miesteliu-trigger">Ieškoti pagal<br> miestelį</li>
+                    <li class="miesteliu-trigger" data-name="{{ $region->id }}">Ieškoti pagal<br> miestelį</li>
                 </ul>
             </div>
         @endforeach
@@ -128,34 +128,26 @@
 
 <!-- Miesteliu sarasas -->
 
-<div class="paslaugu-sarasas miesteliu-sarasas">
-    <div class="header-of-headers">
-        <h3>MIESTELIAI</h3>
-        <span>X</span>
-    </div>
-    <div class="sarasas-wrapper">
-        <div class="nano sarasas-container">
-            <ul class="nano-content">
-                <li>Nemenčinė</li>
-                <li>Pabradė</li>
-                <li>Meškonys</li>
-                <li>Nemenčinė</li>
-                <li>Pabradė</li>
-                <li>Meškonys</li>
-                <li>Nemenčinė</li>
-                <li>Pabradė</li>
-                <li>Meškonys</li>
-                <li>Nemenčinė</li>
-                <li>Pabradė</li>
-                <li>Meškonys</li>
-                <li>Nemenčinė</li>
-                <li>Pabradė</li>
-                <li>Meškonys</li>
-                <li>Nemenčinė</li>
-                <li>Pabradė</li>
-                <li>Meškonys</li>
-            </ul>
+@foreach(Helper::regions() as $region)
+    <div class="paslaugu-sarasas miesteliu-sarasas sarasas-id-{{ $region->id }}">
+        <div class="header-of-headers">
+            <h3>MIESTELIAI</h3>
+            <span>X</span>
         </div>
+        <div class="sarasas-wrapper">
+            <div class="nano sarasas-container">
+                <ul class="nano-content">
+                    @foreach(
+                        $region->select('organizations.place')->join('cities', 'regions.id', '=', 'cities.region_id')
+                            ->join('organizations', 'cities.id', '=', 'organizations.city_id')
+                            ->where('organizations.approved', '=', 1)
+                            ->groupBy('organizations.place')->get() as $miestelis
+                    )
+                        <li>{{ $miestelis->place }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        <div class="patvirtinti">PATVIRTINTI</div>
     </div>
-    <div class="patvirtinti">PATVIRTINTI</div>
-</div>
+@endforeach
