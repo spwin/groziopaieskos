@@ -120,7 +120,7 @@
             </div>
             <div class="hover-button-text">
                 <p class="kontaktai-button-header">TELEFONAS</p>
-                <p>+370 6 7420316</p>
+                <p>{{ Helper::getContent('phone') }}</p>
             </div>
         </div>
     </div>

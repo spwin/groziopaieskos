@@ -2,12 +2,18 @@
 
 use App\Categories;
 use \App\Regions;
+use \App\Content;
 
 class Helper{
 
     public static function categories(){
         $categories = Categories::with('getOrganizations')->get();
         return $categories;
+    }
+
+    public static function getContent($key){
+        $content = Content::where(['key' => $key])->first();
+        return $content ? $content->content : '';
     }
 
     public static function regions(){

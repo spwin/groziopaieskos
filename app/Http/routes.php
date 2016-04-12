@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::resource('categories', 'CategoriesController');
     Route::resource('facilities-categories', 'FacilitiesCategoriesController');
+    Route::resource('content', 'ContentController');
 
     Route::group(['prefix' => 'categories'], function () {
 
