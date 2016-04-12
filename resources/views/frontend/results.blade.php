@@ -28,14 +28,18 @@
                     var latlngbounds = new google.maps.LatLngBounds();
                     var $set = $('.adresas-mapsui');
                     var len = $set.length;
+                    var green_icon = '{{ URL::to('/') }}/uploads/dirba.png';
+                    var red_icon = '{{ URL::to('/') }}/uploads/nedirba.png';
                     $('.adresas-mapsui').each(function(index, geocoder, n){
                         var geocoder = new google.maps.Geocoder();
                         var address = this.innerHTML;
                         var salono_kategorija = $(this).closest('.left-side').find('.name-details h4').html();
                         var salono_pavadinimas = $(this).closest('.left-side').find('.name-details h3').html();
+                        var dirba_nedirba = $(this).closest('.left-side').find('.name-details p');
                         var result = $(this).closest('.vienas-rezultatas');
                         var rezultato_id = $(this).closest('.vienas-rezultatas').attr('id');
                         var id_for_scroll = '#' + rezultato_id + ' ';
+                        console.log(dirba_nedirba);
 
 
                         geocoder.geocode({'address': address}, function(results, status) {
@@ -43,11 +47,23 @@
                             if (status === google.maps.GeocoderStatus.OK) {
                                 var lat = results[0].geometry.location.lat();
                                 var lng = results[0].geometry.location.lng();
-                                var marker = new google.maps.Marker({
-                                    position: {lat: lat, lng: lng},
-                                    animation: google.maps.Animation.DROP,
-                                    map: map
-                                });
+
+                                if ( dirba_nedirba.css('color') === 'rgb(0, 128, 0)' || dirba_nedirba.css('color') === 'green' ) {
+                                    var marker = new google.maps.Marker({
+                                        position: {lat: lat, lng: lng},
+                                        animation: google.maps.Animation.DROP,
+                                        map: map,
+                                        icon: green_icon
+                                    });
+                                } else {
+                                    var marker = new google.maps.Marker({
+                                        position: {lat: lat, lng: lng},
+                                        animation: google.maps.Animation.DROP,
+                                        map: map,
+                                        icon: red_icon
+                                    });
+                                }
+
 
                                 var positioner = new google.maps.LatLng(lat, lng);
                                 LatLngList.push(positioner);
