@@ -60,6 +60,7 @@ class FrontendController extends Controller
                             ->orWhere('junctions.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
                             ->orWhere('regions.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
                             ->orWhere('organizations.place', 'LIKE', '%'.($word ? $word : 'unknown').'%')
+                            ->orWhere('organizations.address', 'LIKE', '%'.($word ? $word : 'unknown').'%')
                             ->orWhere('organization_data.name', 'LIKE', '%'.($word ? $word : 'unknown').'%')
                             ->orWhere('organization_data.pavarde', 'LIKE', '%'.($word ? $word : 'unknown').'%');
                         });

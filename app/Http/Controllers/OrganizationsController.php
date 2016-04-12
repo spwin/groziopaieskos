@@ -66,7 +66,6 @@ class OrganizationsController extends Controller
             'address' => $input['address'],
             'email' => $input['email'],
             'place' => $input['place'],
-            'approved' => 0,
             'type' => $input['type'],
             'description' => $input['description'],
             'category_id' => $input['category'],
