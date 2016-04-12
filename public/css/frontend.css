@@ -3179,7 +3179,9 @@ div.alert.alert-info button {
     -ms-flex-direction: column;
     flex-direction: column; }
     .main-container.kontaktai-page .hover-container .hover-button {
-      width: 100%; } }
+      width: 100%; }
+  .main-container .mikrorajonu-sidebar .sidebar-icons {
+    width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */
 
