@@ -29,6 +29,12 @@ class FrontendController extends Controller
     public function aboutus(){
         return view('frontend.aboutus');
     }
+    public function kontaktai(){
+        return view('frontend.kontaktai');
+    }
+    public function taisykles(){
+        return view('frontend.taisykles');
+    }
 
     public function search(){
         $input = Input::all();

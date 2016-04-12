@@ -123,10 +123,32 @@
             </map>
         </div>
 
-        <div class="main-header">
+        <div class="main-header top-header">
             <p>Pasirinkite miestą<span class="line-break"> apskritį arba teritoriją</span></p>
         </div>
 
+        <!--  MOBILE MAIN  -->
+        <div class="hover-menu miestai-menu mobile-main">
+            <div class="hover-container">
+                @foreach(Helper::regions() as $region)
+                    <div class="hover-button">
+                        <a href="{{ action('FrontendController@region', ['region' => $region->slug]) }}">
+                            <div class="hover-button-header">
+                                {{ $region->name }}
+                            </div>
+                            <div class="hover-button-image">
+                                <img src="{{ URL::to('/') }}/img/regions/{{ $region->slug }}-map.png" alt="{{ $region->slug }} icon">
+                            </div>
+                            <div class="hover-button-text">
+                                <p>{{ $region->getCities()->join('organizations', 'cities.id', '=', 'organizations.city_id')->where(['organizations.type' => 'imone', 'organizations.approved' => 1])->count() }} įmonės</p>
+                                <p>{{ $region->getCities()->join('organizations', 'cities.id', '=', 'organizations.city_id')->where(['organizations.type' => 'asmuo', 'organizations.approved' => 1])->count() }} fiziniai asmenys</p>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        <!--  MOBILE MAIN END -->
         <div class="main-header main-paieska">
             <p>arba<span class="line-break"> pasinaudokite paieška</span></p>
 

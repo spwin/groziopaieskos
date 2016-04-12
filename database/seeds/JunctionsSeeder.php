@@ -39,23 +39,30 @@ class JunctionsSeeder extends Seeder
                 'rasos' => 'Rasos'
             ],
             'kaunas-miestas' => [
-                'sanciu' => 'Šančių',
-                'centro' => 'Centro',
-                'aleksoto' => 'Aleksoto',
-                'griciupio' => 'Gričiupio',
-                'zaliakalnio' => 'Žaliakalnio',
-                'petrasiunu' => 'Petrašiūnų',
-                'dainavos' => 'Dainavos',
-                'vilijampoles' => 'Vilijampolės',
-                'eiguliu' => 'Eigulių',
-                'silainiu' => 'Šilainių',
-                'panemunes' => 'Panemunės'
+                'sanciu' => 'Šančiai',
+                'centro' => 'Centras',
+                'aleksoto' => 'Aleksotas',
+                'zaliakalnio' => 'Žaliakalnis',
+                'petrasiunu' => 'Petrašiūnai',
+                'dainavos' => 'Dainava',
+                'vilijampoles' => 'Vilijampolė',
+                'eiguliu' => 'Eiguliai',
+                'silainiu' => 'Šilainiai',
+                'panemunes' => 'Panemunė'
             ],
             'klaipeda-miestas' => [
-                'danes' => 'Danės',
-                'baltijos' => 'Baltijos',
-                'mariu' => 'Marių',
-                'pajurio' => 'Pajūrio'
+                'tauralaukis' => 'Tauralaukis',
+                'lypkiai' => 'Lypkiai',
+                'sendvaris' => 'Sendvaris',
+                'luize' => 'Luizė',
+                'rumpiskes' => 'Rumpiškės',
+                'labrenciskes' => 'Labrenciškės',
+                'smelte' => 'Smeltė',
+                'gedminai' => 'Gedminai',
+                'centras' => 'Centras',
+                'zarde' => 'Žardė',
+                'melnrage' => 'Melnragė',
+                'smiltyne' => 'Smiltynė'
             ]
         ];
 

@@ -23,7 +23,7 @@
                 'files' => true,
                 'method' => ''
                 ]) !!}
-                <p>Vartotojas</p>
+                <p class="align-center">Vartotojas</p>
 
                 <div class="first-form-line">
                     <div class="inputs">
@@ -42,7 +42,7 @@
 
                 <div class="registracija-veikla">
 
-                    <p>Veikla</p>
+                    <p class="align-center">Veikla</p>
                     <p class="litred">Turite pasirinkti veiklos sritį! </p>
                     <div class="sidebar-icons">
                         @foreach($categories as $category)
@@ -171,7 +171,7 @@
                 </div>
             <div class="taisykles-input">
                 <input id="taisykles-input" type="checkbox" name="taisykles-input">
-                <label for="taisykles-input"><span></span>Sutinku su šiuo puslapio </label> <a style="font-weight: 700;" href="http://www.failed.lt/upload/image/preview/2012-08-18_04.jpg"> taisyklėmis</a>
+                <label for="taisykles-input"><span></span>Sutinku su šiuo puslapio </label> <a style="font-weight: 700;" href="{{ action('FrontendController@taisykles') }}"> taisyklėmis</a>
                 <p class="litred kategorijos-error">Pasirinkite veiklos sritį </p>
                 <input type="submit" value="Siųsti užklausą">
             </div>
