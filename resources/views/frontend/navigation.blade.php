@@ -5,8 +5,8 @@
         <ul class="menu-list">
             <li id="miestai">Miestai</li>
             <li id="paslaugos">Paslaugos</li>
-            <li id="apiemus">Apie mus</li>
-            <li id="kontaktai">Kontaktai</li>
+            <li id="apiemus"><a href="{{ action('FrontendController@aboutus') }}">Apie mus</a></li>
+            <li id="kontaktai"><a href="{{ action('FrontendController@kontaktai') }}">Kontaktai</a></li>
         </ul>
 
         <div class="header-contacts-button">

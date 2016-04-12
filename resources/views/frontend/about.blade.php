@@ -2,7 +2,7 @@
 @section('content')
     @include('frontend.navigation')
     @include('flash::message')
-    <div class="main-container">
+    <div class="main-container apie-imone-page">
         <div class="apie-imone">
             <div class="main-header">
                 <p>{{ $organization->title }}<span class="line-break">{{ $organization->getCategory()->first()->name_plural }}</span></p>

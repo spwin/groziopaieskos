@@ -1460,4 +1460,366 @@ div.alert.alert-info {
   }
 }
 
+.mikrorajonu-sidebar.single-filter .background-color-selected,
+.main-container .mikrorajonu-sidebar.single-filter .sidebar-icons .sidebar-icon .icon-image:hover {
+  background: transparent;
+}
+.hover-menu.miestai-menu.mobile-main {
+  display: none;
+}
+.apskritis-header {
+  font-size:25px;
+  width:250px;
+}
+/****************** MOBILE ***************/
+
+@media screen and (max-width: 1000px) {
+
+  .main-map {
+    display: none;
+  }
+  .main-container.main-page {
+    flex-direction: column;
+  }
+  .main-container .main-header {
+    position: initial;
+  }
+  .qtip {
+    display: none !important;
+  }
+  .main-container.region-page {
+    .main-header {
+      display: none;
+    }
+  }
+
+  .main-container {
+    .main-header.top-header {
+      text-align: center;
+      margin-top: 10px;
+        p .line-break {
+          font-size: 30px;
+        }
+    }
+
+    .main-header.main-paieska {
+      text-align: center;
+        input {
+          border-radius: 30px;
+        }
+      input[type=submit] {
+        text-align: center;
+        margin-top: 10px;
+      }
+      input[type=search] {
+        max-width: 290px;
+        width: 95%;
+      }
+    }
+  }
+
+  .hover-menu.miestai-menu.mobile-main {
+    position: initial;
+    display: block;
+    width: 100%;
+    background: transparent;
+      .hover-container {
+        width: 100%;
+        margin: initial;
+        flex-direction: column;
+          .hover-button {
+            width:100%;
+            max-width: none;
+            border-top: 1px solid white;
+            .hover-button-header {
+              height: 60px;
+              line-height: 60px;
+              font-size: 40px;
+            }
+            .hover-button-image {
+              height: auto;
+              line-height: auto;
+              img {
+                  width: 60%;
+                  opacity: 1;
+              }
+            }
+            .hover-button-text {
+              p {
+                font-size: 31px;
+              }
+            }
+          }
+
+      }
+
+  }
+
+  header {
+    background-color: #18313f;
+  }
+
+  header .header-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+      .logo {
+        width: 90%;
+        max-width: none;
+        margin:0;
+        margin-top: 25px;
+      }
+    .menu-list {
+      display: flex;
+      justify-content: space-around;
+      width: auto;
+      font-size: 6vmin;
+      margin-top: 20px;
+
+        li {
+          padding: 2%;
+        }
+
+        li:first-child,
+        li:nth-child(2) {
+          display: none;
+        }
+        li:nth-child(3),
+        li:nth-child(4) {
+          border: 2px solid white;
+        }
+    }
+
+    .header-contacts-button {
+      width: auto;
+      text-align: center;
+
+        p {
+          font-size: 5vmin;
+        }
+
+        .header-button {
+          margin: 0 auto;
+          height: 38px;
+          line-height: 38px;
+          border-radius: 50px;
+          margin-bottom: -18px;
+          margin-top: 15px;
+          font-size: 27px;
+          max-width: 263px;
+          width: 81%;
+        }
+    }
+  }
+
+  .main-container.region-page {
+    height: auto;
+      ul.mikrorajonai {
+        position: initial;
+        height: auto;
+        column-count: 1;
+        text-align: center;
+
+        margin: 0 auto;
+
+          li {
+            height: 50px;
+            font-size: 25px;
+            line-height: 50px;
+            border-top: 1px solid white;
+          }
+          li:last-child {
+            border-bottom: 1px solid white;
+          }
+          li:first-child {
+            margin-top: 15px;
+          }
+      }
+      .apskritis-header {
+        margin-bottom: 25px;
+        font-size: 30px;
+      }
+  }
+
+  .main-container.filtras {
+    
+    .vilnius-map,
+    .klaipeda-map {
+      display: none;
+    }
+    
+    .pasirinkite {
+      margin-bottom: 20px;
+      .fleft {
+        float: none;
+      }
+      .fright {
+        display: none;
+      }
+    }
+
+    ul.mikrorajonai {
+      position: initial;
+      height: auto;
+      column-count: 1;
+      margin: 0 auto;
+      width: 60%;
+
+        li {
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          border-top: 1px solid white;
+        }
+        li:last-child {
+          border-bottom: 1px solid white;
+        }
+    }
+
+    .mikrorajonu-sidebar {
+      width: auto;
+      position: initial;
+
+        .search-clues {
+          width: 100%;
+          margin: 0 auto;
+          float: none;
+        }
+
+    }
+  }
+
+  .main-container.search-results-page {
+
+    .left-column {
+      display: none;
+    }
+
+    .right-column {
+      float: none;
+      width: 100%;
+      text-align: left;
+
+        .rezultatai-header {
+          width:100%;
+          float: none;
+        }
+
+        .rezultatu-sarasas {
+          width: 100%;
+        }
+    }
+  }
+
+  .form-container {
+    textarea {
+      width: 100%;
+    }
+  }
+
+  .main-container {
+    .main-header {
+      text-align: center;
+      .registracija-button {
+        max-width: 350px;
+        margin: 10px auto;
+      }
+    }
+    .form-container {
+      .align-center {
+        text-align: center;
+      }
+      div.darbo-laikas {
+        div.diena {
+          width: auto;
+        }
+      }
+
+      .sidebar-icons {
+        justify-content: center;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        .sidebar-icon {
+          width: 89px;
+        }
+      }
+    }
+
+    .registracija-form {
+      .first-form-line {
+        width: 100%;
+        text-align: center;
+      }
+      .second-form-line {
+        text-align: center;
+      }
+    }
+  }
+
+  .main-container.apie-imone-page {
+    .apie-imone {
+
+      .imone-container {
+        height: auto;
+        padding: 0;
+
+        .left-side {
+          width: 100%;
+          .top-left-side {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+
+            .name-details {
+              text-align: center;
+            }
+            .imone-checkboxes {
+              width: 100%;
+            }
+
+          }
+          .logo-cont {
+            margin: 0 auto;
+            margin-top: 20px;
+          }
+          .bottom-left-side {
+            padding: 10px;
+          }
+        }
+
+      }
+
+    }
+  }
+
+  div.about-us {
+    width: 100%;
+  }
+
+  .main-container.kontaktai-page {
+    .hover-menu {
+    background: transparent;
+      border-top: none;
+    }
+      .hover-container {
+        flex-direction: column;
+
+          .hover-button {
+            width: 100%;
+          }
+      }
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
 /*# sourceMappingURL=style.css.map */

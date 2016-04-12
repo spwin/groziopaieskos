@@ -4,7 +4,7 @@
     @include('flash::message')
     <div class="main-container region-page">
         <ul class="mikrorajonai">
-            <div style="font-size:25px;width:250px;">{{ $region_db->name }} apskr.</div>
+            <div class="apskritis-header">{{ $region_db->name }} apskr.</div>
             @foreach($region_db->getCities()->get() as $city)
                 <li data-name="{{ $city->slug }}">{{ $city->name }}</li>
             @endforeach
@@ -22,8 +22,18 @@
 
         <div class="main-header main-paieska">
             <p>arba<span class="line-break"> pasinaudokite paieška</span></p>
-            <input type="search">
-            <a href="http://groziopaieskos.lt/test/pagal-mikrorajonus"><input type="submit" value="Ieškoti"></a>
+            {!! Form::open([
+                'action' => 'FrontendController@search',
+                'class' => 'pure-form pure-form-aligned',
+                'role' => 'form',
+                'method' => 'GET'
+                ]) !!}
+
+            {!! Form::input('search', 'query', null) !!}
+
+            {!! Form::submit('Ieškoti') !!}
+
+            {!! Form::close() !!}
         </div>
     </div>
 @endsection

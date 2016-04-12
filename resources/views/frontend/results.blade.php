@@ -2,7 +2,7 @@
 @section('content')
     @include('frontend.navigation')
     @include('flash::message')
-    <div class="main-container">
+    <div class="main-container search-results-page">
 
         {!! $type == 'search' ? '<h2>Paieška pagal "'.$query.'"</h2>' : '' !!}
 

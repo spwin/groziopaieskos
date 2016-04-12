@@ -24,6 +24,8 @@ Route::get('tooltip/{city}', 'FrontendController@tooltip');
 Route::get('tooltip/junction/{city}', 'FrontendController@tooltipJunction');
 Route::get('apie-imone/{id}/{slug}', 'FrontendController@about');
 Route::get('apie-mus/', 'FrontendController@aboutus');
+Route::get('kontaktai/', 'FrontendController@kontaktai');
+Route::get('taisykles/', 'FrontendController@taisykles');
 // BACKEND
 
 Route::get('login', 'Auth\AuthController@getLogin');

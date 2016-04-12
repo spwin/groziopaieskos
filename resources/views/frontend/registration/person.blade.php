@@ -166,7 +166,7 @@
 
             <div class="taisykles-input">
                 <input id="taisykles-input" type="checkbox" name="taisykles-input">
-                <label for="taisykles-input"><span></span>Sutinku su šiuo puslapio </label> <a style="font-weight: 700;" href="http://www.failed.lt/upload/image/preview/2012-08-18_04.jpg"> taisyklėmis</a>
+                <label for="taisykles-input"><span></span>Sutinku su šiuo puslapio </label> <a style="font-weight: 700;" href="{{ action('FrontendController@taisykles') }}"> taisyklėmis</a>
                 <input type="submit" value="Siųsti užklausą">
             </div>
 

@@ -21,6 +21,8 @@ jQuery( document ).ready(function($){
 
     /********** HOVER MENU VISIBLE ************/
 
+    if ($(window).width() > 1000 ) {
+
     $('#miestai, #c').mouseover(function(){
         $('#c').show();
         $('header').css('background-color', 'rgba(0,0,0,0.8)');
@@ -66,6 +68,19 @@ jQuery( document ).ready(function($){
         $('#apiemus').css('border-bottom', '3px solid transparent');
     })
 
+    }
+
+    if ($(window).width() < 1000 ) {
+        $('.main-header.main-paieska p').html('Pasinaudokite paieška');
+        $('.main-header.top-header p').html('arba <span class="line-break">pasirinkite apskritį</span>');
+        $('.main-header.main-paieska').insertBefore('.main-header.top-header');
+
+        $('.main-container.filtras .mikrorajonai li').on('click', function(){
+            $('.main-container.filtras .mikrorajonai li').css('background-color', 'transparent');
+            $(this).css('background-color', '#18313f');
+        });
+
+    }
 
     $(".hover-button").hover(function() {
         $(this).toggleClass("hovered-button");
