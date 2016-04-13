@@ -180,4 +180,11 @@ class OrganizationsController extends Controller
         return Redirect::back();
     }
 
+    public function destroy($id){
+        $organization = Organization::findOrFail($id);
+        $organization->delete();
+        Flash::success('organization deleted!');
+        return Redirect::action('OrganizationsController@index');
+    }
+
 }
