@@ -2962,7 +2962,8 @@ div.alert.alert-info button {
   .main-container.main-page {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    flex-direction: column; }
+    flex-direction: column;
+    height: auto; }
   .main-container .main-header {
     position: relative; }
   .qtip {
@@ -2976,7 +2977,9 @@ div.alert.alert-info button {
       font-size: 30px; }
   .main-container .main-header.main-paieska {
     text-align: center;
-    bottom: auto; }
+    bottom: initial;
+    top: initial;
+    height: 160px; }
     .main-container .main-header.main-paieska input {
       border-radius: 30px; }
     .main-container .main-header.main-paieska input[type=submit] {
@@ -3198,6 +3201,9 @@ div.alert.alert-info button {
   background: transparent;
   border: none;
   z-index: 0; }
+
+.main-container .imone-container .left-side .logo-cont img {
+  max-height: 94%; }
 
 /*# sourceMappingURL=style.css.map */
 
