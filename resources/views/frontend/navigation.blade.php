@@ -102,7 +102,7 @@
             </div>
             <div class="hover-button-text">
                 <p class="kontaktai-button-header">ADRESAS</p>
-                <p>Namas 7, rajonas, miestas<br>Lietuva, LT154872</p>
+                <p>{{ Helper::getContent('adresas') }}</p>
             </div>
         </div>
         <div class="hover-button">
@@ -111,7 +111,7 @@
             </div>
             <div class="hover-button-text">
                 <p class="kontaktai-button-header">EL. PAŠTAS</p>
-                <p>info@groziopaieskos.lt</p>
+                <p>{{ Helper::getContent('email') }}</p>
             </div>
         </div>
         <div class="hover-button">
@@ -148,6 +148,5 @@
                 </ul>
             </div>
         </div>
-        <div class="patvirtinti">PATVIRTINTI</div>
     </div>
 @endforeach

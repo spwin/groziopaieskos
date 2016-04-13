@@ -2964,7 +2964,7 @@ div.alert.alert-info button {
     -ms-flex-direction: column;
     flex-direction: column; }
   .main-container .main-header {
-    position: initial; }
+    position: relative; }
   .qtip {
     display: none !important; }
   .main-container.region-page .main-header {
@@ -2975,7 +2975,8 @@ div.alert.alert-info button {
     .main-container .main-header.top-header p .line-break {
       font-size: 30px; }
   .main-container .main-header.main-paieska {
-    text-align: center; }
+    text-align: center;
+    bottom: auto; }
     .main-container .main-header.main-paieska input {
       border-radius: 30px; }
     .main-container .main-header.main-paieska input[type=submit] {
@@ -2985,7 +2986,7 @@ div.alert.alert-info button {
       max-width: 290px;
       width: 95%; }
   .hover-menu.miestai-menu.mobile-main {
-    position: initial;
+    position: relative;
     display: block;
     width: 100%;
     background: transparent; }
@@ -3062,13 +3063,13 @@ div.alert.alert-info button {
   .main-container.region-page {
     height: auto; }
     .main-container.region-page ul.mikrorajonai {
-      position: initial;
+      position: relative;
       height: auto;
       -webkit-column-count: 1;
       -moz-column-count: 1;
       column-count: 1;
       text-align: center;
-      margin: 0 auto; }
+      margin: 0 auto 20px; }
       .main-container.region-page ul.mikrorajonai li {
         height: 50px;
         font-size: 25px;
@@ -3181,7 +3182,22 @@ div.alert.alert-info button {
     .main-container.kontaktai-page .hover-container .hover-button {
       width: 100%; }
   .main-container .mikrorajonu-sidebar .sidebar-icons {
-    width: 100%; } }
+    width: 100%; }
+  .main-container.filtras .left-column {
+    display: none; }
+  .main-container .paslaugu-sarasas {
+    position: absolute; }
+    .main-container .paslaugu-sarasas .sarasas-wrapper {
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+  .hover-menu .hover-container .hover-button .hover-button-text p {
+    font-size: 18px; } }
+
+.main-container.kontaktai-page .hover-menu {
+  background: transparent;
+  border: none;
+  z-index: 0; }
 
 /*# sourceMappingURL=style.css.map */
 
