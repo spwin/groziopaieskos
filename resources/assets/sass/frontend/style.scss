@@ -542,7 +542,7 @@ header,
   font-size: 16px;
 }
 .main-container .right-column .rezultatu-sarasas .vienas-rezultatas .left-side{
-  width: auto;
+  width: 100%;
   font-size: 15px;
 }
 .main-container .right-column .rezultatu-sarasas .vienas-rezultatas .top-left-side{
@@ -593,7 +593,7 @@ header,
 .main-container .imone-container .left-side .top-left-side .imone-checkboxes {
   display: inline-block;
   height: 120px;
-  width: 42%;
+  width: 47%;
   position: relative;
   overflow-x: hidden;}
 .main-container .imone-container .left-side .top-left-side .imone-checkboxes input[type=checkbox] {
@@ -1058,7 +1058,7 @@ a {
 
   h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
     padding: 3px 0;
     background-color: #18313f;
@@ -1164,6 +1164,8 @@ li.darbo-laikas-about span {
   height: 15px;
   border-radius: 10px;
 }
+
+
 /************ RESPONSIVENESS *************/
 
 .main-container .imone-container .left-side {

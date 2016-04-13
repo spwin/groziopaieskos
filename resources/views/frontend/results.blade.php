@@ -19,8 +19,8 @@
                 function initMap() {
                     var map
                     map = new google.maps.Map(document.getElementById('gmap'), {
-                        zoom: 9,
-                        center: {lat: 54.705019, lng: 25.311632}
+                        zoom: 4,
+                        center: {lat: 55.360794, lng: 23.849720}
 
                     });
                     var latLng;
@@ -83,6 +83,7 @@
                                     for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
                                         latlngbounds.extend (LatLngList[i]);
                                     }
+                                    map.setCenter({lat: lat, lng: lng});
                                     map.fitBounds(latlngbounds);
                                 }
                             }
