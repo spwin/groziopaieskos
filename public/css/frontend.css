@@ -1752,7 +1752,7 @@ header,
   max-height: 500px; }
 
 .main-container.region-page .mikrorajonai {
-  top: 0; }
+  top: 34px; }
 
 .main-container .main-header {
   position: absolute;
@@ -2107,7 +2107,7 @@ header,
   height: 300px;
   margin-top: 10px;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.7); }
 
 .main-container .imone-container .left-side {
   width: 50%;
@@ -2775,7 +2775,8 @@ div.search-clues .nano {
   padding: 0 5px; }
 
 .taisykles-input {
-  float: right; }
+  float: right;
+  margin-bottom: 30px; }
 
 .miesteliu-sarasas {
   width: 50%;
@@ -2953,7 +2954,9 @@ div.alert.alert-info button {
 
 .apskritis-header {
   font-size: 25px;
-  width: 250px; }
+  width: 250px;
+  position: absolute;
+  top: 0; }
 
 /****************** MOBILE ***************/
 @media screen and (max-width: 1000px) {
@@ -3204,6 +3207,31 @@ div.alert.alert-info button {
 
 .main-container .imone-container .left-side .logo-cont img {
   max-height: 94%; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  color: gray;
+  z-index: 3; }
+  .footer p {
+    font-size: 16px;
+    margin: 0;
+    padding: 0; }
+  @media screen and (max-width: 1000px) {
+    .footer {
+      display: none; } }
+
+.paieska-pagal {
+  margin-top: 0;
+  font-size: 21px; }
+
+.main-container.search-results-page .left-column {
+  margin-top: 60px; }
 
 /*# sourceMappingURL=style.css.map */
 

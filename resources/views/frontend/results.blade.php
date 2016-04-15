@@ -4,23 +4,24 @@
     @include('flash::message')
     <div class="main-container search-results-page">
 
-        {!! $type == 'search' ? '<h2>Paieška pagal "'.$query.'"</h2>' : '' !!}
+        {!! $type == 'search' ? '<h2 class="paieska-pagal">Paieška pagal "'.$query.'"</h2>' : '' !!}
 
         <div class="left-column">
-
+<!--
             <div class="rusiavimas">
                 <p>Rūšiavimas:</p>
                 <div class="filter-button">ilgiausiai dirbančios</div>
                 <div class="filter-button">turinčios daugiausia procedūrų</div>
             </div>
-
+-->
 
             <script>
                 function initMap() {
                     var map
                     map = new google.maps.Map(document.getElementById('gmap'), {
-                        zoom: 4,
-                        center: {lat: 55.360794, lng: 23.849720}
+                        zoom: 7,
+                        center: {lat: 55.360794, lng: 23.849720},
+                        maxZoom: 18
 
                     });
                     var latLng;
@@ -39,7 +40,6 @@
                         var result = $(this).closest('.vienas-rezultatas');
                         var rezultato_id = $(this).closest('.vienas-rezultatas').attr('id');
                         var id_for_scroll = '#' + rezultato_id + ' ';
-                        console.log(dirba_nedirba);
 
 
                         geocoder.geocode({'address': address}, function(results, status) {
@@ -74,7 +74,7 @@
                                 google.maps.event.addListener(marker, 'click', function() {
                                     $('.gm-style-iw').parent().hide();
                                     infowindow.open(marker.get('map'), marker);
-                                    $('.vienas-rezultatas').css('opacity', '0.6');
+                                    $('.vienas-rezultatas').css('opacity', '0.5');
                                     $(result).css('opacity', '1');
                                     $(".nano").nanoScroller({ scrollTo: $(id_for_scroll) });
                                 });
@@ -139,7 +139,7 @@
                                     <div class="bottom-left-side">
                                         <ul>
                                             <li>Telefonas: {{ $organization->phone }}</li>
-                                            <li>Darbo laikas: {{ $organization->getOpeningTimes()->first()->getToday()->first()->from }} - {{ $organization->getOpeningTimes()->first()->getToday()->first()->to }}</li>
+                                            <li>Darbo laikas šiandien: {{ $organization->getOpeningTimes()->first()->getToday()->first()->from }} - {{ $organization->getOpeningTimes()->first()->getToday()->first()->to }}</li>
                                             <li>Darbo dienos:
                                                 <span style="display: inline-block; width: 15px; height: 15px; border-radius: 10px; background-color: {{ $organization->getOpeningTimes()->first()->getMonday()->first()->opened ? 'green' : 'red' }}"></span>
                                                 <span style="display: inline-block; width: 15px; height: 15px; border-radius: 10px; background-color: {{ $organization->getOpeningTimes()->first()->getTuesday()->first()->opened ? 'green' : 'red' }}"></span>

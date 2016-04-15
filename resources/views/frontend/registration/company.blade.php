@@ -91,7 +91,7 @@
                     </div>
                     <div class="inputs">
                         {!! Form::label('website', 'Internetinis puslapis') !!}
-                        {!! Form::text('website', null, ['required' => 'required']) !!}
+                        {!! Form::text('website', null) !!}
                     </div>
                     </span>
                     <div class="darbo-laikas">
@@ -170,7 +170,7 @@
 
                 </div>
             <div class="taisykles-input">
-                <input id="taisykles-input" type="checkbox" name="taisykles-input">
+                <input id="taisykles-input" type="checkbox" name="taisykles-input" required>
                 <label for="taisykles-input"><span></span>Sutinku su šiuo puslapio </label> <a style="font-weight: 700;" href="{{ action('FrontendController@taisykles') }}"> taisyklėmis</a>
                 <p class="litred kategorijos-error">Pasirinkite veiklos sritį </p>
                 <input type="submit" value="Siųsti užklausą">

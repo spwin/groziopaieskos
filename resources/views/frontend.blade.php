@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{ URL::to('/') }}/favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <title>Grožio paieškos</title>
 
     <link href="{{ URL::to('/') }}/css/jquery.qtip.min.css" rel="stylesheet">
@@ -24,7 +25,10 @@
 <div class="container">
 
     @yield('content')
-
+    <div class="footer">
+        <p>©UAB GIB 24, 2016</p>
+    </div>
 </div> <!-- /container -->
+
 </body>
 </html>

@@ -7,7 +7,7 @@
 <div class="mikrorajonu-sidebar single-filter">
 
     <div class="main-header">
-        <p>{{ $city_db->name }}<span class="line-break">{{ $category->name_plural }}</span></p>
+        <p><span class="line-break">{{ $category->name_plural }}</span></p>
     </div>
 
     <div class="sidebar-icons">

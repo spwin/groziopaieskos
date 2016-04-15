@@ -155,7 +155,7 @@ jQuery( document ).ready(function($){
 
     /************** CUSTOM SCROLLBAR **************/
 
-    $(".nano").nanoScroller();
+    $(".nano").nanoScroller({ alwaysVisible: true });
 
     /*** slider **/
 
@@ -376,8 +376,8 @@ function sliderOn7() {
         strokeColor: "000",
         strokeWidth: 1,
         fill: true,
-        fillColor: 'c9eafe',
-        fillOpacity: 0.4,
+        fillColor: '6DCACA',
+        fillOpacity: 0.6,
         onClick: function (data) {
             $('area').mapster('deselect');
         }

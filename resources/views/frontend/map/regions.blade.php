@@ -3,8 +3,9 @@
     @include('frontend.navigation')
     @include('flash::message')
     <div class="main-container region-page">
+        <div class="apskritis-header">{{ $region_db->name }} apskr.</div>
         <ul class="mikrorajonai">
-            <div class="apskritis-header">{{ $region_db->name }} apskr.</div>
+
             @foreach($region_db->getCities()->get() as $city)
                 <li data-name="{{ $city->slug }}">{{ $city->name }}</li>
             @endforeach
