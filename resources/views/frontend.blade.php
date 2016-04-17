@@ -8,7 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="{{ URL::to('/') }}/favicon.ico">
+    <!--
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    -->
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <title>Grožio paieškos</title>
 

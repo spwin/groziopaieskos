@@ -148,9 +148,10 @@ jQuery( document ).ready(function($){
     /******** Miesteliu sarasas toggle **************/
 
     $('.miesteliu-trigger').each(function() {
-       $(this).on('click', function(){
-           $('.miesteliu-sarasas').show();
-       })
+        var id = $(this).attr('data-name');
+        $(this).on('click', function(){
+           $('.sarasas-id-'+id).show();
+        })
     });
 
     /************** CUSTOM SCROLLBAR **************/
@@ -543,6 +544,11 @@ function sliderOn7() {
         })
     });
 
+    /*** footer position script ****/
+
+    if ($(document.body).height() < $(window).height()) {
+        $('.footer').attr('style', 'position: fixed!important; bottom: 0px;');
+    }
 
     /*************** dynamic gmap markers *****************/
 

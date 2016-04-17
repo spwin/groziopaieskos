@@ -27,7 +27,7 @@ class CategoriesSeeder extends Seeder
             ],
             'facilities_categories' => [
                 [
-                    'name' => 'Plaukai',
+                    'name' => ' ',
                     'order' => 1,
                     'image' => 'plaukai.png',
                     'facilities' => [
@@ -43,7 +43,7 @@ class CategoriesSeeder extends Seeder
                     ]
                 ],
                 [
-                    'name' => 'Nagai',
+                    'name' => ' ',
                     'order' => 2,
                     'image' => 'nagas.png',
                     'facilities' => [
@@ -56,7 +56,7 @@ class CategoriesSeeder extends Seeder
 
                 ],
                 [
-                    'name' => 'Veidas',
+                    'name' => ' ',
                     'order' => 3,
                     'image' => 'profilis.png',
                     'facilities' => [
@@ -79,16 +79,17 @@ class CategoriesSeeder extends Seeder
                 'image' => 'soliariumai.png',
                 'order' => 2
             ],
-            'facilities' => [
-                'Kūno masažai',
-                'Veido masažai',
-                'Kūno šveitimai',
-                'Judėsio terapija',
-                'Pirtys',
-                'Baseinai',
-                'Joga',
-                'Treniruoklių salė'
-            ]
+            'facilities_categories' => [
+                [
+                    'name' => ' ',
+                    'order' => 1,
+                    'image' => 'soliariumai.png',
+                    'facilities' => [
+                        'Horizontalus (gulimas)',
+                        'Vertikalus (stovimas)',
+                    ]
+                ],
+            ],
         ];
 
         $categories[] = [
@@ -99,12 +100,19 @@ class CategoriesSeeder extends Seeder
                 'image' => 'tattoo.png',
                 'order' => 3
             ],
-            'facilities' => [
-                'Tatuiruočių darymas',
-                'Auskarų verimas',
-                'Tatuiruočių šalinimas',
-                'Eskizų piešimas'
-            ]
+            'facilities_categories' => [
+                [
+                    'name' => ' ',
+                    'order' => 1,
+                    'image' => 'tattoo.png',
+                    'facilities' => [
+                        'Tatuiruočių darymas',
+                        'Auskarų verimas',
+                        'Tatuiruočių šalinimas',
+                        'Eskizų piešimas'
+                    ]
+                ],
+            ],
         ];
 
         $categories[] = [
@@ -115,16 +123,36 @@ class CategoriesSeeder extends Seeder
                 'image' => 'spa.png',
                 'order' => 4
             ],
-            'facilities' => [
-                'Kūno masažai',
-                'Veido masažai',
-                'Kūno šveitimai',
-                'Judėsio terapija',
-                'Pirtys',
-                'Baseinai',
-                'Joga',
-                'Treniruoklių salė'
-            ]
+            'facilities_categories' => [
+                [
+                    'name' => ' ',
+                    'order' => 1,
+                    'image' => '1.png',
+                    'facilities' => [
+                        'Kūno masažai',
+                        'Kūno šveitimai'
+                    ]
+                ],
+                [
+                    'name' => ' ',
+                    'order' => 2,
+                    'image' => '3.png',
+                    'facilities' => [
+                        'Baseinai',
+                        'Pirtys',
+                        'Saunos'
+                    ]
+                ],
+                [
+                    'name' => ' ',
+                    'order' => 3,
+                    'image' => 'Iconss_322.png',
+                    'facilities' => [
+                        'Judėsio terapija',
+                        'Joga'
+                    ]
+                ],
+            ],
         ];
 
         $categories[] = [
@@ -135,16 +163,30 @@ class CategoriesSeeder extends Seeder
                 'image' => 'kosmetologija.png',
                 'order' => 5
             ],
-            'facilities' => [
-                'Veido valymas',
-                'Spuogų gydymas',
-                'Procedūros odai',
-                'Veido kaukės',
-                'Nugaros valymas',
-                'Depiliacija vašku',
-                'Mezoterapija',
-                'Ilgalaikis makiažas'
-            ]
+            'facilities_categories' => [
+                [
+                    'name' => ' ',
+                    'order' => 1,
+                    'image' => 'iconss_155.png',
+                    'facilities' => [
+                        'Veido valymas',
+                        'Veido kaukės',
+                        'Mezoterapija',
+                        'Ilgalaikis makiažas'
+                    ]
+                ],
+                [
+                    'name' => ' ',
+                    'order' => 2,
+                    'image' => '1.png',
+                    'facilities' => [
+                        'Nugaros valymas',
+                        'Spuogų gydymas',
+                        'Depiliacija vašku',
+                        'Procedūros odai'
+                    ]
+                ],
+            ],
         ];
 
         $categories[] = [
@@ -155,13 +197,20 @@ class CategoriesSeeder extends Seeder
                 'image' => 'dantis.png',
                 'order' => 6
             ],
-            'facilities' => [
-                'Burnos Higiena',
-                'Dantų gydymas',
-                'Dantų protezai',
-                'Dantų balinimas',
-                'Dantų implantai'
-            ]
+            'facilities_categories' => [
+                [
+                    'name' => ' ',
+                    'order' => 1,
+                    'image' => 'iconss_46.png',
+                    'facilities' => [
+                        'Burnos Higiena',
+                        'Dantų gydymas',
+                        'Dantų protezai',
+                        'Dantų balinimas',
+                        'Dantų implantai'
+                    ]
+                ],
+            ],
         ];
 
         $categories[] = [
@@ -172,15 +221,36 @@ class CategoriesSeeder extends Seeder
                 'image' => 'sporto-klubai.png',
                 'order' => 7
             ],
-            'facilities' => [
-                'Treniruoklių sale',
-                'Aerobika',
-                'Joga',
-                'Asmeninės treniruotės',
-                'Pirtis',
-                'Sauna',
-                'Baseinas'
-            ]
+            'facilities_categories' => [
+                [
+                    'name' => ' ',
+                    'order' => 1,
+                    'image' => 'sporto-klubai.png',
+                    'facilities' => [
+                        'Treniruoklių sale',
+                        'Asmeninės treniruotės'
+                    ]
+                ],
+                [
+                    'name' => ' ',
+                    'order' => 2,
+                    'image' => 'iconss_322.png',
+                    'facilities' => [
+                        'Joga',
+                        'Aerobika'
+                    ]
+                ],
+                [
+                    'name' => ' ',
+                    'order' => 3,
+                    'image' => '3.png',
+                    'facilities' => [
+                        'Pirtys',
+                        'Saunos',
+                        'Baseinai'
+                    ]
+                ],
+            ],
         ];
 
         foreach($categories as $category){
